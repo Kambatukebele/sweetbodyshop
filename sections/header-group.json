@@ -11,37 +11,76 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
-    "announcement_bar_peLpCD": {
+    "announcement_bar_cxBeBf": {
       "type": "announcement-bar",
       "blocks": {
-        "announcement_HRAHLp": {
-          "type": "announcement",
+        "scrolling_element_KJ6TfG": {
+          "type": "scrolling_element",
           "settings": {
-            "text": "LIVRAISON GRATUITE",
-            "link": ""
+            "scrolling_element_text": "Livraison gratuite"
           }
         },
-        "announcement_AcPYgG": {
-          "type": "announcement",
+        "scrolling_element_mc9fxg": {
+          "type": "scrolling_element",
           "settings": {
-            "text": "LIVRAISON DISCRÈTE",
-            "link": ""
+            "scrolling_element_text": "Discrétion garantie"
+          }
+        },
+        "scrolling_element_YAhVb4": {
+          "type": "scrolling_element",
+          "settings": {
+            "scrolling_element_text": "Conseils privés"
+          }
+        },
+        "scrolling_element_R479XU": {
+          "type": "scrolling_element",
+          "settings": {
+            "scrolling_element_text": "Paiement sécurisé"
+          }
+        },
+        "scrolling_element_jyrbht": {
+          "type": "scrolling_element",
+          "settings": {
+            "scrolling_element_text": "Effets rapides"
+          }
+        },
+        "scrolling_element_mypjJD": {
+          "type": "scrolling_element",
+          "settings": {
+            "scrolling_element_text": "Appel confidentiel"
+          }
+        },
+        "scrolling_element_eyx6pt": {
+          "type": "scrolling_element",
+          "settings": {
+            "scrolling_element_text": "Formules naturelles"
+          }
+        },
+        "scrolling_element_EdTwdw": {
+          "type": "scrolling_element",
+          "settings": {
+            "scrolling_element_text": "Résultats visibles"
           }
         }
       },
       "block_order": [
-        "announcement_HRAHLp",
-        "announcement_AcPYgG"
+        "scrolling_element_KJ6TfG",
+        "scrolling_element_mc9fxg",
+        "scrolling_element_YAhVb4",
+        "scrolling_element_R479XU",
+        "scrolling_element_jyrbht",
+        "scrolling_element_mypjJD",
+        "scrolling_element_eyx6pt",
+        "scrolling_element_EdTwdw"
       ],
-      "name": "t:sections.announcement-bar.presets.name",
+      "name": "Announcement bar",
       "settings": {
-        "auto_rotate": true,
-        "change_slides_speed": 5,
-        "color_scheme": "scheme-4db46d5d-5c24-40ff-85bf-a2df984ae3e0",
         "show_line_separator": true,
-        "show_social": false,
-        "enable_country_selector": false,
-        "enable_language_selector": false
+        "border_bottom_color": "#000000",
+        "text_scrolling_background_color": "#000000",
+        "text_scrolling_text_color": "#ffffff",
+        "text_scrolling_animation_duration": 100,
+        "text_scrolling_text_transform": "uppercase"
       }
     },
     "header": {
@@ -65,7 +104,7 @@
     }
   },
   "order": [
-    "announcement_bar_peLpCD",
+    "announcement_bar_cxBeBf",
     "header"
   ]
 }
