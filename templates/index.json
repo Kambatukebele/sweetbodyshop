@@ -1,0 +1,53 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "slideshow_fCVnbi": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_iLnGJw": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_May_15_2025_02_21_40_PM.png",
+            "image_overlay_opacity": 0,
+            "heading": "<strong>Bien-être intime et confiance retrouvée</strong>",
+            "heading_size": "h1",
+            "subheading": "Des solutions naturelles pour votre corps, votre désir et votre intimité",
+            "button_label": "Commandez maintenant",
+            "link": "",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "box_align": "middle-left",
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "color_scheme": "scheme-4665c9b2-add1-4db8-b08c-708944f559ab"
+          }
+        }
+      },
+      "block_order": [
+        "slide_iLnGJw"
+      ],
+      "name": "t:sections.slideshow.presets.name",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "large",
+        "slider_visual": "dots",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    }
+  },
+  "order": [
+    "slideshow_fCVnbi"
+  ]
+}
