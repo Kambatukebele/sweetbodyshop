@@ -9,45 +9,47 @@
  */
 {
   "sections": {
-    "slideshow_fCVnbi": {
-      "type": "slideshow",
+    "hero_xrUJfF": {
+      "type": "hero",
       "blocks": {
-        "slide_iLnGJw": {
-          "type": "slide",
+        "heading_RNHLkT": {
+          "type": "heading",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_May_15_2025_02_21_40_PM.png",
-            "image_overlay_opacity": 0,
-            "heading": "<strong>Bien-être intime et confiance retrouvée</strong>",
-            "heading_size": "h1",
-            "subheading": "Des solutions naturelles pour votre corps, votre désir et votre intimité",
-            "button_label": "Commandez maintenant",
-            "link": "",
-            "button_style_secondary": false,
-            "show_text_box": false,
-            "box_align": "middle-left",
-            "text_alignment": "left",
-            "text_alignment_mobile": "left",
-            "color_scheme": "scheme-4665c9b2-add1-4db8-b08c-708944f559ab"
+            "hero__heading": "Améliorez vos sensations, et transformez votre intimité – naturellement."
+          }
+        },
+        "description_wRDKYh": {
+          "type": "description",
+          "settings": {
+            "hero__description": "Découvrez nos 5 produits ciblés pour les hommes et les femmes. Une gamme discrète, puissante et 100 % axée résultats. Paiement confidentiel, livraison rapide et appel privé disponible pour conseils personnalisés."
+          }
+        },
+        "buttons_eDdkQJ": {
+          "type": "buttons",
+          "settings": {
+            "hero__button_text": "Découvrir nos produits",
+            "hero__button_url": "",
+            "hero__button_text_color": "#ffffff",
+            "hero__button_bg_color": "#000000"
           }
         }
       },
       "block_order": [
-        "slide_iLnGJw"
+        "heading_RNHLkT",
+        "description_wRDKYh",
+        "buttons_eDdkQJ"
       ],
-      "name": "t:sections.slideshow.presets.name",
+      "name": "Hero",
       "settings": {
-        "layout": "full_bleed",
-        "slide_height": "large",
-        "slider_visual": "dots",
-        "auto_rotate": false,
-        "change_slides_speed": 5,
-        "image_behavior": "none",
-        "show_text_below": true,
-        "accessibility_info": "Slideshow about our brand"
+        "hero__background_image": "shopify://shop_images/pexels-cottonbro-9374659.jpg",
+        "hero__background_checkbox": true,
+        "hero__background_color": "linear-gradient(180deg, rgba(20, 68, 167, 0.28) 6%, rgba(221, 202, 182, 1) 100%)",
+        "hero__heading_color": "#ffffff",
+        "hero__description_color": "#ffffff"
       }
     }
   },
   "order": [
-    "slideshow_fCVnbi"
+    "hero_xrUJfF"
   ]
 }
