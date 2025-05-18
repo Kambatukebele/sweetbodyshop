@@ -47,9 +47,17 @@
         "hero__heading_color": "#ffffff",
         "hero__description_color": "#ffffff"
       }
+    },
+    "product_carousel_EFXgGR": {
+      "type": "product-carousel",
+      "name": "Product carousel",
+      "settings": {
+        "product_carousel_paddingY": 40
+      }
     }
   },
   "order": [
-    "hero_xrUJfF"
+    "hero_xrUJfF",
+    "product_carousel_EFXgGR"
   ]
 }
