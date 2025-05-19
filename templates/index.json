@@ -52,12 +52,65 @@
       "type": "product-carousel",
       "name": "Product carousel",
       "settings": {
-        "product_carousel_paddingY": 40
+        "product_carousel_enable": false,
+        "product_carousel_paddingY": 20,
+        "product_carousel_image": "shopify://shop_images/fashion-model-in-fur.jpg",
+        "product_carousel_subtitle": "POUR ELLE",
+        "product_carousel_title": "ÉQUILIBRE ET DÉSIR AU FÉMININ",
+        "product_carousel_description": "Besoin de conseils avant de commander ? Laissez votre numéro et recevez un appel discret d’une conseillère.",
+        "product_carousel_button_title": "Me faire rappeler",
+        "product_carousel_button_url": "",
+        "product_carousel_button_bg_color": "#000000",
+        "product_carousel_button_text_color": "#ffffff",
+        "product_carousel_products": [
+          "libido-booster-pour-femmes-copy",
+          "libido-booster-pour-femmes"
+        ]
+      }
+    },
+    "product_carousel_ej8CrC": {
+      "type": "product-carousel",
+      "name": "Product carousel",
+      "settings": {
+        "product_carousel_enable": true,
+        "product_carousel_paddingY": 0,
+        "product_carousel_image": "shopify://shop_images/man-in-suit-bowtie.jpg",
+        "product_carousel_subtitle": "POUR LUI",
+        "product_carousel_title": "PUISSANCE, PERFORMANCE, CONFIANCE",
+        "product_carousel_description": "Des questions sur les effets ? Nous vous rappelons en toute confidentialité.",
+        "product_carousel_button_title": "Me faire rappeler",
+        "product_carousel_button_url": "",
+        "product_carousel_button_bg_color": "#000000",
+        "product_carousel_button_text_color": "#ffffff",
+        "product_carousel_products": [
+          "libido-booster-homme",
+          "mr-big-cream",
+          "horny-goat-weed"
+        ]
+      }
+    },
+    "image_banner_LTeRdb": {
+      "type": "image-banner",
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/pexels-iumoo-14589392.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "large",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": true,
+        "color_scheme": "",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": true
       }
     }
   },
   "order": [
     "hero_xrUJfF",
-    "product_carousel_EFXgGR"
+    "product_carousel_EFXgGR",
+    "product_carousel_ej8CrC",
+    "image_banner_LTeRdb"
   ]
 }

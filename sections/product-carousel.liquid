@@ -4,37 +4,102 @@
       <!-- collection Image -->
       <div class="product-carousel__collection">
         <div class="product-carousel__collection-image">
-          {{- 'collection-4' | placeholder_svg_tag: 'product-carousel__collection-img' -}}
+          {%- if section.settings.product_carousel_image != blank -%}
+            {{-
+              section.settings.product_carousel_image
+              | image_url: width: 1000
+              | image_tag: class: 'product-carousel__collection-img'
+            -}}
+          {%- else -%}
+            {{- 'collection-4' | placeholder_svg_tag: 'product-carousel__collection-img' -}}
+          {%- endif -%}
         </div>
         <div class="product-carousel__collection-info">
-          <span class="product-carousel__collection-subtitle">About us</span>
-          <h2 class="product-carousel__collection-title">Take care of your nails pains them color awesome</h2>
+          <span class="product-carousel__collection-subtitle">
+            {%- if section.settings.product_carousel_subtitle != blank -%}
+              {{ section.settings.product_carousel_subtitle }}
+            {%- else -%}
+              About us
+            {%- endif -%}
+          </span>
+          <h2 class="product-carousel__collection-title">
+            {%- if section.settings.product_carousel_title != blank -%}
+              {{ section.settings.product_carousel_title }}
+            {%- else -%}
+              Take care of your nails pains them color awesome
+            {%- endif -%}
+          </h2>
           <p class="product-carousel__collection-description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua.
+            {%- if section.settings.product_carousel_description != blank -%}
+              {{ section.settings.product_carousel_description }}
+            {%- else -%}
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+            {%- endif -%}
           </p>
           {% render 'button',
-            href: '#',
-            title: 'Me faire rappeler',
+            href: section.settings.product_carousel_button_url,
+            title: section.settings.product_carousel_button_title,
             class_modifier: 'product-carousel__collection-button'
           %}
         </div>
       </div>
       <!-- Products -->
       <div class="product-carousel__products">
-        {%- for item in (1..4) -%}
-          <!-- loop here -->
-          <a href="#" class="product-carousel__product">
-            <div class="product-carousel__product-image-block">
-              {{- 'product-1' | placeholder_svg_tag: 'product-carousel__product-image' -}}
-            </div>
-            <div class="product-carousel__product-info">
-              <span class="product-carousel__product-description">Pure Radiance Skincare</span>
-              <h4 class="product-carousel__product-title">Crystal Clear Cleansing Foam</h4>
-              <span class="product-carousel__product-price">$25.00</span>
-            </div>
-          </a>
-        {%- endfor -%}
+        {%- if section.settings.product_carousel_products != blank -%}
+          {%- for item-product in section.settings.product_carousel_products -%}
+            <a href="#" class="product-carousel__product">
+              <div class="product-carousel__product-image-block">
+                {%- if item-product.featured_image -%}
+                  {{-
+                    item-product.featured_image
+                    | image_url: width: 1000
+                    | image_tag: class: 'product-carousel__product-image'
+                  -}}
+                {%- else -%}
+                  {{- 'product-1' | placeholder_svg_tag: 'product-carousel__product-image' -}}
+                {%- endif -%}
+              </div>
+              <div class="product-carousel__product-info">
+                <span class="product-carousel__product-description">
+                  {%- if item-product.description != blank -%}
+                    {{ item-product.description | truncatewords: 4 }}
+                  {%- else -%}
+                    Pure Radiance Skincare
+                  {%- endif -%}
+                </span>
+                <h4 class="product-carousel__product-title">
+                  {%- if item-product.title != blank -%}
+                    {{ item-product.title }}
+                  {%- else -%}
+                    Crystal Clear Cleansing Foam
+                  {%- endif -%}
+                </h4>
+                <span class="product-carousel__product-price">
+                  {%- if item-product.price != blank -%}
+                    {{ item-product.price | money }}
+                  {%- else -%}
+                    $25.00
+                  {%- endif -%}
+                </span>
+              </div>
+            </a>
+          {%- endfor -%}
+        {%- else -%}
+          {%- for item in (1..4) -%}
+            <!-- loop here -->
+            <a href="#" class="product-carousel__product">
+              <div class="product-carousel__product-image-block">
+                {{- 'product-1' | placeholder_svg_tag: 'product-carousel__product-image' -}}
+              </div>
+              <div class="product-carousel__product-info">
+                <span class="product-carousel__product-description">Pure Radiance Skincare</span>
+                <h4 class="product-carousel__product-title">Crystal Clear Cleansing Foam</h4>
+                <span class="product-carousel__product-price">$25.00</span>
+              </div>
+            </a>
+          {%- endfor -%}
+        {%- endif -%}
       </div>
     </div>
   </div>
@@ -56,7 +121,7 @@
     .product-carousel__wrapper{
       width: 100%;
       display: flex;
-      flex-direction: column;
+      flex-direction: {% if section.settings.product_carousel_enable == true %} column-reverse {% else %} column {% endif %};
       align-items: start;
       justify-content: center;
       gap: 50px;
@@ -70,14 +135,21 @@
     .product-carousel__collection-image{
       min-width: 200px;
       width: 100%;
-      height: auto;
+      min-height: 300px;
+      height: 100%;
+      max-height: 500px;
       border-radius: 10px;
-      border: 1px solid rgba(46, 46, 46, 0.57);
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: {%- if section.settings.product_carousel_image != blank -%} none {%- else -%} 1px solid rgba(46, 46, 46, 0.57) {%- endif -%}
     }
     .product-carousel__collection-img{
       width: 100%;
       height: 100%;
       object-fit: cover;
+
     }
     .product-carousel__collection-info{
       min-width: 200px;
@@ -103,8 +175,8 @@
 
     }
     .product-carousel__collection-button{
-      background-color: black;
-      color: white;
+      background-color: {{-section.settings.product_carousel_button_bg_color-}};
+      color: {{-section.settings.product_carousel_button_text_color-}};
     }
     /* Product carousel */
     .product-carousel__products{
@@ -118,28 +190,46 @@
       width: 100%;
     }
     .product-carousel__product{
-      border-radius: 10px;
-      border: 1px solid rgba(46, 46, 46, 0.57);
       width: 100%;
-      height: auto;
-      padding-left: 5px;
+      height: 330px;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: start;
       text-decoration: none;
+    }
+    .product-carousel__product-image-block{
+      width: 100%;
+      min-height: 180px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      border: 1px solid rgba(46, 46, 46, 0.57);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .product-carousel__product-image{
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
     .product-carousel__product-info{
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: start;
-      gap: 10px;
+      width: 100%;
+      gap: 5px;
+      max-height: 200px;
+      padding-left: 10px;
     }
     .product-carousel__product-description{
-      font-size: 14px;
+      font-size: 12px;
       font-family: {{ settings.type_body_font.family }};
       font-weight: {{ settings.type_body_font.weight }};
       color: black;
     }
     .product-carousel__product-title{
-      font-size: 20px !important;
+      font-size: 16px !important;
       font-family: {{ settings.type_header_font.family }};
       font-weight: {{ settings.type_header_font.weight }};
       margin-top: 0px !important;
@@ -147,18 +237,34 @@
       color: black;
     }
     .product-carousel__product-price{
-      font-size: 16px;
+      font-size: 14px;
       font-family: {{ settings.type_body_font.family }};
       font-weight: {{ settings.type_body_font.weight }};
       color: black;
     }
   @media screen and (min-width: 750px) {
+    .product-carousel__collection-image{
+      max-height: 600px;
+    }
      /* Product carousel */
+
     .product-carousel__products{
       gap: 20px 20px;
     }
     .product-carousel__product{
-      padding-left: 10px;
+      min-height: 530px;
+    }
+    .product-carousel__product-image-block{
+      height: 400px;
+    }
+    .product-carousel__product-description{
+      font-size: 14px;
+    }
+    .product-carousel__product-title{
+      font-size: 18px !important;
+    }
+    .product-carousel__product-price{
+      font-size: 15px;
     }
   }
 
@@ -168,7 +274,7 @@
   } {% endcomment %}
   @media screen and (min-width: 1200px) {
     .product-carousel__wrapper{
-      flex-direction: row;
+      flex-direction: {% if section.settings.product_carousel_enable == true %} row-reverse {% else %} row {% endif %};
       justify-content: space-between;
       gap: 20px;
     }
@@ -181,6 +287,9 @@
       width: 100%;
       height: auto;
       border-radius: 10px;
+    }
+    .product-carousel__collection-image{
+      max-height: 700px;
     }
     /* Product carousel */
     .product-carousel__products{
@@ -197,16 +306,85 @@
 {
   "name": "Product carousel",
   "class": "product_carousel",
+  "enabled_on": {
+    "templates": ["*"]
+  },
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "product_carousel_enable",
+      "label": "Reverse row order",
+      "default": false
+    },
     {
       "type": "range",
       "id": "product_carousel_paddingY",
       "label": "Padding top and bottom",
       "min": 0,
-      "max": 40,
+      "max": 80,
       "step": 1,
       "default": 0,
       "info": "Padding top and bottom of the carousel"
+    },
+    {
+      "type": "header",
+      "content": "Image and text"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_carousel_image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "product_carousel_subtitle",
+      "label": "SubTitle",
+      "default": "About us"
+    },
+    {
+      "type": "text",
+      "id": "product_carousel_title",
+      "label": "Title",
+      "default": "Take care of your nails pains them color awesome"
+    },
+    {
+      "type": "text",
+      "id": "product_carousel_description",
+      "label": "Description",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+    },
+    {
+      "type": "text",
+      "id": "product_carousel_button_title",
+      "label": "Button title",
+      "default": "Me faire rappeler"
+    },
+    {
+      "type": "url",
+      "id": "product_carousel_button_url",
+      "label": "Button url"
+    },
+    {
+      "type": "color",
+      "id": "product_carousel_button_bg_color",
+      "label": "Button background color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "product_carousel_button_text_color",
+      "label": "Button text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Products"
+    },
+    {
+      "type": "product_list",
+      "id": "product_carousel_products",
+      "label": "Products",
+      "limit": 4
     }
   ],
   "blocks": [],
