@@ -1,5 +1,5 @@
 <section class="hero">
-  <div class="hero__wrapper page-width">
+  <div class="hero__wrapper">
     {%- if section.blocks.size > 0 -%}
       <div class="hero__content">
         {%- for block in section.blocks -%}
@@ -73,6 +73,11 @@
     justify-content: center;
     align-items: center;
   }
+  .hero__wrapper{
+    width: {{- settings.page_width -}}px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
   .hero__content{
     min-width: 280px;
   }
@@ -123,9 +128,6 @@
 
   /* Example: Header layout changes for desktop */
   @media screen and (min-width: 990px) {
-    .page-width{
-        margin: 0 !important;
-    }
     .hero {
         justify-content: start;
         align-items: center;
@@ -142,6 +144,10 @@
 
   /* Example: Increase max width for large screens */
   @media screen and (min-width: 1200px) {
+    .hero__wrapper{
+      padding: 0;
+      margin: 0 auto;
+    }
   }
 </style>
 

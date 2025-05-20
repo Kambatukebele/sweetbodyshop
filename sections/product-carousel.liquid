@@ -118,8 +118,7 @@
       max-width: {{ settings.page_width }}px;
       width: 100%;
       margin: 0 auto;
-      padding-left: 20px;
-      padding-right: 20px;
+      padding: 0 1.5rem;
     }
     .product-carousel__wrapper-{{ section.id }}{
       width: 100%;
@@ -276,6 +275,10 @@
 
   } {% endcomment %}
   @media screen and (min-width: 1200px) {
+    .product-carousel__container{
+      padding: 0;
+      margin: 0 auto;
+    }
     .product-carousel__wrapper-{{ section.id }}{
       flex-direction: {% if section.settings.product_carousel_enable == true %} row-reverse {% else %} row {% endif %};
       justify-content: space-between;

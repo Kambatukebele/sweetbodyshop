@@ -41,13 +41,48 @@
       "settings": {
         "hero__background_image": "shopify://shop_images/pexels-cottonbro-9374659.jpg",
         "hero__background_checkbox": true,
-        "hero__background_color": "linear-gradient(135deg, rgba(95, 10, 135, 0.5), rgba(164, 80, 139, 1) 100%)",
+        "hero__background_color": "linear-gradient(135deg, rgba(95, 10, 135, 1), rgba(132, 35, 121, 0.5) 50%, rgba(164, 80, 139, 1) 100%)",
         "hero__heading_color": "#ffffff",
         "hero__description_color": "#ffffff",
         "hero__button_primary_text_color": "#ffffff",
-        "hero__button_primary_bg_color": "#e3c770",
+        "hero__button_primary_bg_color": "#5c1a1b",
         "hero__button_secondary_text_color": "#ffffff",
         "hero__button_secondary_bg_color": "#000000"
+      }
+    },
+    "featured_products_WWMVGz": {
+      "type": "featured-products",
+      "name": "Featured products",
+      "settings": {
+        "collection": [
+          "libido-booster-pour-femmes-copy",
+          "horny-goat-weed",
+          "libido-booster-homme",
+          "libido-booster-pour-femmes",
+          "mr-big-cream"
+        ],
+        "products_to_show": 5,
+        "title": "",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 5,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-1",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "product_carousel_EFXgGR": {
@@ -142,8 +177,8 @@
         "text_scrolling_font_size": 29,
         "text_scrolling_font_weight": 700,
         "text_scrolling_height": 100,
-        "text_scrolling_background_color": "#ffffff",
-        "text_scrolling_text_color": "#000000",
+        "text_scrolling_background_color": "#5c1a1b",
+        "text_scrolling_text_color": "#ffffff",
         "text_scrolling_animation_duration": 98,
         "text_scrolling_text_transform": "uppercase"
       }
@@ -176,6 +211,7 @@
   },
   "order": [
     "hero_xrUJfF",
+    "featured_products_WWMVGz",
     "product_carousel_EFXgGR",
     "slider_HejBdt",
     "product_carousel_YLCxGC"
