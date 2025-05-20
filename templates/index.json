@@ -15,22 +15,20 @@
         "heading_RNHLkT": {
           "type": "heading",
           "settings": {
-            "hero__heading": "Améliorez vos sensations, et transformez votre intimité – naturellement."
+            "hero__heading": "Transformez votre intimité."
           }
         },
         "description_wRDKYh": {
           "type": "description",
           "settings": {
-            "hero__description": "Découvrez nos 5 produits ciblés pour les hommes et les femmes. Une gamme discrète, puissante et 100 % axée résultats. Paiement confidentiel, livraison rapide et appel privé disponible pour conseils personnalisés."
+            "hero__description": "Découvrez nos produits ciblés pour les hommes et les femmes. Une gamme discrète, puissante et 100 % axée résultats. Paiement confidentiel, livraison rapide et appel privé disponible pour conseils personnalisés."
           }
         },
         "buttons_eDdkQJ": {
           "type": "buttons",
           "settings": {
             "hero__button_text": "Découvrir nos produits",
-            "hero__button_url": "",
-            "hero__button_text_color": "#ffffff",
-            "hero__button_bg_color": "#000000"
+            "hero__button_url": ""
           }
         }
       },
@@ -43,9 +41,13 @@
       "settings": {
         "hero__background_image": "shopify://shop_images/pexels-cottonbro-9374659.jpg",
         "hero__background_checkbox": true,
-        "hero__background_color": "linear-gradient(180deg, rgba(20, 68, 167, 0.28) 6%, rgba(221, 202, 182, 1) 100%)",
+        "hero__background_color": "linear-gradient(135deg, rgba(95, 10, 135, 0.5), rgba(164, 80, 139, 1) 100%)",
         "hero__heading_color": "#ffffff",
-        "hero__description_color": "#ffffff"
+        "hero__description_color": "#ffffff",
+        "hero__button_primary_text_color": "#ffffff",
+        "hero__button_primary_bg_color": "#e3c770",
+        "hero__button_secondary_text_color": "#ffffff",
+        "hero__button_secondary_bg_color": "#000000"
       }
     },
     "product_carousel_EFXgGR": {
@@ -53,64 +55,129 @@
       "name": "Product carousel",
       "settings": {
         "product_carousel_enable": false,
-        "product_carousel_paddingY": 20,
-        "product_carousel_image": "shopify://shop_images/fashion-model-in-fur.jpg",
+        "product_carousel_enable_border": false,
+        "product_carousel_paddingY": 36,
+        "product_carousel_image": "shopify://shop_images/pexels-antonio-fernandez-124839204-10009413.jpg",
         "product_carousel_subtitle": "POUR ELLE",
         "product_carousel_title": "ÉQUILIBRE ET DÉSIR AU FÉMININ",
         "product_carousel_description": "Besoin de conseils avant de commander ? Laissez votre numéro et recevez un appel discret d’une conseillère.",
         "product_carousel_button_title": "Me faire rappeler",
         "product_carousel_button_url": "",
-        "product_carousel_button_bg_color": "#000000",
+        "product_carousel_button_bg_color": "#e3c770",
         "product_carousel_button_text_color": "#ffffff",
         "product_carousel_products": [
           "libido-booster-pour-femmes-copy",
           "libido-booster-pour-femmes"
-        ]
+        ],
+        "product_carousel_list_enable": true,
+        "product_carousel_list_color": "#ededed"
       }
     },
-    "product_carousel_ej8CrC": {
+    "slider_HejBdt": {
+      "type": "slider",
+      "blocks": {
+        "scrolling_element_j3Y3YK": {
+          "type": "scrolling_element",
+          "settings": {
+            "scrolling_element_text": "Livraison gratuite"
+          }
+        },
+        "scrolling_element_Dg7rLc": {
+          "type": "scrolling_element",
+          "settings": {
+            "scrolling_element_text": "Discrétion garantie"
+          }
+        },
+        "scrolling_element_d9rhqa": {
+          "type": "scrolling_element",
+          "settings": {
+            "scrolling_element_text": "Conseils privés"
+          }
+        },
+        "scrolling_element_VBgiNT": {
+          "type": "scrolling_element",
+          "settings": {
+            "scrolling_element_text": "Paiement sécurisé"
+          }
+        },
+        "scrolling_element_ebENyi": {
+          "type": "scrolling_element",
+          "settings": {
+            "scrolling_element_text": "Effets rapides"
+          }
+        },
+        "scrolling_element_jJ7pUb": {
+          "type": "scrolling_element",
+          "settings": {
+            "scrolling_element_text": "Appel confidentiel"
+          }
+        },
+        "scrolling_element_w49m4n": {
+          "type": "scrolling_element",
+          "settings": {
+            "scrolling_element_text": "Formules naturelles"
+          }
+        },
+        "scrolling_element_HHnPNT": {
+          "type": "scrolling_element",
+          "settings": {
+            "scrolling_element_text": "Résultats visibles"
+          }
+        }
+      },
+      "block_order": [
+        "scrolling_element_j3Y3YK",
+        "scrolling_element_Dg7rLc",
+        "scrolling_element_d9rhqa",
+        "scrolling_element_VBgiNT",
+        "scrolling_element_ebENyi",
+        "scrolling_element_jJ7pUb",
+        "scrolling_element_w49m4n",
+        "scrolling_element_HHnPNT"
+      ],
+      "name": "Slider",
+      "settings": {
+        "show_line_separator": false,
+        "border_bottom_color": "#000000",
+        "text_scrolling_font_size": 29,
+        "text_scrolling_font_weight": 700,
+        "text_scrolling_height": 100,
+        "text_scrolling_background_color": "#ffffff",
+        "text_scrolling_text_color": "#000000",
+        "text_scrolling_animation_duration": 98,
+        "text_scrolling_text_transform": "uppercase"
+      }
+    },
+    "product_carousel_YLCxGC": {
       "type": "product-carousel",
       "name": "Product carousel",
       "settings": {
         "product_carousel_enable": true,
-        "product_carousel_paddingY": 0,
-        "product_carousel_image": "shopify://shop_images/man-in-suit-bowtie.jpg",
+        "product_carousel_enable_border": true,
+        "product_carousel_paddingY": 36,
+        "product_carousel_image": "shopify://shop_images/pexels-dani-alejandro-1468024-2827479.jpg",
         "product_carousel_subtitle": "POUR LUI",
         "product_carousel_title": "PUISSANCE, PERFORMANCE, CONFIANCE",
-        "product_carousel_description": "Des questions sur les effets ? Nous vous rappelons en toute confidentialité.",
+        "product_carousel_description": "Redécouvrez une virilité affirmée avec nos formules masculines",
         "product_carousel_button_title": "Me faire rappeler",
         "product_carousel_button_url": "",
-        "product_carousel_button_bg_color": "#000000",
+        "product_carousel_button_bg_color": "#5c1a1b",
         "product_carousel_button_text_color": "#ffffff",
         "product_carousel_products": [
-          "libido-booster-homme",
+          "libido-booster-pour-femmes-copy",
           "mr-big-cream",
-          "horny-goat-weed"
-        ]
-      }
-    },
-    "image_banner_LTeRdb": {
-      "type": "image-banner",
-      "name": "t:sections.image-banner.presets.name",
-      "settings": {
-        "image": "shopify://shop_images/pexels-iumoo-14589392.jpg",
-        "image_overlay_opacity": 0,
-        "image_height": "large",
-        "image_behavior": "none",
-        "desktop_content_position": "middle-center",
-        "desktop_content_alignment": "center",
-        "show_text_box": true,
-        "color_scheme": "",
-        "stack_images_on_mobile": true,
-        "mobile_content_alignment": "center",
-        "show_text_below": true
+          "horny-goat-weed",
+          "libido-booster-homme"
+        ],
+        "product_carousel_list_enable": true,
+        "product_carousel_list_color": "#ededed"
       }
     }
   },
   "order": [
     "hero_xrUJfF",
     "product_carousel_EFXgGR",
-    "product_carousel_ej8CrC",
-    "image_banner_LTeRdb"
+    "slider_HejBdt",
+    "product_carousel_YLCxGC"
   ]
 }

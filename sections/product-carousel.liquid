@@ -1,13 +1,13 @@
-<section class="product-carousel">
+<section class="product-carousel-{{ section.id }}">
   <div class="product-carousel__container">
-    <div class="product-carousel__wrapper">
+    <div class="product-carousel__wrapper-{{ section.id }}">
       <!-- collection Image -->
-      <div class="product-carousel__collection">
-        <div class="product-carousel__collection-image">
+      <div class="product-carousel__collection-{{ section.id }}">
+        <div class="product-carousel__collection-image-{{ section.id }}">
           {%- if section.settings.product_carousel_image != blank -%}
             {{-
               section.settings.product_carousel_image
-              | image_url: width: 1000
+              | image_url: width: 700
               | image_tag: class: 'product-carousel__collection-img'
             -}}
           {%- else -%}
@@ -37,10 +37,12 @@
               dolore magna aliqua.
             {%- endif -%}
           </p>
+          {%- assign classButton = 'product-carousel__collection-button' -%}
+          {% assign sectionId = classButton | append: '-' | append: section.id -%}
           {% render 'button',
             href: section.settings.product_carousel_button_url,
             title: section.settings.product_carousel_button_title,
-            class_modifier: 'product-carousel__collection-button'
+            class_modifier: sectionId
           %}
         </div>
       </div>
@@ -49,11 +51,11 @@
         {%- if section.settings.product_carousel_products != blank -%}
           {%- for item-product in section.settings.product_carousel_products -%}
             <a href="#" class="product-carousel__product">
-              <div class="product-carousel__product-image-block">
+              <div class="product-carousel__product-image-block-{{ section.id }}">
                 {%- if item-product.featured_image -%}
                   {{-
                     item-product.featured_image
-                    | image_url: width: 1000
+                    | image_url: width: 400
                     | image_tag: class: 'product-carousel__product-image'
                   -}}
                 {%- else -%}
@@ -104,8 +106,9 @@
     </div>
   </div>
 </section>
+
 <style>
-    .product-carousel {
+    .product-carousel-{{ section.id }} {
       padding-top: {{- section.settings.product_carousel_paddingY -}} px;
       padding-bottom: {{- section.settings.product_carousel_paddingY -}} px;
       width: 100%;
@@ -118,7 +121,7 @@
       padding-left: 20px;
       padding-right: 20px;
     }
-    .product-carousel__wrapper{
+    .product-carousel__wrapper-{{ section.id }}{
       width: 100%;
       display: flex;
       flex-direction: {% if section.settings.product_carousel_enable == true %} column-reverse {% else %} column {% endif %};
@@ -127,12 +130,12 @@
       gap: 50px;
     }
     /* collection Image */
-    .product-carousel__collection{
+    .product-carousel__collection-{{ section.id }}{
       width: 100%;
       height: auto;
       min-width: 200px;
     }
-    .product-carousel__collection-image{
+    .product-carousel__collection-image-{{ section.id }}{
       min-width: 200px;
       width: 100%;
       min-height: 300px;
@@ -143,7 +146,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      border: {%- if section.settings.product_carousel_image != blank -%} none {%- else -%} 1px solid rgba(46, 46, 46, 0.57) {%- endif -%}
+      border: {%- if section.settings.product_carousel_enable_border == true -%} 1px solid rgba(46, 46, 46, 0.57) {%- else -%} none {%- endif -%};
     }
     .product-carousel__collection-img{
       width: 100%;
@@ -174,7 +177,7 @@
       font-weight: {{ settings.type_body_font.weight }};
 
     }
-    .product-carousel__collection-button{
+    .product-carousel__collection-button-{{ section.id }}{
       background-color: {{-section.settings.product_carousel_button_bg_color-}};
       color: {{-section.settings.product_carousel_button_text_color-}};
     }
@@ -183,7 +186,7 @@
       display: grid;
       grid-auto-columns: 1fr;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
+      grid-template-rows: {%- for item in section.settings.product_carousel_products -%}{%- if forloop.index == 1 or forloop.index == 2 -%}1fr{%- else -%}1fr 1fr{%- endif -%}{%- endfor -%} ;
       grid-gap: 10px 10px;
       justify-items: center;
       align-items: center;
@@ -198,12 +201,12 @@
       align-items: start;
       text-decoration: none;
     }
-    .product-carousel__product-image-block{
+    .product-carousel__product-image-block-{{ section.id }}{
       width: 100%;
       min-height: 180px;
       padding-top: 20px;
       padding-bottom: 20px;
-      border: 1px solid rgba(46, 46, 46, 0.57);
+      border: {%- if section.settings.product_carousel_list_enable == true -%} 1px solid {{ section.settings.product_carousel_list_color }} {%- else -%} none {%- endif -%};
       border-radius: 10px;
       overflow: hidden;
     }
@@ -243,7 +246,7 @@
       color: black;
     }
   @media screen and (min-width: 750px) {
-    .product-carousel__collection-image{
+    .product-carousel__collection-image-{{ section.id }}{
       max-height: 600px;
     }
      /* Product carousel */
@@ -254,7 +257,7 @@
     .product-carousel__product{
       min-height: 530px;
     }
-    .product-carousel__product-image-block{
+    .product-carousel__product-image-block-{{ section.id }}{
       height: 400px;
     }
     .product-carousel__product-description{
@@ -273,24 +276,23 @@
 
   } {% endcomment %}
   @media screen and (min-width: 1200px) {
-    .product-carousel__wrapper{
+    .product-carousel__wrapper-{{ section.id }}{
       flex-direction: {% if section.settings.product_carousel_enable == true %} row-reverse {% else %} row {% endif %};
       justify-content: space-between;
       gap: 20px;
     }
     /* collection Image */
-    .product-carousel__collection{
+    .product-carousel__collection-{{ section.id }}{
       width: 50%;
       min-width: 600px;
     }
-    .product-carousel__collection-image{
+    .product-carousel__collection-image-{{ section.id }}{
       width: 100%;
       height: auto;
       border-radius: 10px;
+      max-height: 750px;
     }
-    .product-carousel__collection-image{
-      max-height: 700px;
-    }
+
     /* Product carousel */
     .product-carousel__products{
       grid-gap: 20px 20px;
@@ -315,6 +317,12 @@
       "id": "product_carousel_enable",
       "label": "Reverse row order",
       "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "product_carousel_enable_border",
+      "label": "Enable border on the image",
+      "default": true
     },
     {
       "type": "range",
@@ -385,6 +393,23 @@
       "id": "product_carousel_products",
       "label": "Products",
       "limit": 4
+    },
+    {
+      "type": "header",
+      "content": "Products border color"
+    },
+    {
+      "type": "checkbox",
+      "id": "product_carousel_list_enable",
+      "label": "Enable product border",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "product_carousel_list_color",
+      "label": "Border color",
+      "default": "#000000",
+      "visible_if": "{{ section.settings.product_carousel_list_enable == true }}"
     }
   ],
   "blocks": [],
@@ -392,7 +417,9 @@
     {
       "name": "Product carousel",
       "settings": {
-        "product_carousel_paddingY": 0
+        "product_carousel_paddingY": 0,
+        "product_carousel_enable": false,
+        "product_carousel_enable_border": true
       },
       "blocks": []
     }

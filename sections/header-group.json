@@ -11,76 +11,32 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
-    "announcement_bar_cxBeBf": {
-      "type": "announcement-bar",
+    "promotion_cPR6Nc": {
+      "type": "promotion",
       "blocks": {
-        "scrolling_element_KJ6TfG": {
-          "type": "scrolling_element",
+        "promotion_cJKbb7": {
+          "type": "promotion",
           "settings": {
-            "scrolling_element_text": "Livraison gratuite"
-          }
-        },
-        "scrolling_element_mc9fxg": {
-          "type": "scrolling_element",
-          "settings": {
-            "scrolling_element_text": "Discrétion garantie"
-          }
-        },
-        "scrolling_element_YAhVb4": {
-          "type": "scrolling_element",
-          "settings": {
-            "scrolling_element_text": "Conseils privés"
-          }
-        },
-        "scrolling_element_R479XU": {
-          "type": "scrolling_element",
-          "settings": {
-            "scrolling_element_text": "Paiement sécurisé"
-          }
-        },
-        "scrolling_element_jyrbht": {
-          "type": "scrolling_element",
-          "settings": {
-            "scrolling_element_text": "Effets rapides"
-          }
-        },
-        "scrolling_element_mypjJD": {
-          "type": "scrolling_element",
-          "settings": {
-            "scrolling_element_text": "Appel confidentiel"
-          }
-        },
-        "scrolling_element_eyx6pt": {
-          "type": "scrolling_element",
-          "settings": {
-            "scrolling_element_text": "Formules naturelles"
-          }
-        },
-        "scrolling_element_EdTwdw": {
-          "type": "scrolling_element",
-          "settings": {
-            "scrolling_element_text": "Résultats visibles"
+            "promotion_block_text_id": "Welcome to our store"
           }
         }
       },
       "block_order": [
-        "scrolling_element_KJ6TfG",
-        "scrolling_element_mc9fxg",
-        "scrolling_element_YAhVb4",
-        "scrolling_element_R479XU",
-        "scrolling_element_jyrbht",
-        "scrolling_element_mypjJD",
-        "scrolling_element_eyx6pt",
-        "scrolling_element_EdTwdw"
+        "promotion_cJKbb7"
       ],
-      "name": "Announcement bar",
+      "name": "Promotion",
       "settings": {
-        "show_line_separator": true,
-        "border_bottom_color": "#000000",
-        "text_scrolling_background_color": "#000000",
-        "text_scrolling_text_color": "#ffffff",
-        "text_scrolling_animation_duration": 100,
-        "text_scrolling_text_transform": "uppercase"
+        "promotion_color_scheme_id": "scheme_1",
+        "promotion_enable_custom_background_color_id": true,
+        "promotion_custom_background_color_id": "#000000",
+        "promotion_custom_text_color_id": "#ffffff",
+        "promotion_enable_line_divider_id": true,
+        "promotion_bottom_color_line_divider_id": "#000000",
+        "promotion_background_height_id": 40,
+        "promotion_font_size_id": 14,
+        "promotion_animation_mobile_id": 60,
+        "promotion_animation_tablet_id": 59,
+        "promotion_animation_large_id": 60
       }
     },
     "header": {
@@ -104,7 +60,7 @@
     }
   },
   "order": [
-    "announcement_bar_cxBeBf",
+    "promotion_cPR6Nc",
     "header"
   ]
 }

@@ -44,8 +44,9 @@
     width: 100%;
     margin-inline: auto;
     position: relative;
-    height: 50px;
-    border-bottom: {% if section.settings.show_line_separator %} 1px solid {{ section.settings.border_bottom_color }} {% else %} none {% endif %};
+    height:{{ section.settings.text_scrolling_height }}px;
+    border-top: {% if section.settings.show_line_separator == true %} 1px solid {{ section.settings.border_bottom_color }} {% else %} none {% endif %};
+    border-bottom: {% if section.settings.show_line_separator == true %} 1px solid {{ section.settings.border_bottom_color }} {% else %} none {% endif %};
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -64,7 +65,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50px;
+    height: {{ section.settings.text_scrolling_height }}px;
+    font-size: {{ section.settings.text_scrolling_font_size }}px;
+    font-weight: {{ section.settings.text_scrolling_font_weight }};
+    font-family: {{ settings.type_body_font.family }};
     left: max(calc(400px * 8), 100%);
     animation-name: scrollLeft;
     animation-duration: {{- section.settings.text_scrolling_animation_duration -}}s;
@@ -99,10 +103,10 @@
 
 {% schema %}
 {
-  "name": "Announcement-bar",
-  "class": "announcement-bar-section",
+  "name": "Slider",
+  "class": "slider-section",
   "enabled_on": {
-    "groups": ["header"]
+    "templates": ["*"]
   },
   "settings": [
     {
@@ -115,7 +119,42 @@
       "type": "color",
       "id": "border_bottom_color",
       "label": "Border bottom color",
-      "default": "#000000"
+      "default": "#000000",
+      "visible_if": "{{ section.settings.show_line_separator == true }}"
+    },
+    {
+      "type": "header",
+      "content": "hight and font size"
+    },
+    {
+      "type": "range",
+      "id": "text_scrolling_font_size",
+      "label": "Font size",
+      "min": 10,
+      "max": 50,
+      "unit": "px",
+      "step": 1,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "text_scrolling_font_weight",
+      "label": "Font size",
+      "min": 100,
+      "max": 900,
+      "unit": "px",
+      "step": 100,
+      "default": 500
+    },
+    {
+      "type": "range",
+      "id": "text_scrolling_height",
+      "label": "Height",
+      "min": 10,
+      "max": 100,
+      "unit": "px",
+      "step": 1,
+      "default": 50
     },
     {
       "type": "header",
@@ -198,7 +237,7 @@
   ],
   "presets": [
     {
-      "name": "Announcement bar",
+      "name": "Slider",
       "settings": {
         "show_line_separator": true,
         "border_bottom_color": "#000000",
