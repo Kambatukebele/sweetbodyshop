@@ -159,7 +159,6 @@
     },
     "product_carousel_EFXgGR": {
       "type": "product-carousel",
-      "disabled": true,
       "name": "Product carousel",
       "settings": {
         "product_carousel_enable": false,
@@ -243,7 +242,6 @@
         "scrolling_element_w49m4n",
         "scrolling_element_HHnPNT"
       ],
-      "disabled": true,
       "name": "Slider",
       "settings": {
         "show_line_separator": false,
@@ -259,7 +257,6 @@
     },
     "product_carousel_YLCxGC": {
       "type": "product-carousel",
-      "disabled": true,
       "name": "Product carousel",
       "settings": {
         "product_carousel_enable": true,
@@ -285,7 +282,6 @@
     },
     "featured_blog_PVebUA": {
       "type": "featured-blog",
-      "disabled": true,
       "name": "t:sections.featured-blog.presets.name",
       "settings": {
         "blog": "news",
