@@ -1,0 +1,122 @@
+<section class="features-section">
+  <div class="container">
+    <div class="feature-box top-left">
+      <img src="images/ingredient-1.png" alt="Natural Ingredients">
+      <h3>Natural Ingredients</h3>
+      <p>Our supplements are made with natural ingredients, carefully for quality, effectiveness.</p>
+    </div>
+
+    <div class="feature-box top-right">
+      <img src="images/ingredient-2.png" alt="High Potency">
+      <h3>High Potency</h3>
+      <p>Our supplements are made with natural ingredients, carefully for quality, effectiveness.</p>
+    </div>
+
+    <div class="product-box">
+      <img src="images/product.png" alt="Premium Supplement">
+    </div>
+
+    <div class="feature-box bottom-left">
+      <img src="images/ingredient-3.png" alt="Pure Elements">
+      <h3>Pure Elements</h3>
+      <p>Our supplements are made with natural ingredients, carefully for quality, effectiveness.</p>
+    </div>
+
+    <div class="feature-box bottom-right">
+      <img src="images/ingredient-4.png" alt="Nature's Best">
+      <h3>Nature's Best</h3>
+      <p>Our supplements are made with natural ingredients, carefully for quality, effectiveness.</p>
+    </div>
+  </div>
+</section>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #eef6e5;
+    color: #333;
+  }
+
+  .features-section {
+    padding: 40px 20px;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 20px;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .feature-box {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    max-width: 280px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s;
+  }
+
+  .feature-box:hover {
+    transform: translateY(-5px);
+  }
+
+  .feature-box img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 15px;
+  }
+
+  .feature-box h3 {
+    color: #3cae3c;
+    margin: 10px 0;
+    font-size: 1.1rem;
+  }
+
+  .feature-box p {
+    font-size: 0.95rem;
+    color: #666;
+  }
+
+  .product-box {
+    grid-row: 1 / span 2;
+    grid-column: 2;
+    text-align: center;
+  }
+
+  .product-box img {
+    max-width: 100%;
+    height: auto;
+    max-height: 300px;
+  }
+
+  /* Responsive layout */
+  @media (max-width: 992px) {
+    .container {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+
+    .product-box {
+      grid-column: 1;
+      grid-row: auto;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Product description",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Product description"
+    }
+  ]
+}
+{% endschema %}

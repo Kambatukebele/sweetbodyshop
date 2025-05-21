@@ -1,0 +1,193 @@
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f7f8fa;
+    color: #1a1a1a;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 60px 10%;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .faq-section {
+    flex: 1 1 500px;
+  }
+
+  .faq-header {
+    color: #8cc63f;
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  .faq-title {
+    font-size: 40px;
+    font-weight: 700;
+    margin: 10px 0 30px;
+    line-height: 1.2;
+  }
+
+  .faq-title span {
+    color: #8cc63f;
+  }
+
+  .faq-item {
+    background-color: #fff;
+    margin-bottom: 20px;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .faq-question {
+    padding: 20px 24px;
+    font-weight: 600;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .faq-answer {
+    padding: 0 24px 20px;
+    color: #555;
+    font-size: 15px;
+    display: none;
+  }
+
+  .faq-item.active .faq-answer {
+    display: block;
+  }
+
+  .faq-icon {
+    background: #8cc63f;
+    border-radius: 50%;
+    color: white;
+    font-weight: bold;
+    width: 28px;
+    height: 28px;
+    text-align: center;
+    line-height: 28px;
+    font-size: 18px;
+    transition: transform 0.3s ease;
+  }
+
+  .faq-item.active .faq-icon {
+    transform: rotate(45deg);
+  }
+
+  .product-image {
+    flex: 1 1 400px;
+    text-align: center;
+  }
+
+  .product-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 16px;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      padding: 40px 20px;
+    }
+
+    .faq-title {
+      font-size: 32px;
+    }
+  }
+</style>
+
+<div class="container">
+  <!-- FAQ Section -->
+  <div class="faq-section">
+    <p class="faq-header">Faq</p>
+    <h1 class="faq-title">
+      Get Every Answers<br>
+      From Here<span>.</span>
+    </h1>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        Mixlix ingredients provides a searchable ?
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-answer">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation.
+      </div>
+    </div>
+
+    <div class="faq-item active">
+      <div class="faq-question">
+        How to edit Mixlix themes ?
+        <div class="faq-icon">−</div>
+      </div>
+      <div class="faq-answer">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        Mixlix app is a powerful application ?
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-answer">
+        Yes, Mixlix is designed with a range of powerful features that make it highly adaptable and easy to use.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        Latest version through Mixlix powerful ?
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-answer">
+        The latest version includes performance upgrades and security patches for better functionality.
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Image -->
+  <div class="product-image">
+    <img src="https://i.imgur.com/Nm6qExT.png" alt="Whey Gold Product">
+  </div>
+</div>
+
+<script>
+  // FAQ toggle script
+  document.querySelectorAll('.faq-question').forEach((item) => {
+    item.addEventListener('click', () => {
+      const faqItem = item.parentElement;
+      faqItem.classList.toggle('active');
+      const icon = item.querySelector('.faq-icon');
+      icon.textContent = faqItem.classList.contains('active') ? '−' : '+';
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Faq",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Faq"
+    }
+  ]
+}
+{% endschema %}

@@ -1,16 +1,167 @@
-<section>
-  <div>
-    <!-- Title -->
-    <div>
-      <h3>
-        “ Millions of combinations, meaning you get a totally unique piece of furniture exactly the way you want it.”
-      </h3>
-    </div>
-    <!-- Ingredient images -->
-    <div>
-      <div>
-        {{ 'product-1' | placeholder_svg_tag }}
+<section class="ingredients-section">
+  <div class="content-wrapper">
+    <div class="left-column">
+      <span class="subtitle">Increased Energy With Mixlix</span>
+      <h1 class="title">Mixlix Ingredients</h1>
+      <p class="description">
+        There are many variations of passages of lorem ipsum that available but the majority have alteration in some
+        form by injected humour.
+      </p>
+
+      <div class="feature">
+        <div class="feature-text">
+          <h3>Helps You Stick To Your Diet</h3>
+          <p>A thing added to something else in order to complete or enhance it.</p>
+        </div>
+        <div class="feature-icon">💊</div>
       </div>
+
+      <div class="feature">
+        <div class="feature-text">
+          <h3>Only 3g Net Carbs In Every Jar</h3>
+          <p>A thing added to something else in order to complete or enhance it.</p>
+        </div>
+        <div class="feature-icon">🥄</div>
+      </div>
+
+      <div class="feature">
+        <div class="feature-text">
+          <h3>Clean Ingredients Only</h3>
+          <p>A thing added to something else in order to complete or enhance it.</p>
+        </div>
+        <div class="feature-icon">🍃</div>
+      </div>
+
+      <div class="feature">
+        <div class="feature-text">
+          <h3>Ingredients To Fuel Your Body</h3>
+          <p>A thing added to something else in order to complete or enhance it.</p>
+        </div>
+        <div class="feature-icon">⚡</div>
+      </div>
+    </div>
+
+    <div class="right-column">
+      <img src="https://via.placeholder.com/600x500?text=Protein+Scoop" alt="Protein Powder">
     </div>
   </div>
 </section>
+<style>
+  /* Reset & base */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #fff;
+    color: #1a1a1a;
+    padding: 20px;
+  }
+
+  .ingredients-section {
+    padding: 40px 20px;
+  }
+
+  .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .left-column {
+    flex: 1;
+  }
+
+  .right-column {
+    flex: 1;
+    text-align: center;
+  }
+  .right-column img {
+    max-width: 100%;
+    border-radius: 8px;
+  }
+
+  .subtitle {
+    color: #75d728;
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+
+  .title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+  }
+
+  .description {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 30px;
+  }
+
+  /* Features */
+  .feature {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f9f9f9;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  .feature-text h3 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 6px;
+  }
+  .feature-text p {
+    color: #555;
+    font-size: 0.9rem;
+  }
+
+  .feature-icon {
+    background-color: #75d728;
+    color: white;
+    font-size: 1.4rem;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Responsive */
+  @media (min-width: 768px) {
+    .content-wrapper {
+      flex-direction: row;
+      align-items: center;
+    }
+    .left-column {
+      padding-right: 40px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Mixlix Ingredients",
+  "class": "mixlix_ingredients",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Mixlix Ingredients"
+    }
+  ]
+}
+{% endschema %}

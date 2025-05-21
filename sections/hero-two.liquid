@@ -1,0 +1,402 @@
+<section class="hero-two">
+  <div class="hero-two__container">
+    <!-- Avatars -->
+    {% comment %}
+      {{ 'product-1' | placeholder_svg_tag: 'avatar avatar-1' }}
+      {{ 'product-2' | placeholder_svg_tag: 'avatar avatar-2' }}
+      {{ 'product-3' | placeholder_svg_tag: 'avatar avatar-3' }}
+    {% endcomment %}
+    <!-- Text Block -->
+    <div class="hero-two__text-block">
+      {%- if section.blocks.size > 0 -%}
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'heading' -%}
+              {%- if block.settings.hero_two__title != blank -%}
+                <h1>
+                  {{- block.settings.hero_two__title -}}
+                  {%- if block.settings.hero_two__title_second != blank -%}
+                    <span>{{- block.settings.hero_two__title_second -}}</span>
+                  {%- endif -%}
+                </h1>
+              {%- endif -%}
+
+            {%- when 'body' -%}
+              {%- if block.settings.hero_two__body != blank -%}
+                <p>
+                  {{- block.settings.hero_two__body -}}
+                </p>
+              {%- else -%}
+                <p>
+                  Slingback fabric heels. Thin wraparound ankle strap. Squared heel and toe. Pointed toes. Padded insole
+                  with geometrical design.
+                </p>
+              {%- endif -%}
+            {%- when 'button' -%}
+              {%- if block.settings.hero_two__button_text != blank -%}
+                <button>
+                  {{- block.settings.hero_two__button_text -}}
+                </button>
+              {%- else -%}
+                <button>Browse Full Collection</button>
+              {%- endif -%}
+          {%- endcase -%}
+        {%- endfor -%}
+      {%- else -%}
+        <h1>
+          Night Time
+
+          <span>Skin Routine</span>
+        </h1>
+        <p>
+          Slingback fabric heels. Thin wraparound ankle strap. Squared heel and toe. Pointed toes. Padded insole with
+          geometrical design.
+        </p>
+        <button>Browse Full Collection</button>
+
+        <div class="text-two__extra">
+          <div>
+            <h4>Material</h4>
+            <p>Hydrate and replenish your skin overnight with this nourishing serum.</p>
+          </div>
+          <div>
+            <h4>Care</h4>
+            <p>Charged with a potent blend of AHAs, the formula gently but effectively.</p>
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+
+    <!-- Product Image -->
+    <div class="hero-two__image-block">
+      {%- if section.settings.hero_two_image -%}
+        {{- section.settings.hero_two_image | image_url: width: 600 | image_tag -}}
+      {%- else -%}
+        {{- 'product-2' | placeholder_svg_tag -}}
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+<style>
+  .hero-two {
+    width: 100%;
+    height: fit-content;
+    background-color: {{- section.settings.hero_two__background_color -}};
+  }
+  .hero-two__container {
+    max-width: var(--page-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    width: 100%;
+    height: {{- section.settings.hero_two_height -}};
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  .hero-two__text-block {
+    width: 100%;
+    flex: 1 1 450px;
+  }
+
+  .hero-two__text-block h1 {
+    font-size: 42px;
+    font-weight: 900;
+    margin-bottom: 20px;
+    color: {{- section.settings.hero_two__heading_color -}};
+  }
+
+  .hero-two__text-block h1 span {
+    color: {{- section.settings.hero_two__second_heading_color -}};
+    display: block;
+  }
+
+  .hero-two__text-block p {
+    font-size: 16px;
+    margin-bottom: 30px;
+    color: {{- section.settings.hero_two__body_color -}};
+  }
+
+  .hero-two__text-block button {
+    background: {{- section.settings.hero_two__button_bg_color -}};
+    color: {{- section.settings.hero_two__button_text_color -}};
+    padding: 18px 28px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .hero-two__text-block button:hover {
+    background: {{- section.settings.hero_two__button_bg_color_hover -}};
+  }
+
+  .hero-two__image-block {
+    flex: 1 1 400px;
+    text-align: center;
+  }
+
+  .hero-two__image-block img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  .text-two__extra {
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 40px;
+  }
+
+  .text-two__extra div {
+    flex: 1 1 100px;
+    padding-right: 20px;
+  }
+
+  .text-two__extra h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: {{ section.settings.hero_two__heading_color }}
+  }
+
+  .text-two__extra p {
+    font-size: 14px;
+    color: {{- section.settings.hero_two__body_color -}};
+  }
+
+  /* Avatars */
+  .avatar {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid white;
+  }
+
+  .avatar-1 {
+    top: 10px;
+    left: 10%;
+  }
+
+  .avatar-2 {
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+  }
+
+  .avatar-3 {
+    top: 20px;
+    right: 10%;
+  }
+
+  @media screen and (min-width: 750px) {
+    .hero-two__container {
+      flex-direction: column;
+      padding: 40px 20px;
+    }
+
+    .hero-two__text-block h1 {
+      font-size: 62px;
+    }
+
+    .text-two__extra {
+      flex-direction: row;
+      gap: 20px;
+    }
+
+    .avatar {
+      display: none;
+    }
+  }
+  @media screen and (min-width: 990px) {
+    .hero-two__container {
+      flex-wrap: nowrap;
+      flex-direction: row;
+      padding: 40px 0px;
+    }
+    .hero-two__text-block {
+      flex: 1 1 400px;
+    }
+    .hero-two__text-block h1 {
+      font-size: 72px;
+    }
+    .text-two__extra {
+    display: flex;
+  }
+  }
+  @media screen and (min-width: 1200px) {
+    .hero-two__text-block h1 {
+      font-size: 88px;
+    }
+  }
+</style>
+{% schema %}
+{
+  "name": "Hero Two",
+  "limit": 1,
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Color background"
+    },
+    {
+      "type": "color",
+      "id": "hero_two__background_color",
+      "label": "Background color",
+      "info": "This is the background color for the hero",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Height"
+    },
+    {
+      "type": "select",
+      "id": "hero_two_height",
+      "label": "Height",
+      "info": "This is the height of the hero",
+      "options": [
+        {
+          "label": "70vh",
+          "value": "70vh"
+        },
+        {
+          "label": "80vh",
+          "value": "80vh"
+        },
+        {
+          "label": "90vh",
+          "value": "90vh"
+        },
+        {
+          "label": "100vh",
+          "value": "100vh"
+        }
+      ],
+      "default": "70vh"
+    },
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_two_image",
+      "label": "Image"
+    },
+    {
+      "type": "header",
+      "content": "Text color"
+    },
+    {
+      "type": "color",
+      "id": "hero_two__heading_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "hero_two__second_heading_color",
+      "label": "Second heading Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "hero_two__body_color",
+      "label": "Body Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Button color"
+    },
+    {
+      "type": "color",
+      "id": "hero_two__button_bg_color",
+      "label": "Button background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "hero_two__button_bg_color_hover",
+      "label": "Button background color",
+      "default": "#f7f8f9"
+    },
+    {
+      "type": "color",
+      "id": "hero_two__button_text_color",
+      "label": "Button text color",
+      "default": "#000000"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Heading",
+      "type": "heading",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "hero_two__title",
+          "label": "Title",
+          "default": "Night Time"
+        },
+        {
+          "type": "text",
+          "id": "hero_two__title_second",
+          "label": "Title",
+          "default": "Skin Routine"
+        }
+      ]
+    },
+    {
+      "name": "Body",
+      "type": "body",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "hero_two__body",
+          "label": "Description"
+        }
+      ]
+    },
+    {
+      "name": "Button",
+      "type": "button",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "hero_two__button_text",
+          "label": "Button text",
+          "default": "Browse Full Collection"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Two",
+      "settings": {
+        "hero_two__background_color": "#000000",
+        "hero_two_height": "70vh",
+        "hero_two__heading_color": "#ffffff",
+        "hero_two__second_heading_color": "#ffffff",
+        "hero_two__body_color": "#ffffff",
+        "hero_two__button_bg_color": "#ffffff",
+        "hero_two__button_bg_color_hover": "#f7f8f9",
+        "hero_two__button_text_color": "#000000"
+      }
+    }
+  ]
+}
+{% endschema %}

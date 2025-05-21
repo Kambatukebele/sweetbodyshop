@@ -1,0 +1,163 @@
+<section class="hero-three">
+  <div class="hero-three__container">
+    <!-- Text Section -->
+    <div class="hero-three__text-block">
+      <h1>
+        <span>Keto Snack</span><br>
+        Shouldn’t Be So Hard
+      </h1>
+      <p>
+        Keto Bars may melt a bit in transit, especially if you live in a warmer climate. This happens because we don't
+        use any gums or filler ingredients like dextrin or inulin.
+      </p>
+      <button>Learn More</button>
+    </div>
+
+    <!-- Image Section -->
+    <div class="hero-three__image-block">
+      {%- if section.settings.hero_three_image -%}
+        {{- section.settings.hero_three_image | image_url: width: 500 | image_tag -}}
+      {%- else -%}
+        {{- 'product-1' | placeholder_svg_tag -}}
+      {%- endif -%}
+      <div class="emoji-bubble">😮 ❤️</div>
+    </div>
+  </div>
+</section>
+<style>
+  .hero-three {
+    width: 100%;
+    height: fit-content;
+  }
+  .hero-three__container {
+    max-width: var(--page-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+    gap: 20px;
+    position: relative;
+    border: 1px solid black;
+  }
+
+  .hero-three__text-block {
+    flex: 1 1 400px;
+  }
+
+  .hero-three__text-block h1 {
+    font-size: 32px;
+    font-weight: 900;
+    color: #111;
+    margin-bottom: 20px;
+  }
+
+  .hero-three__text-block h1 span {
+    color: #f6921e; /* Orange accent */
+  }
+
+  .hero-three__text-block p {
+    font-size: 15px;
+    color: #444;
+    margin-bottom: 25px;
+    max-width: 90%;
+  }
+
+  .hero-three__text-block button {
+    background: #000;
+    color: #fff;
+    padding: 16px 24px;
+    font-size: 14px;
+    border: none;
+    border-radius: 8px;
+    width: 200px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .hero-three__text-block button:hover {
+    background: #333;
+  }
+
+  .hero-three__image-block {
+    flex: 1 1 400px;
+    text-align: center;
+  }
+
+  .hero-three__image-block img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid black;
+  }
+
+  .emoji-bubble {
+    position: absolute;
+    top: 20px;
+    right: 20%;
+    background: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .hero-three__container {
+      flex-direction: row;
+      text-align: start;
+      padding: 40px 20px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .emoji-bubble {
+      top: 10px;
+      right: 10%;
+    }
+
+    .hero-three__text-block h1 {
+      font-size: 42px;
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    .hero-three__text-block h1 {
+      font-size: 52px;
+    }
+    .hero-three__image-block {
+      text-align: center;
+      border: 1px solid black;
+    }
+
+    .hero-three__image-block img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid black;
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    .hero-three__text-block h1 {
+      font-size: 72px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Hero three",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "hero_three_image",
+      "label": "Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero three"
+    }
+  ]
+}
+{% endschema %}

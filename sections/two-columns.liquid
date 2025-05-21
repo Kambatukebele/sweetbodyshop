@@ -1,0 +1,144 @@
+<section class="promo-container">
+  <div class="promo-card">
+    <div class="promo-text">
+      <h2>
+        Grass-fed, Multi Whey,<br>
+        nebo kasein?
+      </h2>
+      <p>Vyber si protein, který bude vyhovovat právě tobě</p>
+      <button class="btn">Koupit</button>
+    </div>
+    <div class="promo-image">
+      <img src="https://via.placeholder.com/400x300?text=Whey+Protein" alt="Whey Protein Image">
+    </div>
+  </div>
+
+  <div class="promo-card">
+    <div class="promo-text">
+      <h2>
+        Nejlepší proteinovka,<br>
+        kterou kdy ochutnáš
+      </h2>
+      <p>Užij si spojení čokolády a krému s 29 % bílkovin</p>
+      <button class="btn">Koupit</button>
+    </div>
+    <div class="promo-image">
+      <img src="https://via.placeholder.com/400x300?text=Protein+Bars" alt="Protein Bars Image">
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Reset and base */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #f9f9f9;
+    color: #1a1a1a;
+    padding: 20px;
+  }
+
+  /* Promo container */
+  .promo-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Promo card */
+  .promo-card {
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  /* Text block */
+  .promo-text h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .promo-text p {
+    font-size: 1rem;
+    margin-bottom: 16px;
+    color: #333;
+  }
+
+  .btn {
+    background-color: #1a1a1a;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .btn:hover {
+    background-color: #333;
+  }
+
+  /* Image block */
+  .promo-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  /* Responsive layout */
+  @media (min-width: 768px) {
+    .promo-container {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .promo-card {
+      flex: 1;
+      flex-direction: row;
+      align-items: center;
+      padding: 30px;
+    }
+
+    .promo-text {
+      flex: 1;
+      padding-right: 20px;
+    }
+
+    .promo-image {
+      flex: 1;
+    }
+
+    .promo-text h2 {
+      font-size: 2rem;
+    }
+
+    .promo-text p {
+      font-size: 1.1rem;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Two columns",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Two-columns",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

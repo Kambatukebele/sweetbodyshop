@@ -1,0 +1,126 @@
+<section class="product-carousel">
+  <div class="carousel-wrapper">
+    <!-- Card 1 -->
+    <div class="product-card">
+      <img src="https://naties.cz/images/liver.jpg" alt="NATIOS Liver Complex">
+      <div class="product-info">
+        <h3>Exkluzivní péče o játra s NATIOS Liver Complex 💥</h3>
+        <p>Standardizované extrakty pro komplexní podporu jater.</p>
+        <button>Zobrazit</button>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="product-card">
+      <img src="https://naties.cz/images/iron.jpg" alt="NATIOS Iron Complex">
+      <div class="product-info">
+        <h3>NATIOS Iron Complex pro zmírnění únavy ⚡</h3>
+        <p>Chelátová vazba železa s maximální vstřebatelností bez kompromisů.</p>
+        <button>Zobrazit</button>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="product-card">
+      <img src="https://naties.cz/images/biotin.jpg" alt="NATIOS Biotin">
+      <div class="product-info">
+        <h3>NATIOS Biotin pro pevné vlasy a zářivou pokožku 💥</h3>
+        <p>Extra silný 10 000 mcg biotin pro maximální podporu.</p>
+        <button>Zobrazit</button>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="product-card">
+      <img src="https://naties.cz/images/tribulus.jpg" alt="NATIOS Tribulus">
+      <div class="product-info">
+        <h3>NATIOS Standardizovaný extrakt tribulusu 💪</h3>
+        <p>90% saponinů pro maximální podporu testosteronu.</p>
+        <button>Zobrazit</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .product-carousel {
+    padding: 40px 20px;
+    overflow-x: auto;
+  }
+
+  .carousel-wrapper {
+    display: flex;
+    gap: 20px;
+    scroll-snap-type: x mandatory;
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+
+  .product-card {
+    flex: 0 0 300px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .product-info {
+    padding: 16px;
+  }
+
+  .product-info h3 {
+    font-size: 16px;
+    margin: 0 0 8px;
+  }
+
+  .product-info p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 12px;
+  }
+
+  .product-info button {
+    background: #1a1a1a;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 16px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  .product-info button:hover {
+    background: #333;
+  }
+
+  /* Optional scrollbar styling for better UI */
+  .carousel-wrapper::-webkit-scrollbar {
+    height: 8px;
+  }
+  .carousel-wrapper::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Image carousel",
+  "class": "image_carousel",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Image carousel"
+    }
+  ]
+}
+{% endschema %}

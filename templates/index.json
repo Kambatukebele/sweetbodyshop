@@ -9,45 +9,45 @@
  */
 {
   "sections": {
-    "hero_xrUJfF": {
-      "type": "hero",
+    "hero_two_7Tqddg": {
+      "type": "hero-two",
       "blocks": {
-        "heading_RNHLkT": {
+        "heading_cTHAea": {
           "type": "heading",
           "settings": {
-            "hero__heading": "Transformez votre intimité."
+            "hero_two__title": "Transformez",
+            "hero_two__title_second": "votre intimité"
           }
         },
-        "description_wRDKYh": {
-          "type": "description",
+        "body_UxdrFJ": {
+          "type": "body",
           "settings": {
-            "hero__description": "Découvrez nos produits ciblés pour les hommes et les femmes. Une gamme discrète, puissante et 100 % axée résultats. Paiement confidentiel, livraison rapide et appel privé disponible pour conseils personnalisés."
+            "hero_two__body": "Une gamme discrète, puissante et 100 % axée résultats. Livraison rapide et appel privé disponible pour conseils personnalisés."
           }
         },
-        "buttons_eDdkQJ": {
-          "type": "buttons",
+        "button_yHerMt": {
+          "type": "button",
           "settings": {
-            "hero__button_text": "Découvrir nos produits",
-            "hero__button_url": ""
+            "hero_two__button_text": "Découvrir nos produits"
           }
         }
       },
       "block_order": [
-        "heading_RNHLkT",
-        "description_wRDKYh",
-        "buttons_eDdkQJ"
+        "heading_cTHAea",
+        "body_UxdrFJ",
+        "button_yHerMt"
       ],
-      "name": "Hero",
+      "name": "Hero Two",
       "settings": {
-        "hero__background_image": "shopify://shop_images/pexels-cottonbro-9374659.jpg",
-        "hero__background_checkbox": true,
-        "hero__background_color": "linear-gradient(135deg, rgba(95, 10, 135, 1), rgba(132, 35, 121, 0.5) 50%, rgba(164, 80, 139, 1) 100%)",
-        "hero__heading_color": "#ffffff",
-        "hero__description_color": "#ffffff",
-        "hero__button_primary_text_color": "#ffffff",
-        "hero__button_primary_bg_color": "#5c1a1b",
-        "hero__button_secondary_text_color": "#ffffff",
-        "hero__button_secondary_bg_color": "#000000"
+        "hero_two__background_color": "#5c1a1b",
+        "hero_two_height": "70vh",
+        "hero_two_image": "shopify://shop_images/About_image_acd5d5d9-62fb-48ff-9307-d35a829fa975_670x640.png_v_1613787669.png",
+        "hero_two__heading_color": "#ffffff",
+        "hero_two__second_heading_color": "#ffffff",
+        "hero_two__body_color": "#ffffff",
+        "hero_two__button_bg_color": "#ffffff",
+        "hero_two__button_bg_color_hover": "#f7f8f9",
+        "hero_two__button_text_color": "#000000"
       }
     },
     "featured_products_WWMVGz": {
@@ -109,8 +109,57 @@
       "name": "Featured products",
       "settings": {}
     },
+    "product_description_JgYzyq": {
+      "type": "product-description",
+      "disabled": true,
+      "name": "Product description",
+      "settings": {}
+    },
+    "hero_xrUJfF": {
+      "type": "hero",
+      "blocks": {
+        "heading_RNHLkT": {
+          "type": "heading",
+          "settings": {
+            "hero__heading": "Transformez votre intimité."
+          }
+        },
+        "description_wRDKYh": {
+          "type": "description",
+          "settings": {
+            "hero__description": "Découvrez nos produits ciblés pour les hommes et les femmes. Une gamme discrète, puissante et 100 % axée résultats. Paiement confidentiel, livraison rapide et appel privé disponible pour conseils personnalisés."
+          }
+        },
+        "buttons_eDdkQJ": {
+          "type": "buttons",
+          "settings": {
+            "hero__button_text": "Découvrir nos produits",
+            "hero__button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_RNHLkT",
+        "description_wRDKYh",
+        "buttons_eDdkQJ"
+      ],
+      "disabled": true,
+      "name": "Hero",
+      "settings": {
+        "hero__background_image": "shopify://shop_images/pexels-cottonbro-9374659.jpg",
+        "hero__background_checkbox": true,
+        "hero__background_color": "linear-gradient(135deg, rgba(95, 10, 135, 1), rgba(132, 35, 121, 0.5) 50%, rgba(164, 80, 139, 1) 100%)",
+        "hero__heading_color": "#ffffff",
+        "hero__description_color": "#ffffff",
+        "hero__button_primary_text_color": "#ffffff",
+        "hero__button_primary_bg_color": "#5c1a1b",
+        "hero__button_secondary_text_color": "#ffffff",
+        "hero__button_secondary_bg_color": "#000000"
+      }
+    },
     "product_carousel_EFXgGR": {
       "type": "product-carousel",
+      "disabled": true,
       "name": "Product carousel",
       "settings": {
         "product_carousel_enable": false,
@@ -194,6 +243,7 @@
         "scrolling_element_w49m4n",
         "scrolling_element_HHnPNT"
       ],
+      "disabled": true,
       "name": "Slider",
       "settings": {
         "show_line_separator": false,
@@ -209,6 +259,7 @@
     },
     "product_carousel_YLCxGC": {
       "type": "product-carousel",
+      "disabled": true,
       "name": "Product carousel",
       "settings": {
         "product_carousel_enable": true,
@@ -234,6 +285,7 @@
     },
     "featured_blog_PVebUA": {
       "type": "featured-blog",
+      "disabled": true,
       "name": "t:sections.featured-blog.presets.name",
       "settings": {
         "blog": "news",
@@ -249,14 +301,37 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "two_columns_RYfMkD": {
+      "type": "two-columns",
+      "disabled": true,
+      "name": "Two-columns",
+      "settings": {}
+    },
+    "ingredient_DnRTQV": {
+      "type": "ingredient",
+      "disabled": true,
+      "name": "Mixlix Ingredients",
+      "settings": {}
+    },
+    "faq_NPCGpD": {
+      "type": "faq",
+      "disabled": true,
+      "name": "Faq",
+      "settings": {}
     }
   },
   "order": [
-    "hero_xrUJfF",
+    "hero_two_7Tqddg",
     "featured_products_WWMVGz",
+    "product_description_JgYzyq",
+    "hero_xrUJfF",
     "product_carousel_EFXgGR",
     "slider_HejBdt",
     "product_carousel_YLCxGC",
-    "featured_blog_PVebUA"
+    "featured_blog_PVebUA",
+    "two_columns_RYfMkD",
+    "ingredient_DnRTQV",
+    "faq_NPCGpD"
   ]
 }
