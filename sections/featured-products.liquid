@@ -1,6 +1,127 @@
-<section>
-  <div></div>
+<section class="featured_products">
+  <div class="featured_products__container">
+    <div class="featured_products__products-cards">
+      <!-- Loop here -->
+      {%- if section.blocks.size > 0 -%}
+        {%- for product in section.blocks -%}
+          {%- case product.type -%}
+            {%- when 'featured_product_list' -%}
+              <a href="#" class="featured_products__product-card">
+                <div class="featured_products__product-image-block">
+                  {% if product.settings.featured_product_image != blank %}
+                    {{-
+                      product.settings.featured_product_image
+                      | image_url: width: 400
+                      | image_tag: class: 'featured_products__product-image'
+                    -}}
+                  {%- else -%}
+                    {{ 'product-1' | placeholder_svg_tag: 'featured_products__product-image' }}
+                  {% endif %}
+                </div>
+                <div class="featured_products__product-info-block">
+                  <h4 class="featured_products__product-title">Novinka, ktera se stala BESTSELLREM</h4>
+                  <P class="featured_products__product-price">
+                    Speciálně sestavený komplex 8 aktivních látek pro kontrolu tělesné hmotnosti. Ulehčete si cestu za
+                    vysněnou postavou.
+                  </P>
+                </div>
+              </a>
+          {%- endcase -%}
+        {%- endfor -%}
+      {%- else -%}
+        {%- for item in (1..5) -%}
+          <a href="#" class="featured_products__product-card">
+            <div class="featured_products__product-image-block">
+              {{ 'product-1' | placeholder_svg_tag: 'featured_products__product-image' }}
+            </div>
+            <div class="featured_products__product-info-block">
+              <h4 class="featured_products__product-title">Novinka, ktera se stala BESTSELLREM</h4>
+              <P class="featured_products__product-price">
+                Speciálně sestavený komplex 8 aktivních látek pro kontrolu tělesné hmotnosti. Ulehčete si cestu za
+                vysněnou postavou.
+              </P>
+            </div>
+          </a>
+        {%- endfor -%}
+      {%- endif -%}
+    </div>
+  </div>
 </section>
+<style>
+  .featured_products {
+    width: 100%;
+    height: fit-content;
+  }
+  .featured_products__container {
+    max-width: var(--page-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  .featured_products__products-cards{
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 1rem;
+    scroll-behavior: smooth;
+    gap: 1rem;
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+
+  }
+  .featured_products__product-card{
+    flex: 0 0 auto;
+    width: 240px;
+    scroll-snap-align: start;
+    text-decoration: none;
+    position: relative;
+    border-radius: 10px;
+  }
+  .featured_products__product-image-block{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+
+  }
+  .featured_products__product-image{
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  .featured_products__product-info-block{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+  }
+  @media screen and (min-width: 750px) {
+    .featured_products__product-card{
+      width: 300px;
+    }
+  }
+
+
+  {% comment %} @media screen and (min-width: 990px) {
+
+  } {% endcomment %}
+  @media screen and (min-width: 1200px) {
+    .featured_products__container {
+      padding: 0;
+      margin: 0 auto;
+    }
+    .featured_products__product-card{
+      width: 435px;
+    }
+
+  }
+</style>
 
 {% schema %}
 {
@@ -8,6 +129,40 @@
   "tag": "section",
   "class": "featured_products",
   "settings": [],
-  "presets": []
+  "blocks": [
+    {
+      "name": "Featured product list",
+      "type": "featured_product_list",
+      "limit": 5,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "featured_product_image",
+          "label": "Choose your product image"
+        },
+        {
+          "type": "text",
+          "id": "featured_product_title",
+          "label": "Product title"
+        },
+        {
+          "type": "text",
+          "id": "featured_product_description",
+          "label": "Product description"
+        },
+        {
+          "type": "url",
+          "id": "featured_product_url",
+          "label": "Product url"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured products",
+      "settings": {}
+    }
+  ]
 }
 {% endschema %}
