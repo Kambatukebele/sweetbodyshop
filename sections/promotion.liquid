@@ -1,23 +1,23 @@
 {% comment %} Capturing schemes color and assign it in the variable {% endcomment %}
-{%- assign BACKGROUND_SCHEME_COLOR = section.settings.promotion_color_scheme_id.settings.background -%}
-{%- assign TEXT_SCHEME_COLOR = section.settings.promotion_color_scheme_id.settings.text -%}
+{%- assign background_scheme_color = section.settings.promotion_color_scheme_id.settings.background -%}
+{%- assign text_scheme_color = section.settings.promotion_color_scheme_id.settings.text -%}
 {% comment %} Capturing customs colors and assign it in the variable {% endcomment %}
-{%- assign BACKGROUND_CUSTOM_COLOR = section.settings.promotion_custom_background_color_id -%}
-{%- assign TEXT_CUSTOM_COLOR = section.settings.promotion_custom_text_color_id -%}
+{%- assign background_custom_color = section.settings.promotion_custom_background_color_id -%}
+{%- assign text_custom_color = section.settings.promotion_custom_text_color_id -%}
 {% comment %} Capturing "enable custom background color and assign it into a variable" {% endcomment %}
-{%- assign ENABLING_CUSTOM_BACKGROUND_COLOR = section.settings.promotion_enable_custom_background_color_id -%}
+{%- assign enabling_custom_background_color = section.settings.promotion_enable_custom_background_color_id -%}
 {% comment %} Capturing border divider and assign it into a variable  {% endcomment %}
-{%- assign ENABLING_BORDER_DIVIDER = section.settings.promotion_enable_line_divider_id -%}
+{%- assign enabling_border_divider = section.settings.promotion_enable_line_divider_id -%}
 
 {% comment %} Capturing border color and assign it into a variable {% endcomment %}
-{%- assign BOTTOM_COLOR_BORDER_DIVIDER = section.settings.promotion_bottom_color_line_divider_id -%}
+{%- assign bottom_color_border_divider = section.settings.promotion_bottom_color_line_divider_id -%}
 
 {% comment %}Capturing the height and assign it into a variable {% endcomment %}
-{%- assign HEIGHT = section.settings.promotion_background_height_id -%}
+{%- assign height = section.settings.promotion_background_height_id -%}
 {% comment %} Annimation variables {% endcomment %}
-{%- assign MOBILE_ANIM = section.settings.promotion_animation_mobile_id -%}
-{%- assign TABLET_ANIM = section.settings.promotion_animation_tablet_id -%}
-{%- assign LARGE_ANIM = section.settings.promotion_animation_large_id -%}
+{%- assign mobile_anim = section.settings.promotion_animation_mobile_id -%}
+{%- assign tablet_anim = section.settings.promotion_animation_tablet_id -%}
+{%- assign large_anim = section.settings.promotion_animation_large_id -%}
 
 <section class="promotion">
   <div class="promotion__wrapper">
@@ -42,26 +42,26 @@
 </section>
 {% style %}
   .promotion{
-  {%- if ENABLING_CUSTOM_BACKGROUND_COLOR == true -%}
-  background: {{- BACKGROUND_CUSTOM_COLOR -}};
-  color: {{- TEXT_CUSTOM_COLOR -}};
+  {%- if enabling_custom_background_color == true -%}
+    background: {{- background_custom_color -}};
+    color: {{- text_custom_color -}};
   {%- else -%}
-  background: {{- BACKGROUND_SCHEME_COLOR -}};
-  color: {{- TEXT_SCHEME_COLOR -}};
+    background: {{- background_scheme_color -}};
+    color: {{- text_scheme_color -}};
   {% endif %}
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  {%- if ENABLING_BORDER_DIVIDER == true -%}
-  border-bottom:  1px solid {{ BOTTOM_COLOR_BORDER_DIVIDER -}};
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  {%- if enabling_border_divider == true -%}
+    border-bottom:  1px solid {{ bottom_color_border_divider -}};
   {%- endif -%}
   }
   .promotion__wrapper{
-    height: {{ HEIGHT -}}px;
+    height: {{ height -}}px;
     display: flex;
     align-items:center;
     white-space: nowrap;
-    animation: anim-promotion var(--duration, {{- MOBILE_ANIM }}s) linear infinite running;
+    animation: anim-promotion var(--duration, {{- mobile_anim }}s) linear infinite running;
   }
   .promotion__block {
     display: inline-block;
@@ -74,10 +74,10 @@
     font-size: {{- section.settings.promotion_font_size_id -}}px;
   }
   .promotion__block .promotion__text  a{
-    {%- if ENABLING_CUSTOM_BACKGROUND_COLOR == true -%}
-        color: {{- TEXT_CUSTOM_COLOR -}};
+    {%- if enabling_custom_background_color == true -%}
+        color: {{- text_custom_color -}};
     {%- else -%}
-        color: {{- TEXT_SCHEME_COLOR -}};
+        color: {{- text_scheme_color -}};
     {% endif %}
     text-decoration: none;
     font-family: {{ settings.type_body_font.family }}
@@ -87,26 +87,30 @@
   /* 0% {
   transform: translateX(100vw);
   } */
-  100% {
-  transform: translateX(-100vw);
-  }
+    100% {
+      transform: translateX(-100vw);
+    }
   }
   /* Adjust the duration based on viewport width */
-  @media (min-width: 600px) {
+  @media (min-width: 750px) {
     .promotion__wrapper {
-        --duration: {{- TABLET_ANIM }}s; /* Slower on larger screens */
+      --duration: {{- tablet_anim }}s; /* Slower on larger screens */
     }
   }
 
   @media (min-width: 1200px) {
       .promotion__wrapper {
-          --duration: {{- LARGE_ANIM }}s; /* Even slower on very large screens */
+        --duration: {{- large_anim }}s; /* Even slower on very large screens */
       }
   }
 {% endstyle %}
+
 {% schema %}
 {
   "name": "Promotion",
+  "enabled_on": {
+    "groups": ["header"]
+  },
   "limit": 1,
   "settings": [
     {
@@ -115,25 +119,25 @@
       "info": "Choose between Schemes or custom color"
     },
     {
-      "type": "color_scheme",
-      "id": "promotion_color_scheme_id",
-      "label": "Color scheme",
-      "default": "scheme_1",
-      "visible_if": "{{ section.settings.promotion_enable_custom_background_color_id == false }}"
-    },
-    {
       "type": "checkbox",
       "id": "promotion_enable_custom_background_color_id",
       "label": "Enable Custom Background Color",
       "default": false
     },
     {
+      "type": "color_scheme",
+      "id": "promotion_color_scheme_id",
+      "label": "Color scheme",
+      "default": "scheme_1",
+      "visible_if": "{{ section.settings.promotion_enable_custom_background_color_id == false }}"
+    },
+
+    {
       "type": "color",
       "id": "promotion_custom_background_color_id",
       "label": "Custom Background Color",
       "default": "#000000",
-      "visible_if": "{{ section.settings.promotion_enable_custom_background_color_id == true }}",
-      "info": "Works only when 'Enable Custom Background Color' is toggle"
+      "visible_if": "{{ section.settings.promotion_enable_custom_background_color_id == true }}"
     },
 
     {
@@ -141,11 +145,15 @@
       "id": "promotion_custom_text_color_id",
       "label": "Custom Text Color",
       "default": "#ffffff",
-      "visible_if": "{{ section.settings.promotion_enable_custom_background_color_id == true }}",
-      "info": "Works only when 'Enable Custom Text Color' is toggle"
+      "visible_if": "{{ section.settings.promotion_enable_custom_background_color_id == true }}"
     },
 
-    { "type": "checkbox", "id": "promotion_enable_line_divider_id", "label": "Enable line divider", "default": true },
+    {
+      "type": "checkbox",
+      "id": "promotion_enable_line_divider_id",
+      "label": "Enable line divider",
+      "default": true
+    },
     {
       "type": "color",
       "id": "promotion_bottom_color_line_divider_id",
@@ -237,9 +245,6 @@
       ]
     }
   ],
-  "enabled_on": {
-    "groups": ["header"]
-  },
   "presets": [
     {
       "name": "Promotion",

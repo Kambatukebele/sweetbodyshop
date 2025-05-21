@@ -17,17 +17,31 @@
         "promotion_cJKbb7": {
           "type": "promotion",
           "settings": {
-            "promotion_block_text_id": "Welcome to our store"
+            "promotion_block_text_id": "Livraison discrète"
+          }
+        },
+        "promotion_jMgrAn": {
+          "type": "promotion",
+          "settings": {
+            "promotion_block_text_id": "Conseils privés"
+          }
+        },
+        "promotion_XMDKKh": {
+          "type": "promotion",
+          "settings": {
+            "promotion_block_text_id": "Livraison gratuite"
           }
         }
       },
       "block_order": [
-        "promotion_cJKbb7"
+        "promotion_cJKbb7",
+        "promotion_jMgrAn",
+        "promotion_XMDKKh"
       ],
       "name": "Promotion",
       "settings": {
-        "promotion_color_scheme_id": "scheme_1",
         "promotion_enable_custom_background_color_id": true,
+        "promotion_color_scheme_id": "scheme_1",
         "promotion_custom_background_color_id": "#000000",
         "promotion_custom_text_color_id": "#ffffff",
         "promotion_enable_line_divider_id": true,
