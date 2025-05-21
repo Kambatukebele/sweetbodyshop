@@ -52,38 +52,62 @@
     },
     "featured_products_WWMVGz": {
       "type": "featured-products",
+      "blocks": {
+        "featured_product_list_CriPyy": {
+          "type": "featured_product_list",
+          "settings": {
+            "featured_product_image": "shopify://shop_images/BEAUTY_BOMB.webp",
+            "featured_product_title": "",
+            "featured_product_description": "",
+            "featured_product_url": ""
+          }
+        },
+        "featured_product_list_F9nq8e": {
+          "type": "featured_product_list",
+          "settings": {
+            "featured_product_image": "shopify://shop_images/SUPER_GREENS.webp",
+            "featured_product_title": "",
+            "featured_product_description": "",
+            "featured_product_url": ""
+          }
+        },
+        "featured_product_list_rMPRBi": {
+          "type": "featured_product_list",
+          "settings": {
+            "featured_product_image": "shopify://shop_images/MATCHA.webp",
+            "featured_product_title": "",
+            "featured_product_description": "",
+            "featured_product_url": ""
+          }
+        },
+        "featured_product_list_mrTeJm": {
+          "type": "featured_product_list",
+          "settings": {
+            "featured_product_image": "shopify://shop_images/HUBNOUCI_KURA.webp",
+            "featured_product_title": "",
+            "featured_product_description": "",
+            "featured_product_url": ""
+          }
+        },
+        "featured_product_list_XTyPUi": {
+          "type": "featured_product_list",
+          "settings": {
+            "featured_product_image": "shopify://shop_images/NOVINKA_BYE_BYE_CELLU.webp",
+            "featured_product_title": "",
+            "featured_product_description": "",
+            "featured_product_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "featured_product_list_CriPyy",
+        "featured_product_list_F9nq8e",
+        "featured_product_list_rMPRBi",
+        "featured_product_list_mrTeJm",
+        "featured_product_list_XTyPUi"
+      ],
       "name": "Featured products",
-      "settings": {
-        "collection": [
-          "libido-booster-pour-femmes-copy",
-          "horny-goat-weed",
-          "libido-booster-homme",
-          "libido-booster-pour-femmes",
-          "mr-big-cream"
-        ],
-        "products_to_show": 5,
-        "title": "",
-        "heading_size": "h1",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "columns_desktop": 5,
-        "enable_desktop_slider": false,
-        "full_width": false,
-        "show_view_all": false,
-        "view_all_style": "solid",
-        "color_scheme": "scheme-1",
-        "image_ratio": "portrait",
-        "image_shape": "default",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
+      "settings": {}
     },
     "product_carousel_EFXgGR": {
       "type": "product-carousel",
@@ -207,6 +231,24 @@
         "product_carousel_list_enable": true,
         "product_carousel_list_color": "#ededed"
       }
+    },
+    "featured_blog_PVebUA": {
+      "type": "featured-blog",
+      "name": "t:sections.featured-blog.presets.name",
+      "settings": {
+        "blog": "news",
+        "post_limit": 3,
+        "heading": "Articles de blog",
+        "heading_size": "h1",
+        "columns_desktop": 3,
+        "show_view_all": false,
+        "show_image": true,
+        "show_date": true,
+        "show_author": false,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -214,6 +256,7 @@
     "featured_products_WWMVGz",
     "product_carousel_EFXgGR",
     "slider_HejBdt",
-    "product_carousel_YLCxGC"
+    "product_carousel_YLCxGC",
+    "featured_blog_PVebUA"
   ]
 }
