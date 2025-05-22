@@ -87,144 +87,167 @@
 </section>
 
 <style>
-  .product-description {
-    width: 100%;
-    height: fit-content;
-    background-color: #f9f6f2;
-  }
+   .product-description {
+     width: 100%;
+     height: fit-content;
+     background-color: #f9f6f2;
+   }
 
-  .product-description__container {
-    max-width: var(--page-width);
-    margin: 0 auto;
-    padding: 0 1.5rem;
-  }
-  .product-description__wrapper {
-    text-align: center;
-    padding-top: {{ section.settings.product_description_paddingY }}px;
-    padding-bottom: {{ section.settings.product_description_paddingY }}px;
-  }
+   .product-description__container {
+     max-width: var(--page-width);
+     margin: 0 auto;
+     padding: 0 1.5rem;
+   }
+   .product-description__wrapper {
+     text-align: center;
+     padding-top: {{ section.settings.product_description_paddingY }}px;
+     padding-bottom: {{ section.settings.product_description_paddingY }}px;
+   }
 
-  .product-description__intro {
-    font-style: italic;
-    color: #9c7b38;
-    font-weight: 500;
-    font-size: 1rem;
-  }
+   .product-description__intro {
+     font-style: italic;
+     color: #9c7b38;
+     font-weight: 500;
+     font-size: 1rem;
+   }
 
-  .product-description__title {
-    font-size: 26px;
-    font-family: {{ settings.type_header_font.family }};
-    font-weight: 700;
-    color: #0b3f1e;
-    margin-top: 0.5rem;
-  }
+   .product-description__title {
+     font-size: 26px;
+     font-family: {{ settings.type_header_font.family }};
+     font-weight: 700;
+     color: #0b3f1e;
+     margin-top: 0.5rem;
+   }
 
-  .product-description__title span {
-    display: block;
-    font-style: italic;
-    font-size: 26px;
-    font-weight: 400;
-    color: #304022;
-    margin-top: 0.25rem;
-  }
+   .product-description__title span {
+     display: block;
+     font-style: italic;
+     font-size: 26px;
+     font-weight: 400;
+     color: #304022;
+     margin-top: 0.25rem;
+   }
 
-  .product-description__desc {
-    max-width: 720px;
-    margin: 1rem auto 2rem;
-    font-family: {{ settings.type_body_font.family }};
-    font-size: 14px;
-    color: #555;
-  }
+   .product-description__desc {
+     max-width: 720px;
+     margin: 1rem auto 2rem;
+     font-family: {{ settings.type_body_font.family }};
+     font-size: 14px;
+     color: #555;
+   }
 
-  .product-description__content {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    gap: 2rem;
-    align-items: center;
-  }
+   .product-description__content {
+     display: flex;
+     flex-wrap: wrap;
+     flex-direction: column;
+     justify-content: center;
+     gap: 2rem;
+     align-items: center;
+   }
 
-  .product-description__text-list {
-    flex: 1;
-    min-width: 250px;
-  }
+   .product-description__text-list {
+     flex: 1;
+     min-width: 250px;
+   }
 
-  .product-description__text-list.product-description__right {
-    text-align: left;
-  }
+   .product-description__text-list.product-description__right {
+     text-align: left;
+   }
 
-  .product-description__item {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 1.5rem;
-    text-align: left;
-  }
-
-  .product-description__icon {
-    width: 40px;
-    height: 40px;
-    background-color: #d9a441;
-    border-radius: 50%;
-    margin-product-description__right: 1rem;
-  }
-
-  .product-description__info h4 {
-    font-size: 18px;
-    font-family: {{ settings.type_header_font.family }};
-    font-weight: 600;
-    margin: 0;
-  }
-
-  .product-description__info p {
-    font-size: 14px;
-    font-family: {{ settings.type_body_font.family }};
-    font-weight: 400;
-    color: #777;
-  }
-
-  .product-description__image-block {
-    flex: 1;
-    text-align: center;
-    width: 200px;
-  }
-  .product-description__image{
-    max-width: 100%;
-    height: auto;
-    display: block;
-    overflow: hidden;
-  }
-
-  .oil-feature__image {
-    max-width: 100%;
-    height: auto;
-  }
-
-  .oil-feature__footer {
-    margin-top: 3rem;
-    font-size: 14px;
-  }
-
-  .oil-feature__footer a {
-    color: #d9a441;
-    text-decoration: underline;
-  }
-
-  @media screen and (min-width: 750px) {
-     .product-description__content {
-       flex-direction: row;
-    }
-
-    .product-description__item {
-      justify-content: center;
-      text-align: center;
-      flex-direction: column;
-    }
+   .product-description__item {
+     display: flex;
+     align-items: flex-start;
+     margin-bottom: 1.5rem;
+     text-align: left;
+   }
 
     .product-description__icon {
-      margin: 0 auto 0.5rem;
-    }
-  }
+     width: 40px;
+     height: 40px;
+     background-color: #d9a441;
+     border-radius: 50%;
+   }
+
+   .product-description__info h4 {
+     font-size: 18px;
+     font-family: {{ settings.type_header_font.family }};
+     font-weight: 600;
+     margin: 0;
+   }
+
+   .product-description__info p {
+     font-size: 14px;
+     font-family: {{ settings.type_body_font.family }};
+     font-weight: 400;
+     color: #777;
+   }
+
+   .product-description__image-block {
+     flex: 1;
+     text-align: center;
+     width: 200px;
+   }
+   .product-description__image{
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+
+   }
+
+   {% comment %} .oil-feature__image {
+     max-width: 100%;
+     height: auto;
+   } {% endcomment %}
+
+    .oil-feature__footer {
+     margin-top: 3rem;
+     font-size: 14px;
+   }
+
+  .oil-feature__footer a {
+     color: #d9a441;
+     text-decoration: underline;
+   }
+
+   @media screen and (min-width: 750px) {
+      .product-description__content {
+        flex-direction: row;
+      }
+      .product-description__title {
+        font-size: 36px;
+      }
+
+      .product-description__title span {
+        font-size: 36px;
+      }
+
+      .product-description__item {
+       justify-content: center;
+       text-align: center;
+       flex-direction: column;
+      }
+
+      .product-description__icon {
+       margin: 0 auto 0.5rem;
+      }
+      .product-description__image-block {
+       max-width: 300px;
+      }
+   }
+   @media screen and (min-width: 990px) {
+     .product-description__image-block {
+       max-width: 400px;
+     }
+   }
+   @media screen and (min-width: 1200px) {
+      .product-description__title {
+        font-size: 46px;
+      }
+
+      .product-description__title span {
+        font-size: 46px;
+      }
+   }
 </style>
 
 {% schema %}
