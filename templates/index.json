@@ -50,6 +50,78 @@
         "hero_two__button_text_color": "#000000"
       }
     },
+    "image_carousel_9JiNxC": {
+      "type": "image-carousel",
+      "blocks": {
+        "image_carousel_WaWweq": {
+          "type": "image_carousel",
+          "settings": {
+            "image_carousel_image": "shopify://shop_images/Natios_Iron_Banner_02.webp"
+          }
+        },
+        "image_carousel_ppNnfb": {
+          "type": "image_carousel",
+          "settings": {
+            "image_carousel_image": "shopify://shop_images/Natios_Liver_Banner.webp"
+          }
+        },
+        "image_carousel_EtHRWc": {
+          "type": "image_carousel",
+          "settings": {
+            "image_carousel_image": "shopify://shop_images/Natios_biotin_banner_06.webp"
+          }
+        },
+        "image_carousel_EnTiWy": {
+          "type": "image_carousel",
+          "settings": {
+            "image_carousel_image": "shopify://shop_images/Natios_Tribulus_Banner_2.webp"
+          }
+        },
+        "image_carousel_yiXxYM": {
+          "type": "image_carousel",
+          "settings": {
+            "image_carousel_image": "shopify://shop_images/Natios_Kids_Magnesium_banner_v4.webp"
+          }
+        },
+        "image_carousel_96CtTC": {
+          "type": "image_carousel",
+          "settings": {
+            "image_carousel_image": "shopify://shop_images/NatiosDarkovaKrabice_4.webp"
+          }
+        },
+        "image_carousel_Db6qae": {
+          "type": "image_carousel",
+          "settings": {
+            "image_carousel_image": "shopify://shop_images/pexels-n-voitkevich-7852672_f93ab3ea-160b-43f0-b05e-e5492c41cce9.jpg"
+          }
+        },
+        "image_carousel_xTawE9": {
+          "type": "image_carousel",
+          "settings": {
+            "image_carousel_image": "shopify://shop_images/Natios_Methyl_Folate_Banner_2.webp"
+          }
+        }
+      },
+      "block_order": [
+        "image_carousel_WaWweq",
+        "image_carousel_ppNnfb",
+        "image_carousel_EtHRWc",
+        "image_carousel_EnTiWy",
+        "image_carousel_yiXxYM",
+        "image_carousel_96CtTC",
+        "image_carousel_Db6qae",
+        "image_carousel_xTawE9"
+      ],
+      "name": "Image carousel",
+      "settings": {
+        "image_carousel_paddingY": 36,
+        "image_carousel_heading_color": "#f5f5f5",
+        "image_carousel_heading_transform": "none",
+        "image_carousel_body_color": "#ffffff",
+        "image_carousel_bg_color": "#000000",
+        "image_carousel_text_color": "#ffffff"
+      }
+    },
     "featured_products_WWMVGz": {
       "type": "featured-products",
       "blocks": {
@@ -113,48 +185,6 @@
       "type": "product-description",
       "name": "Product description",
       "settings": {}
-    },
-    "hero_xrUJfF": {
-      "type": "hero",
-      "blocks": {
-        "heading_RNHLkT": {
-          "type": "heading",
-          "settings": {
-            "hero__heading": "Transformez votre intimité."
-          }
-        },
-        "description_wRDKYh": {
-          "type": "description",
-          "settings": {
-            "hero__description": "Découvrez nos produits ciblés pour les hommes et les femmes. Une gamme discrète, puissante et 100 % axée résultats. Paiement confidentiel, livraison rapide et appel privé disponible pour conseils personnalisés."
-          }
-        },
-        "buttons_eDdkQJ": {
-          "type": "buttons",
-          "settings": {
-            "hero__button_text": "Découvrir nos produits",
-            "hero__button_url": ""
-          }
-        }
-      },
-      "block_order": [
-        "heading_RNHLkT",
-        "description_wRDKYh",
-        "buttons_eDdkQJ"
-      ],
-      "disabled": true,
-      "name": "Hero",
-      "settings": {
-        "hero__background_image": "shopify://shop_images/pexels-cottonbro-9374659.jpg",
-        "hero__background_checkbox": true,
-        "hero__background_color": "linear-gradient(135deg, rgba(95, 10, 135, 1), rgba(132, 35, 121, 0.5) 50%, rgba(164, 80, 139, 1) 100%)",
-        "hero__heading_color": "#ffffff",
-        "hero__description_color": "#ffffff",
-        "hero__button_primary_text_color": "#ffffff",
-        "hero__button_primary_bg_color": "#5c1a1b",
-        "hero__button_secondary_text_color": "#ffffff",
-        "hero__button_secondary_bg_color": "#000000"
-      }
     },
     "product_carousel_EFXgGR": {
       "type": "product-carousel",
@@ -279,6 +309,11 @@
         "product_carousel_list_color": "#ededed"
       }
     },
+    "product_description_Mi3Nre": {
+      "type": "product-description",
+      "name": "Product description",
+      "settings": {}
+    },
     "featured_blog_PVebUA": {
       "type": "featured-blog",
       "name": "t:sections.featured-blog.presets.name",
@@ -317,12 +352,13 @@
   },
   "order": [
     "hero_two_7Tqddg",
+    "image_carousel_9JiNxC",
     "featured_products_WWMVGz",
     "product_description_JgYzyq",
-    "hero_xrUJfF",
     "product_carousel_EFXgGR",
     "slider_HejBdt",
     "product_carousel_YLCxGC",
+    "product_description_Mi3Nre",
     "featured_blog_PVebUA",
     "two_columns_RYfMkD",
     "ingredient_DnRTQV",
