@@ -111,7 +111,6 @@
     },
     "product_description_JgYzyq": {
       "type": "product-description",
-      "disabled": true,
       "name": "Product description",
       "settings": {}
     },
