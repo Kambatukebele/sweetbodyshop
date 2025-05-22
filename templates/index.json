@@ -130,64 +130,77 @@
         "product_description_image": "shopify://shop_images/IMG_6129_1_0a97012b-bf7c-4b3c-920b-cfe14aa0ebf3.png"
       }
     },
-    "featured_products_WWMVGz": {
-      "type": "featured-products",
+    "image_carousel_KUgYgg": {
+      "type": "image-carousel",
       "blocks": {
-        "featured_product_list_CriPyy": {
-          "type": "featured_product_list",
+        "image_carousel_rDBUYD": {
+          "type": "image_carousel",
           "settings": {
-            "featured_product_image": "shopify://shop_images/BEAUTY_BOMB.webp",
-            "featured_product_title": "",
-            "featured_product_description": "",
-            "featured_product_url": ""
+            "image_carousel_image": "shopify://shop_images/HUBNOUCI_KURA.webp"
           }
         },
-        "featured_product_list_F9nq8e": {
-          "type": "featured_product_list",
+        "image_carousel_zNyRd4": {
+          "type": "image_carousel",
           "settings": {
-            "featured_product_image": "shopify://shop_images/SUPER_GREENS.webp",
-            "featured_product_title": "",
-            "featured_product_description": "",
-            "featured_product_url": ""
+            "image_carousel_image": "shopify://shop_images/SUPER_GREENS.webp"
           }
         },
-        "featured_product_list_rMPRBi": {
-          "type": "featured_product_list",
+        "image_carousel_MLayCR": {
+          "type": "image_carousel",
           "settings": {
-            "featured_product_image": "shopify://shop_images/MATCHA.webp",
-            "featured_product_title": "",
-            "featured_product_description": "",
-            "featured_product_url": ""
+            "image_carousel_image": "shopify://shop_images/MATCHA.webp"
           }
         },
-        "featured_product_list_mrTeJm": {
-          "type": "featured_product_list",
+        "image_carousel_jyUHUU": {
+          "type": "image_carousel",
           "settings": {
-            "featured_product_image": "shopify://shop_images/HUBNOUCI_KURA.webp",
-            "featured_product_title": "",
-            "featured_product_description": "",
-            "featured_product_url": ""
+            "image_carousel_image": "shopify://shop_images/NOVINKA_BYE_BYE_CELLU.webp"
           }
         },
-        "featured_product_list_XTyPUi": {
-          "type": "featured_product_list",
+        "image_carousel_Nn8UJ4": {
+          "type": "image_carousel",
           "settings": {
-            "featured_product_image": "shopify://shop_images/NOVINKA_BYE_BYE_CELLU.webp",
-            "featured_product_title": "",
-            "featured_product_description": "",
-            "featured_product_url": ""
+            "image_carousel_image": "shopify://shop_images/BEAUTY_BOMB.webp"
+          }
+        },
+        "image_carousel_aPPc7R": {
+          "type": "image_carousel",
+          "settings": {
+            "image_carousel_image": "shopify://shop_images/MATCHA.webp"
+          }
+        },
+        "image_carousel_3j3bjt": {
+          "type": "image_carousel",
+          "settings": {
+            "image_carousel_image": "shopify://shop_images/Natios_Liver_Banner.webp"
+          }
+        },
+        "image_carousel_qQqa6E": {
+          "type": "image_carousel",
+          "settings": {
+            "image_carousel_image": "shopify://shop_images/SUPER_GREENS.webp"
           }
         }
       },
       "block_order": [
-        "featured_product_list_CriPyy",
-        "featured_product_list_F9nq8e",
-        "featured_product_list_rMPRBi",
-        "featured_product_list_mrTeJm",
-        "featured_product_list_XTyPUi"
+        "image_carousel_rDBUYD",
+        "image_carousel_zNyRd4",
+        "image_carousel_MLayCR",
+        "image_carousel_jyUHUU",
+        "image_carousel_Nn8UJ4",
+        "image_carousel_aPPc7R",
+        "image_carousel_3j3bjt",
+        "image_carousel_qQqa6E"
       ],
-      "name": "Featured products",
-      "settings": {}
+      "name": "Image carousel",
+      "settings": {
+        "image_carousel_paddingY": 36,
+        "image_carousel_heading_color": "#000000",
+        "image_carousel_heading_transform": "none",
+        "image_carousel_body_color": "#000000",
+        "image_carousel_bg_color": "#000000",
+        "image_carousel_text_color": "#ffffff"
+      }
     },
     "product_carousel_EFXgGR": {
       "type": "product-carousel",
@@ -359,7 +372,7 @@
     "hero_two_7Tqddg",
     "image_carousel_9JiNxC",
     "product_description_JgYzyq",
-    "featured_products_WWMVGz",
+    "image_carousel_KUgYgg",
     "product_carousel_EFXgGR",
     "slider_HejBdt",
     "product_carousel_YLCxGC",

@@ -1,70 +1,58 @@
 <section class="ingredients-section">
-  <div class="content-wrapper">
-    <div class="left-column">
-      <span class="subtitle">Increased Energy With Mixlix</span>
-      <h1 class="title">Mixlix Ingredients</h1>
-      <p class="description">
+  <div class="ingredients-section__wrapper">
+    <div class="ingredients-section__left-column">
+      <span class="ingredients-section__subtitle">Increased Energy With Mixlix</span>
+      <h1 class="ingredients-section__title">Mixlix Ingredients</h1>
+      <p class="ingredients-section__description">
         There are many variations of passages of lorem ipsum that available but the majority have alteration in some
         form by injected humour.
       </p>
 
-      <div class="feature">
-        <div class="feature-text">
+      <div class="ingredients-section__feature">
+        <div class="ingredients-section__feature-text">
           <h3>Helps You Stick To Your Diet</h3>
           <p>A thing added to something else in order to complete or enhance it.</p>
         </div>
-        <div class="feature-icon">💊</div>
+        <div class="ingredients-section__feature-icon">💊</div>
       </div>
 
-      <div class="feature">
-        <div class="feature-text">
+      <div class="ingredients-section__feature">
+        <div class="ingredients-section__feature-text">
           <h3>Only 3g Net Carbs In Every Jar</h3>
           <p>A thing added to something else in order to complete or enhance it.</p>
         </div>
-        <div class="feature-icon">🥄</div>
+        <div class="ingredients-section__feature-icon">🥄</div>
       </div>
 
-      <div class="feature">
-        <div class="feature-text">
+      <div class="ingredients-section__feature">
+        <div class="ingredients-section__feature-text">
           <h3>Clean Ingredients Only</h3>
           <p>A thing added to something else in order to complete or enhance it.</p>
         </div>
-        <div class="feature-icon">🍃</div>
+        <div class="ingredients-section__feature-icon">🍃</div>
       </div>
 
-      <div class="feature">
-        <div class="feature-text">
+      <div class="ingredients-section__feature">
+        <div class="ingredients-section__feature-text">
           <h3>Ingredients To Fuel Your Body</h3>
           <p>A thing added to something else in order to complete or enhance it.</p>
         </div>
-        <div class="feature-icon">⚡</div>
+        <div class="ingredients-section__feature-icon">⚡</div>
       </div>
     </div>
 
-    <div class="right-column">
-      <img src="https://via.placeholder.com/600x500?text=Protein+Scoop" alt="Protein Powder">
+    <div class="ingredients-section__right-column">
+      {{- 'product-6' | placeholder_svg_tag: 'ingredients-section__image' -}}
     </div>
   </div>
 </section>
 <style>
-  /* Reset & base */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  body {
-    font-family: 'Segoe UI', sans-serif;
-    background: #fff;
-    color: #1a1a1a;
-    padding: 20px;
-  }
-
   .ingredients-section {
-    padding: 40px 20px;
+    width: 100%;
+    height: fit-content;
   }
 
-  .content-wrapper {
+  .ingredients-section__wrapper {
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -72,20 +60,20 @@
     margin: 0 auto;
   }
 
-  .left-column {
+  .ingredients-section__left-column {
     flex: 1;
   }
 
-  .right-column {
+  .ingredients-section__right-column {
     flex: 1;
     text-align: center;
   }
-  .right-column img {
+  .ingredients-section__right-column .ingredients-section__right-column {
     max-width: 100%;
     border-radius: 8px;
   }
 
-  .subtitle {
+  .ingredients-section__subtitle {
     color: #75d728;
     font-weight: bold;
     font-size: 0.9rem;
@@ -94,20 +82,20 @@
     margin-bottom: 10px;
   }
 
-  .title {
+  .ingredients-section__title {
     font-size: 2.5rem;
     font-weight: 800;
     margin-bottom: 10px;
   }
 
-  .description {
+  .ingredients-section__description {
     font-size: 1rem;
     color: #666;
     margin-bottom: 30px;
   }
 
   /* Features */
-  .feature {
+  .ingredients-section__feature {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -118,17 +106,17 @@
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
   }
 
-  .feature-text h3 {
+  .ingredients-section__feature-text h3 {
     font-size: 1.1rem;
     font-weight: bold;
     margin-bottom: 6px;
   }
-  .feature-text p {
+  .ingredients-section__feature-text p {
     color: #555;
     font-size: 0.9rem;
   }
 
-  .feature-icon {
+  .ingredients-section__feature-icon {
     background-color: #75d728;
     color: white;
     font-size: 1.4rem;
@@ -143,11 +131,11 @@
 
   /* Responsive */
   @media (min-width: 768px) {
-    .content-wrapper {
+    .ingredients-section__wrapper {
       flex-direction: row;
       align-items: center;
     }
-    .left-column {
+    .ingredients-section__left-column {
       padding-right: 40px;
     }
   }
