@@ -41,7 +41,15 @@
         </div>
 
         <div class="product-description__image-block">
-          {{ 'product-6' | placeholder_svg_tag: 'product-description__image' }}
+          {%- if section.settings.product_description_image != blank -%}
+            {{-
+              section.settings.product_description_image
+              | image_url: width: 700
+              | image_tag: class: 'product-description__image'
+            -}}
+          {%- else -%}
+            {{ 'product-6' | placeholder_svg_tag: 'product-description__image' }}
+          {%- endif -%}
         </div>
 
         <div class="product-description__text-list product-description__right">
@@ -92,8 +100,8 @@
   }
   .product-description__wrapper {
     text-align: center;
-    padding-top: 2.25rem;
-    padding-bottom: 2.25rem;
+    padding-top: {{ section.settings.product_description_paddingY }}px;
+    padding-bottom: {{ section.settings.product_description_paddingY }}px;
   }
 
   .product-description__intro {
@@ -178,7 +186,13 @@
   .product-description__image-block {
     flex: 1;
     text-align: center;
-    min-width: 250px;
+    width: 200px;
+  }
+  .product-description__image{
+    max-width: 100%;
+    height: auto;
+    display: block;
+    overflow: hidden;
   }
 
   .oil-feature__image {
@@ -218,11 +232,34 @@
   "name": "Product description",
   "tag": "section",
   "class": "oil-dropper-feature",
-  "settings": [],
+  "settings": [
+    {
+      "type": "range",
+      "id": "product_description_paddingY",
+      "label": "Padding Y",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_description_image",
+      "label": "Image"
+    }
+  ],
   "blocks": [],
   "presets": [
     {
-      "name": "Product description"
+      "name": "Product description",
+      "settings": {
+        "product_description_paddingY": 36
+      }
     }
   ]
 }

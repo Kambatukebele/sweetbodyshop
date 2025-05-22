@@ -122,6 +122,14 @@
         "image_carousel_text_color": "#ffffff"
       }
     },
+    "product_description_JgYzyq": {
+      "type": "product-description",
+      "name": "Product description",
+      "settings": {
+        "product_description_paddingY": 36,
+        "product_description_image": "shopify://shop_images/IMG_6129_1_0a97012b-bf7c-4b3c-920b-cfe14aa0ebf3.png"
+      }
+    },
     "featured_products_WWMVGz": {
       "type": "featured-products",
       "blocks": {
@@ -179,11 +187,6 @@
         "featured_product_list_XTyPUi"
       ],
       "name": "Featured products",
-      "settings": {}
-    },
-    "product_description_JgYzyq": {
-      "type": "product-description",
-      "name": "Product description",
       "settings": {}
     },
     "product_carousel_EFXgGR": {
@@ -312,7 +315,9 @@
     "product_description_Mi3Nre": {
       "type": "product-description",
       "name": "Product description",
-      "settings": {}
+      "settings": {
+        "product_description_paddingY": 36
+      }
     },
     "featured_blog_PVebUA": {
       "type": "featured-blog",
@@ -353,8 +358,8 @@
   "order": [
     "hero_two_7Tqddg",
     "image_carousel_9JiNxC",
-    "featured_products_WWMVGz",
     "product_description_JgYzyq",
+    "featured_products_WWMVGz",
     "product_carousel_EFXgGR",
     "slider_HejBdt",
     "product_carousel_YLCxGC",
