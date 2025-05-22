@@ -338,6 +338,29 @@
         "product_description_image": "shopify://shop_images/B-11_92b85505-dc88-4e57-90f9-89bf91efc563.png"
       }
     },
+    "two_columns_RYfMkD": {
+      "type": "two-columns",
+      "blocks": {
+        "two_columns_38gNXi": {
+          "type": "two-columns",
+          "settings": {
+            "two_columns__image": "shopify://shop_images/close-up-beauty-portrait-topless-woman-with-perfect-skin-natural-make-up-holding-supplement-vitamin-omega-3-fish-oil-turquoise-background.jpg"
+          }
+        },
+        "two_columns_n7aeM9": {
+          "type": "two-columns",
+          "settings": {
+            "two_columns__image": "shopify://shop_images/image-fitness-girl-opening-bottle-dietary-supplement-taking-vitamins-stay-healthy-fit.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "two_columns_38gNXi",
+        "two_columns_n7aeM9"
+      ],
+      "name": "Two-columns",
+      "settings": {}
+    },
     "featured_blog_PVebUA": {
       "type": "featured-blog",
       "name": "t:sections.featured-blog.presets.name",
@@ -356,14 +379,8 @@
         "padding_bottom": 36
       }
     },
-    "two_columns_RYfMkD": {
-      "type": "two-columns",
-      "name": "Two-columns",
-      "settings": {}
-    },
     "ingredient_DnRTQV": {
       "type": "ingredient",
-      "disabled": true,
       "name": "Mixlix Ingredients",
       "settings": {}
     },
@@ -384,8 +401,8 @@
     "slider_HejBdt",
     "product_carousel_YLCxGC",
     "product_description_Mi3Nre",
-    "featured_blog_PVebUA",
     "two_columns_RYfMkD",
+    "featured_blog_PVebUA",
     "ingredient_DnRTQV",
     "faq_NPCGpD"
   ]

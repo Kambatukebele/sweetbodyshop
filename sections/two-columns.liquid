@@ -1,21 +1,50 @@
 <section class="two-columns">
   <div class="two-columns-container">
     <div class="two-columns__wrapper">
-      {%- for item in (1..3) -%}
-        <div class="two-columns__card">
-          <div class="two-columns__text">
-            <h2>
-              Grass-fed, Multi Whey,<br>
-              nebo kasein?
-            </h2>
-            <p>Vyber si protein, který bude vyhovovat právě tobě</p>
-            <button class="btn">Koupit</button>
+      {%- if section.blocks.size > 0 -%}
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'two-columns' -%}
+              <div class="two-columns__card">
+                <div class="two-columns__text">
+                  <h2>
+                    Grass-fed, Multi Whey,<br>
+                    nebo kasein?
+                  </h2>
+                  <p>Vyber si protein, který bude vyhovovat právě tobě</p>
+                  <button class="btn">Koupit</button>
+                </div>
+                <div class="two-columns__image">
+                  {%- if block.settings.two_columns__image != blank -%}
+                    {{
+                      block.settings.two_columns__image
+                      | image_url: width: 600
+                      | image_tag: class: 'two-columns__img'
+                    }}
+                  {%- else -%}
+                    {{- 'product-5' | placeholder_svg_tag: 'two-columns__img' -}}
+                  {%- endif -%}
+                </div>
+              </div>
+          {%- endcase -%}
+        {%- endfor -%}
+      {%- else -%}
+        {%- for item in (1..2) -%}
+          <div class="two-columns__card">
+            <div class="two-columns__text">
+              <h2>
+                Grass-fed, Multi Whey,<br>
+                nebo kasein?
+              </h2>
+              <p>Vyber si protein, který bude vyhovovat právě tobě</p>
+              <button class="btn">Koupit</button>
+            </div>
+            <div class="two-columns__image">
+              {{- 'product-5' | placeholder_svg_tag: 'two-columns__img' -}}
+            </div>
           </div>
-          <div class="two-columns__image">
-            {{- 'product-5' | placeholder_svg_tag: 'two-columns__img' -}}
-          </div>
-        </div>
-      {%- endfor -%}
+        {%- endfor -%}
+      {%- endif -%}
     </div>
   </div>
 </section>
@@ -36,20 +65,28 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    padding-top: 36px;
+    padding-bottom: 36px;
   }
 
   /* Promo card */
   .two-columns__card {
+    border: 1px solid #ddd;
     background-color: #fff;
     border-radius: 16px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
     padding: 20px;
+    height: 400px;
     gap: 20px;
+    position: relative;
   }
 
   /* Text block */
+  .two-columns__text {
+    z-index: 100;
+  }
   .two-columns__text h2 {
     font-size: 24px;
     font-weight: bold;
@@ -78,9 +115,20 @@
   }
 
   /* Image block */
-  .two-columns__image img {
+  .two-columns__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
     width: 100%;
-    height: auto;
+  }
+  .two-columns__image .two-columns__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
     border-radius: 12px;
   }
 
@@ -113,7 +161,19 @@
 {
   "name": "Two columns",
   "settings": [],
-  "blocks": [],
+  "blocks": [
+    {
+      "name": "Two-columns",
+      "type": "two-columns",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "two_columns__image",
+          "label": "Two image"
+        }
+      ]
+    }
+  ],
   "presets": [
     {
       "name": "Two-columns",
