@@ -50,6 +50,11 @@
         "hero_two__button_text_color": "#000000"
       }
     },
+    "prove_yGBMDc": {
+      "type": "prove",
+      "name": "Prove",
+      "settings": {}
+    },
     "image_carousel_9JiNxC": {
       "type": "image-carousel",
       "blocks": {
@@ -329,7 +334,8 @@
       "type": "product-description",
       "name": "Product description",
       "settings": {
-        "product_description_paddingY": 36
+        "product_description_paddingY": 36,
+        "product_description_image": "shopify://shop_images/B-11_92b85505-dc88-4e57-90f9-89bf91efc563.png"
       }
     },
     "featured_blog_PVebUA": {
@@ -370,6 +376,7 @@
   },
   "order": [
     "hero_two_7Tqddg",
+    "prove_yGBMDc",
     "image_carousel_9JiNxC",
     "product_description_JgYzyq",
     "image_carousel_KUgYgg",

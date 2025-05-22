@@ -1,21 +1,132 @@
-<section>
-  <div></div>
+<section class="benefits">
+  <div class="benefits__container">
+    <div class="benefits__wrapper">
+      <div class="benefits__item">
+        {{ 'icon-24.svg' | inline_asset_content }}
+        {% comment %} <img src="path/to/your/icons/24h.svg" alt="Rychlé doručení" class="benefits__icon"> {% endcomment %}
+        <div>
+          <h4>Rychlé doručení</h4>
+          <p>následující pracovní den</p>
+        </div>
+      </div>
+      <div class="benefits__item">
+        {{ 'icon-delivery.svg' | inline_asset_content }}
+        <div>
+          <h4>Doprava zdarma</h4>
+          <p>při objednávce nad 1500 Kč</p>
+        </div>
+      </div>
+      <div class="benefits__item">
+        {{ 'icon-customer-service.svg' | inline_asset_content }}
+        <div>
+          <h4>Zákaznická podpora</h4>
+          <p>každý všední den 8:00–16:00</p>
+        </div>
+      </div>
+      <div class="benefits__item">
+        {{ 'icon-gift.svg' | inline_asset_content }}
+        <div>
+          <h4>Dárek zdarma</h4>
+          <p>při objednávce nad 1200 Kč</p>
+        </div>
+      </div>
+      <div class="benefits__item">
+        {{ 'icon-package.svg' | inline_asset_content }}
+        <div>
+          <h4>Produkty skladem</h4>
+          <p>ihned k odeslání</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+
+<style>
+  .benefits {
+    width: 100%;
+    height: fit-content;
+  }
+
+  .benefits__container {
+    max-width: var(--page-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  .benefits__wrapper {
+    padding-top: 36px;
+    padding-bottom: 36px;
+    display: flex;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+  }
+  .benefits__wrapper::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+
+  .benefits__item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1 1 18%;
+    width: 280px;
+    flex: 0 0 auto;
+    min-width: 200px;
+    scroll-snap-align: start;
+  }
+
+  .benefits__icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+  }
+
+  .benefits__item h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+  }
+
+  .benefits__item p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+  }
+
+  @media screen and (min-width: 750px) {
+    .benefits__wrapper {
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .benefits__wrapper::-webkit-scrollbar {
+      display: none;
+    }
+
+    .benefits__item {
+      flex: 0 0 auto;
+      min-width: 200px;
+      scroll-snap-align: start;
+    }
+  }
+</style>
 
 {% schema %}
 {
   "name": "Prove",
   "class": "prove",
-  "enabled_on": {
-    "templates": ["*"]
-  },
   "settings": [],
-  "blocks": [],
   "presets": [
     {
       "name": "Prove",
-      "settings": {},
-      "blocks": []
+      "settings": {}
     }
   ]
 }
