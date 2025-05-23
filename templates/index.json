@@ -376,6 +376,81 @@
         "product_carousel_list_color": "#ededed"
       }
     },
+    "slider_HejBdt": {
+      "type": "slider",
+      "blocks": {
+        "scrolling_element_j3Y3YK": {
+          "type": "scrolling_element",
+          "settings": {
+            "scrolling_element_text": "Livraison gratuite"
+          }
+        },
+        "scrolling_element_Dg7rLc": {
+          "type": "scrolling_element",
+          "settings": {
+            "scrolling_element_text": "Discrétion garantie"
+          }
+        },
+        "scrolling_element_d9rhqa": {
+          "type": "scrolling_element",
+          "settings": {
+            "scrolling_element_text": "Conseils privés"
+          }
+        },
+        "scrolling_element_VBgiNT": {
+          "type": "scrolling_element",
+          "settings": {
+            "scrolling_element_text": "Paiement sécurisé"
+          }
+        },
+        "scrolling_element_ebENyi": {
+          "type": "scrolling_element",
+          "settings": {
+            "scrolling_element_text": "Effets rapides"
+          }
+        },
+        "scrolling_element_jJ7pUb": {
+          "type": "scrolling_element",
+          "settings": {
+            "scrolling_element_text": "Appel confidentiel"
+          }
+        },
+        "scrolling_element_w49m4n": {
+          "type": "scrolling_element",
+          "settings": {
+            "scrolling_element_text": "Formules naturelles"
+          }
+        },
+        "scrolling_element_HHnPNT": {
+          "type": "scrolling_element",
+          "settings": {
+            "scrolling_element_text": "Résultats visibles"
+          }
+        }
+      },
+      "block_order": [
+        "scrolling_element_j3Y3YK",
+        "scrolling_element_Dg7rLc",
+        "scrolling_element_d9rhqa",
+        "scrolling_element_VBgiNT",
+        "scrolling_element_ebENyi",
+        "scrolling_element_jJ7pUb",
+        "scrolling_element_w49m4n",
+        "scrolling_element_HHnPNT"
+      ],
+      "name": "Slider",
+      "settings": {
+        "show_line_separator": false,
+        "border_bottom_color": "#000000",
+        "text_scrolling_font_size": 29,
+        "text_scrolling_font_weight": 700,
+        "text_scrolling_height": 100,
+        "text_scrolling_background_color": "#5c1a1b",
+        "text_scrolling_text_color": "#ffffff",
+        "text_scrolling_animation_duration": 98,
+        "text_scrolling_text_transform": "uppercase"
+      }
+    },
     "image_carousel_KUgYgg": {
       "type": "image-carousel",
       "blocks": {
@@ -626,81 +701,6 @@
         "product_description_background_color": "#f9f6f2"
       }
     },
-    "slider_HejBdt": {
-      "type": "slider",
-      "blocks": {
-        "scrolling_element_j3Y3YK": {
-          "type": "scrolling_element",
-          "settings": {
-            "scrolling_element_text": "Livraison gratuite"
-          }
-        },
-        "scrolling_element_Dg7rLc": {
-          "type": "scrolling_element",
-          "settings": {
-            "scrolling_element_text": "Discrétion garantie"
-          }
-        },
-        "scrolling_element_d9rhqa": {
-          "type": "scrolling_element",
-          "settings": {
-            "scrolling_element_text": "Conseils privés"
-          }
-        },
-        "scrolling_element_VBgiNT": {
-          "type": "scrolling_element",
-          "settings": {
-            "scrolling_element_text": "Paiement sécurisé"
-          }
-        },
-        "scrolling_element_ebENyi": {
-          "type": "scrolling_element",
-          "settings": {
-            "scrolling_element_text": "Effets rapides"
-          }
-        },
-        "scrolling_element_jJ7pUb": {
-          "type": "scrolling_element",
-          "settings": {
-            "scrolling_element_text": "Appel confidentiel"
-          }
-        },
-        "scrolling_element_w49m4n": {
-          "type": "scrolling_element",
-          "settings": {
-            "scrolling_element_text": "Formules naturelles"
-          }
-        },
-        "scrolling_element_HHnPNT": {
-          "type": "scrolling_element",
-          "settings": {
-            "scrolling_element_text": "Résultats visibles"
-          }
-        }
-      },
-      "block_order": [
-        "scrolling_element_j3Y3YK",
-        "scrolling_element_Dg7rLc",
-        "scrolling_element_d9rhqa",
-        "scrolling_element_VBgiNT",
-        "scrolling_element_ebENyi",
-        "scrolling_element_jJ7pUb",
-        "scrolling_element_w49m4n",
-        "scrolling_element_HHnPNT"
-      ],
-      "name": "Slider",
-      "settings": {
-        "show_line_separator": false,
-        "border_bottom_color": "#000000",
-        "text_scrolling_font_size": 29,
-        "text_scrolling_font_weight": 700,
-        "text_scrolling_height": 100,
-        "text_scrolling_background_color": "#5c1a1b",
-        "text_scrolling_text_color": "#ffffff",
-        "text_scrolling_animation_duration": 98,
-        "text_scrolling_text_transform": "uppercase"
-      }
-    },
     "product_carousel_YLCxGC": {
       "type": "product-carousel",
       "name": "Product carousel",
@@ -726,8 +726,85 @@
         "product_carousel_list_color": "#ededed"
       }
     },
+    "slider_D4j76M": {
+      "type": "slider",
+      "name": "Slider",
+      "settings": {
+        "show_line_separator": true,
+        "border_bottom_color": "#f2f2f2",
+        "text_scrolling_font_size": 26,
+        "text_scrolling_font_weight": 500,
+        "text_scrolling_height": 77,
+        "text_scrolling_background_color": "#000000",
+        "text_scrolling_text_color": "#ffffff",
+        "text_scrolling_animation_duration": 50,
+        "text_scrolling_text_transform": "none"
+      }
+    },
+    "faq_NPCGpD": {
+      "type": "faq",
+      "blocks": {
+        "question_response_Ped8w3": {
+          "type": "question_response",
+          "settings": {
+            "question": "What is the capital of France",
+            "answer": "Francess"
+          }
+        },
+        "question_response_axHt3f": {
+          "type": "question_response",
+          "settings": {
+            "question": "What is the capital of France",
+            "answer": "France"
+          }
+        },
+        "question_response_FyJYHR": {
+          "type": "question_response",
+          "settings": {
+            "question": "What is the capital of France",
+            "answer": "France"
+          }
+        },
+        "question_response_qnBbfU": {
+          "type": "question_response",
+          "settings": {
+            "question": "What is the capital of France",
+            "answer": "France"
+          }
+        },
+        "question_response_GWAbfE": {
+          "type": "question_response",
+          "settings": {
+            "question": "What is the capital of France",
+            "answer": "France"
+          }
+        }
+      },
+      "block_order": [
+        "question_response_Ped8w3",
+        "question_response_axHt3f",
+        "question_response_FyJYHR",
+        "question_response_qnBbfU",
+        "question_response_GWAbfE"
+      ],
+      "name": "Faq",
+      "settings": {
+        "faq_background_color": "#ffffff",
+        "faq_sub_heading": "Faqss",
+        "faq_heading": "Get every answers from heress",
+        "faq_sub_heading_color": "#000000",
+        "faq_heading_color": "#ffffff",
+        "question_response_background_color": "#fdfdfd",
+        "question_text_color": "#000000",
+        "response_text_color": "#000000",
+        "icon_background_color": "#000000"
+      }
+    },
     "featured_blog_PVebUA": {
       "type": "featured-blog",
+      "custom_css": [
+        ".card{border-radius: 10px;}"
+      ],
       "name": "t:sections.featured-blog.presets.name",
       "settings": {
         "blog": "news",
@@ -749,11 +826,6 @@
       "disabled": true,
       "name": "Mixlix Ingredients",
       "settings": {}
-    },
-    "faq_NPCGpD": {
-      "type": "faq",
-      "name": "Faq",
-      "settings": {}
     }
   },
   "order": [
@@ -763,13 +835,14 @@
     "two_columns_RYfMkD",
     "product_description_JgYzyq",
     "product_carousel_EFXgGR",
+    "slider_HejBdt",
     "image_carousel_KUgYgg",
     "two_columns_rhyWzT",
     "product_description_Mi3Nre",
-    "slider_HejBdt",
     "product_carousel_YLCxGC",
+    "slider_D4j76M",
+    "faq_NPCGpD",
     "featured_blog_PVebUA",
-    "ingredient_DnRTQV",
-    "faq_NPCGpD"
+    "ingredient_DnRTQV"
   ]
 }

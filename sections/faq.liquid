@@ -1,21 +1,66 @@
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+<section class="faq">
+  <div class="faq__wrapper">
+    <div class="container">
+      <!-- FAQ Section -->
+      <div class="faq-section">
+        <p class="faq-header">
+          {{ section.settings.faq_sub_heading }}
+        </p>
+        <h1 class="faq-title">
+          {{ section.settings.faq_heading }}
+        </h1>
 
-  body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f7f8fa;
-    color: #1a1a1a;
+        {%- if section.blocks.size > 0 -%}
+          {%- for block in section.blocks -%}
+            {%- case block.type -%}
+              {%- when 'question_response' -%}
+                <div class="faq-item {% if forloop.index == 1 %} active {% endif %}">
+                  <div class="faq-question">
+                    {{ block.settings.question }}
+                    <div class="faq-icon">+</div>
+                  </div>
+                  <div class="faq-answer">
+                    {{ block.settings.answer }}
+                  </div>
+                </div>
+            {%- endcase -%}
+          {%- endfor -%}
+        {%- else -%}
+          {%- for item in (1..5) -%}
+            <div class="faq-item">
+              <div class="faq-question {% if forloop.index == 1 %} active {% endif %}">
+                How to edit Mixlix themes ?
+                <div class="faq-icon">+</div>
+              </div>
+              <div class="faq-answer">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua.
+              </div>
+            </div>
+          {%- endfor -%}
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq {
+    width: 100%;
+    height: fit-content;
+    background-color: {{ section.settings.faq_background_color }};
+  }
+  .faq__wrapper {
+    max-width: var(--page-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
   }
 
   .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 60px 10%;
+    padding: 36px 20px;
     gap: 40px;
     align-items: center;
   }
@@ -25,16 +70,19 @@
   }
 
   .faq-header {
-    color: #8cc63f;
+    color: {{ section.settings.faq_sub_heading_color }};
     font-weight: 600;
     font-size: 14px;
+    text-align: center;
   }
 
   .faq-title {
-    font-size: 40px;
+    font-size: 24px;
     font-weight: 700;
     margin: 10px 0 30px;
     line-height: 1.2;
+    text-align: center;
+    color: {{ section.settings.faq_heading }}
   }
 
   .faq-title span {
@@ -42,22 +90,24 @@
   }
 
   .faq-item {
-    background-color: #fff;
+    background-color: {{ section.settings.question_response_background_color }};
     margin-bottom: 20px;
     border-radius: 16px;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
     overflow: hidden;
     transition: all 0.3s ease;
+
   }
 
   .faq-question {
-    padding: 20px 24px;
+    padding: 20px 14px;
     font-weight: 600;
     font-size: 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
+    color: {{ section.settings.question_text_color }}
   }
 
   .faq-answer {
@@ -65,6 +115,7 @@
     color: #555;
     font-size: 15px;
     display: none;
+    color: {{ section.settings.response_text_color }}
   }
 
   .faq-item.active .faq-answer {
@@ -72,7 +123,7 @@
   }
 
   .faq-icon {
-    background: #8cc63f;
+    background: {{ section.settings.icon_background_color }};
     border-radius: 50%;
     color: white;
     font-weight: bold;
@@ -99,7 +150,7 @@
     border-radius: 16px;
   }
 
-  @media (max-width: 768px) {
+  @media (min-width: 768px) {
     .container {
       flex-direction: column;
       padding: 40px 20px;
@@ -109,72 +160,26 @@
       font-size: 32px;
     }
   }
+  @media (min-width: 990px) {
+    .faq-title {
+      font-size: 36px;
+    }
+    .faq-item {
+      width: 800px
+
+    }
+  }
 </style>
-
-<div class="container">
-  <!-- FAQ Section -->
-  <div class="faq-section">
-    <p class="faq-header">Faq</p>
-    <h1 class="faq-title">
-      Get Every Answers<br>
-      From Here<span>.</span>
-    </h1>
-
-    <div class="faq-item">
-      <div class="faq-question">
-        Mixlix ingredients provides a searchable ?
-        <div class="faq-icon">+</div>
-      </div>
-      <div class="faq-answer">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation.
-      </div>
-    </div>
-
-    <div class="faq-item active">
-      <div class="faq-question">
-        How to edit Mixlix themes ?
-        <div class="faq-icon">−</div>
-      </div>
-      <div class="faq-answer">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua.
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-question">
-        Mixlix app is a powerful application ?
-        <div class="faq-icon">+</div>
-      </div>
-      <div class="faq-answer">
-        Yes, Mixlix is designed with a range of powerful features that make it highly adaptable and easy to use.
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-question">
-        Latest version through Mixlix powerful ?
-        <div class="faq-icon">+</div>
-      </div>
-      <div class="faq-answer">
-        The latest version includes performance upgrades and security patches for better functionality.
-      </div>
-    </div>
-  </div>
-
-  <!-- Product Image -->
-  <div class="product-image">
-    <img src="https://i.imgur.com/Nm6qExT.png" alt="Whey Gold Product">
-  </div>
-</div>
 
 <script>
   // FAQ toggle script
-  document.querySelectorAll('.faq-question').forEach((item) => {
-    item.addEventListener('click', () => {
-      const faqItem = item.parentElement;
+  const questions = document.querySelectorAll('.faq-question');
+  questions.forEach((question, index) => {
+    question.addEventListener('click', () => {
+      const faqItem = question.parentElement;
       faqItem.classList.toggle('active');
-      const icon = item.querySelector('.faq-icon');
+
+      const icon = faqItem.querySelector('.faq-icon');
       icon.textContent = faqItem.classList.contains('active') ? '−' : '+';
     });
   });
@@ -183,10 +188,125 @@
 {% schema %}
 {
   "name": "Faq",
-  "settings": [],
+  "limit": 1,
+  "settings": [
+    {
+      "type": "color",
+      "id": "faq_background_color",
+      "label": "Background color",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "header",
+      "content": "Headings",
+      "info": "Subheading and heading text"
+    },
+    {
+      "type": "text",
+      "id": "faq_sub_heading",
+      "label": "Sub heading",
+      "default": "Faq"
+    },
+    {
+      "type": "text",
+      "id": "faq_heading",
+      "label": "Heading",
+      "default": "Get every answers from here"
+    },
+    {
+      "type": "header",
+      "content": "Headings color",
+      "info": "Subheading and heading color"
+    },
+    {
+      "type": "color",
+      "id": "faq_sub_heading_color",
+      "label": "Sub heading color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "faq_heading_color",
+      "label": "Heading color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Question response colors"
+    },
+    {
+      "type": "color",
+      "id": "question_response_background_color",
+      "label": "Question response background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "question_text_color",
+      "label": "Question text color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "response_text_color",
+      "label": "Response text color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "icons colors"
+    },
+    {
+      "type": "color",
+      "id": "icon_background_color",
+      "label": "Icon Background color",
+      "default": "#000000"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Question Response",
+      "type": "question_response",
+      "limit": 5,
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "What is the capital of France"
+        },
+        {
+          "type": "text",
+          "id": "answer",
+          "label": "Response",
+          "default": "France"
+        }
+      ]
+    }
+  ],
   "presets": [
     {
-      "name": "Faq"
+      "name": "Faq",
+      "settings": {
+        "faq_background_color": "#f5f5f5",
+        "faq_sub_heading": "Faq",
+        "faq_heading": "Get every answers from here",
+        "faq_sub_heading_color": "#000000",
+        "faq_heading_color": "#ffffff",
+        "question_response_background_color": "#ffffff",
+        "question_text_color": "#000000",
+        "response_text_color": "#000000",
+        "icon_background_color": "#000000"
+      },
+      "blocks": [
+        {
+          "type": "question_response",
+          "settings": {
+            "question": "What is the capital of France",
+            "answer": "France"
+          }
+        }
+      ]
     }
   ]
 }
