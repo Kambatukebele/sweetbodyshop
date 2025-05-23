@@ -1,119 +1,127 @@
 <section class="hero-two">
   <div class="hero-two__container">
-    <!-- Avatars -->
-    {% comment %}
-      {{ 'product-1' | placeholder_svg_tag: 'avatar avatar-1' }}
-      {{ 'product-2' | placeholder_svg_tag: 'avatar avatar-2' }}
-      {{ 'product-3' | placeholder_svg_tag: 'avatar avatar-3' }}
-    {% endcomment %}
-    <!-- Text Block -->
-    <div class="hero-two__text-block">
-      {%- if section.blocks.size > 0 -%}
-        {%- for block in section.blocks -%}
-          {%- case block.type -%}
-            {%- when 'heading' -%}
-              {%- if block.settings.hero_two__title != blank -%}
-                <h1>
-                  {{- block.settings.hero_two__title -}}
-                  {%- if block.settings.hero_two__title_second != blank -%}
-                    <span>{{- block.settings.hero_two__title_second -}}</span>
-                  {%- endif -%}
-                </h1>
-              {%- endif -%}
+    <div class="hero-two__wrapper">
+      <!-- Avatars -->
+      {% comment %}
+        {{ 'product-1' | placeholder_svg_tag: 'avatar avatar-1' }}
+        {{ 'product-2' | placeholder_svg_tag: 'avatar avatar-2' }}
+        {{ 'product-3' | placeholder_svg_tag: 'avatar avatar-3' }}
+      {% endcomment %}
+      <!-- Text Block -->
+      <div class="hero-two__text-block">
+        {%- if section.blocks.size > 0 -%}
+          {%- for block in section.blocks -%}
+            {%- case block.type -%}
+              {%- when 'heading' -%}
+                {%- if block.settings.hero_two__title != blank -%}
+                  <h1>
+                    {{- block.settings.hero_two__title -}}
+                    {%- if block.settings.hero_two__title_second != blank -%}
+                      <span>{{- block.settings.hero_two__title_second -}}</span>
+                    {%- endif -%}
+                  </h1>
+                {%- endif -%}
 
-            {%- when 'body' -%}
-              {%- if block.settings.hero_two__body != blank -%}
-                <p>
-                  {{- block.settings.hero_two__body -}}
-                </p>
-              {%- else -%}
-                <p>
-                  Slingback fabric heels. Thin wraparound ankle strap. Squared heel and toe. Pointed toes. Padded insole
-                  with geometrical design.
-                </p>
-              {%- endif -%}
-            {%- when 'button' -%}
-              {%- if block.settings.hero_two__button_text != blank -%}
-                <button>
-                  {{- block.settings.hero_two__button_text -}}
-                </button>
-              {%- else -%}
-                <button>Browse Full Collection</button>
-              {%- endif -%}
-              <div class="text-two__extra">
-                <div>
-                  <h4>Material</h4>
-                  <p>Hydrate and replenish your skin overnight with this nourishing serum.</p>
-                </div>
-                <div>
-                  <h4>Care</h4>
-                  <p>Charged with a potent blend of AHAs, the formula gently but effectively.</p>
-                </div>
-              </div>
-          {%- endcase -%}
-        {%- endfor -%}
-      {%- else -%}
-        <h1>
-          Night Time
+              {%- when 'body' -%}
+                {%- if block.settings.hero_two__body != blank -%}
+                  <p>
+                    {{- block.settings.hero_two__body -}}
+                  </p>
+                {%- else -%}
+                  <p>
+                    Slingback fabric heels. Thin wraparound ankle strap. Squared heel and toe. Pointed toes. Padded
+                    insole with geometrical design.
+                  </p>
+                {%- endif -%}
+              {%- when 'button' -%}
+                {%- if block.settings.hero_two__button_text != blank -%}
+                  {% render 'button',
+                    title: block.settings.hero_two__button_text,
+                    href: '',
+                    class_modifier: 'hero-two__button-link'
+                  %}
+                {%- else -%}
+                  <button>Browse Full Collection</button>
+                {%- endif -%}
+            {%- endcase -%}
+          {%- endfor -%}
+        {%- else -%}
+          <h1>
+            Night Time
 
-          <span>Skin Routine</span>
-        </h1>
-        <p>
-          Slingback fabric heels. Thin wraparound ankle strap. Squared heel and toe. Pointed toes. Padded insole with
-          geometrical design.
-        </p>
-        <button>Browse Full Collection</button>
+            <span>Skin Routine</span>
+          </h1>
+          <p>
+            Slingback fabric heels. Thin wraparound ankle strap. Squared heel and toe. Pointed toes. Padded insole with
+            geometrical design.
+          </p>
+          <button>Browse Full Collection</button>
 
-        <div class="text-two__extra">
-          <div>
-            <h4>Material</h4>
-            <p>Hydrate and replenish your skin overnight with this nourishing serum.</p>
+          <div class="text-two__extra">
+            <div>
+              <h4>Material</h4>
+              <p>Hydrate and replenish your skin overnight with this nourishing serum.</p>
+            </div>
+            <div>
+              <h4>Care</h4>
+              <p>Charged with a potent blend of AHAs, the formula gently but effectively.</p>
+            </div>
           </div>
-          <div>
-            <h4>Care</h4>
-            <p>Charged with a potent blend of AHAs, the formula gently but effectively.</p>
-          </div>
-        </div>
-      {%- endif -%}
-    </div>
+        {%- endif -%}
+      </div>
 
-    <!-- Product Image -->
-    <div class="hero-two__image-block">
-      {%- if section.settings.hero_two_image -%}
-        {{- section.settings.hero_two_image | image_url: width: 600 | image_tag -}}
-      {%- else -%}
-        {{- 'product-2' | placeholder_svg_tag -}}
-      {%- endif -%}
+      <!-- Product Image -->
+      <div class="hero-two__image-block">
+        {%- if section.settings.hero_two_image -%}
+          {{- section.settings.hero_two_image | image_url: width: 600 | image_tag: class: 'hero-two__image' -}}
+        {%- else -%}
+          {{- 'product-2' | placeholder_svg_tag: 'hero-two__image' -}}
+        {%- endif -%}
+      </div>
     </div>
   </div>
 </section>
 <style>
   .hero-two {
     width: 100%;
-    height: fit-content;
     background-color: {{- section.settings.hero_two__background_color -}};
+    height: {{- section.settings.hero_two_height -}};
+    position: relative;
+
   }
   .hero-two__container {
     max-width: var(--page-width);
     margin: 0 auto;
     padding: 0 1.5rem;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .hero-two__wrapper {
     display: flex;
     width: 100%;
-    height: {{- section.settings.hero_two_height -}};
     justify-content: space-between;
     flex-direction: column;
     align-items: center;
     position: relative;
+    padding: 0px 16px;
   }
   .hero-two__text-block {
     width: 100%;
-    flex: 1 1 450px;
+    flex: 1 1 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
   }
 
   .hero-two__text-block h1 {
-    font-size: 42px;
+    font-size: 32px;
     font-weight: 900;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     color: {{- section.settings.hero_two__heading_color -}};
   }
 
@@ -124,33 +132,36 @@
 
   .hero-two__text-block p {
     font-size: 16px;
-    margin-bottom: 30px;
+    margin-bottom: 32px;
     color: {{- section.settings.hero_two__body_color -}};
+    max-width: 480px;
+    text-align: center;
   }
 
-  .hero-two__text-block button {
+  .hero-two__text-block .hero-two__button-link {
     background: {{- section.settings.hero_two__button_bg_color -}};
     color: {{- section.settings.hero_two__button_text_color -}};
-    padding: 18px 28px;
     border: none;
-    border-radius: 8px;
     font-size: 16px;
     cursor: pointer;
-    transition: background 0.3s ease;
+
   }
 
-  .hero-two__text-block button:hover {
+  .hero-two__text-block .hero-two__button-link:hover {
     background: {{- section.settings.hero_two__button_bg_color_hover -}};
   }
 
   .hero-two__image-block {
-    flex: 1 1 400px;
+    flex: 1 1 450px;
     text-align: center;
+    min-height: 400px;
+    min-width: 280px;
   }
 
-  .hero-two__image-block img {
+  .hero-two__image-block .hero-two__image {
     max-width: 100%;
-    height: auto;
+    width: 100%;
+    height: 100%;
     display: block;
     object-fit: cover;
   }
@@ -206,13 +217,21 @@
 
   @media screen and (min-width: 750px) {
     .hero-two__container {
+      padding: 0;
+      margin: 0 auto;
+    }
+    .hero-two__wrapper {
       flex-direction: column;
-      padding: 40px 20px;
+      padding: 0px 30px;
     }
 
     .hero-two__text-block h1 {
-      font-size: 62px;
+      font-size: 40px;
     }
+    .hero-two__text-block p {
+      font-size: 18px;
+    }
+
 
     .text-two__extra {
       flex-direction: row;
@@ -224,25 +243,33 @@
     }
   }
   @media screen and (min-width: 990px) {
-    .hero-two__container {
+    .hero-two {
+      height: {{- section.settings.hero_two_height_desktop -}};
+    }
+    .hero-two__wrapper {
       flex-wrap: nowrap;
       flex-direction: row;
-      padding: 40px 0px;
     }
+
     .hero-two__text-block {
       flex: 1 1 400px;
+      align-items: start;
     }
     .hero-two__text-block h1 {
-      font-size: 72px;
+      font-size: 48px;
+    }
+    .hero-two__text-block p {
+      text-align: left;
     }
     .text-two__extra {
     display: flex;
-  }
-  }
-  @media screen and (min-width: 1200px) {
-    .hero-two__text-block h1 {
-      font-size: 88px;
     }
+     .hero-two__image-block {
+    flex: 1 1 180px;
+    text-align: center;
+    max-height: auto;
+    width: 180px;
+  }
   }
 </style>
 {% schema %}
@@ -271,6 +298,31 @@
     {
       "type": "select",
       "id": "hero_two_height",
+      "label": "Height",
+      "info": "This is the height of the hero",
+      "options": [
+        {
+          "label": "70vh",
+          "value": "70vh"
+        },
+        {
+          "label": "80vh",
+          "value": "80vh"
+        },
+        {
+          "label": "90vh",
+          "value": "90vh"
+        },
+        {
+          "label": "100vh",
+          "value": "100vh"
+        }
+      ],
+      "default": "70vh"
+    },
+    {
+      "type": "select",
+      "id": "hero_two_height_desktop",
       "label": "Height",
       "info": "This is the height of the hero",
       "options": [
@@ -399,6 +451,7 @@
       "settings": {
         "hero_two__background_color": "#000000",
         "hero_two_height": "70vh",
+        "hero_two_height_desktop": "70vh",
         "hero_two__heading_color": "#ffffff",
         "hero_two__second_heading_color": "#ffffff",
         "hero_two__body_color": "#ffffff",

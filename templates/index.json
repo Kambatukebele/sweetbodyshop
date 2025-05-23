@@ -39,15 +39,16 @@
       ],
       "name": "Hero Two",
       "settings": {
-        "hero_two__background_color": "#5c1a1b",
-        "hero_two_height": "90vh",
-        "hero_two_image": "shopify://shop_images/About_image_acd5d5d9-62fb-48ff-9307-d35a829fa975_670x640.png_v_1613787669.png",
-        "hero_two__heading_color": "#ffffff",
-        "hero_two__second_heading_color": "#ffffff",
-        "hero_two__body_color": "#ffffff",
-        "hero_two__button_bg_color": "#ffffff",
-        "hero_two__button_bg_color_hover": "#f7f8f9",
-        "hero_two__button_text_color": "#000000"
+        "hero_two__background_color": "#ffffff",
+        "hero_two_height": "100vh",
+        "hero_two_height_desktop": "70vh",
+        "hero_two_image": "shopify://shop_images/image-1_5ab36ff3-9b63-43d3-860b-1043492c1558.png_v_1613787668.png",
+        "hero_two__heading_color": "#050505",
+        "hero_two__second_heading_color": "#5c1a1b",
+        "hero_two__body_color": "#212121",
+        "hero_two__button_bg_color": "#5c1a1b",
+        "hero_two__button_bg_color_hover": "#5c6c7c",
+        "hero_two__button_text_color": "#ffffff"
       }
     },
     "prove_yGBMDc": {
