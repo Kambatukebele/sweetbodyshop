@@ -7,12 +7,18 @@
             {%- when 'two-columns' -%}
               <div class="two-columns__card">
                 <div class="two-columns__text">
-                  <h2>
-                    Grass-fed, Multi Whey,<br>
-                    nebo kasein?
+                  <h2 style="color: {{ block.settings.two_columns__color_heading }}">
+                    {{ block.settings.two_columns__color_heading_text }}
                   </h2>
-                  <p>Vyber si protein, který bude vyhovovat právě tobě</p>
-                  <button class="btn">Koupit</button>
+                  <p style="color: {{ block.settings.two_columns__color_body }}">
+                    {{ block.settings.two_columns__color_body_text }}
+                  </p>
+                  {% render 'button',
+                    class_modifier: 'btn',
+                    title: block.settings.two_columns__color_btn_text,
+                    color: block.settings.two_columns__color_btn,
+                    background_color: block.settings.two_columns__bg_color_btn
+                  %}
                 </div>
                 <div class="two-columns__image">
                   {%- if block.settings.two_columns__image != blank -%}
@@ -100,14 +106,10 @@
   }
 
   .btn {
-    background-color: #1a1a1a;
     color: #fff;
     border: none;
-    padding: 18px 24px;
-    border-radius: 8px;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s;
   }
 
   .btn:hover {
@@ -165,11 +167,69 @@
     {
       "name": "Two-columns",
       "type": "two-columns",
+      "limit": 2,
       "settings": [
+        {
+          "type": "header",
+          "content": "Image",
+          "info": "Pick an image"
+        },
         {
           "type": "image_picker",
           "id": "two_columns__image",
           "label": "Two image"
+        },
+        {
+          "type": "header",
+          "content": "Text",
+          "info": "Heading, body and button text"
+        },
+        {
+          "type": "text",
+          "id": "two_columns__color_heading_text",
+          "label": "Heading",
+          "default": "Get an exclusive"
+        },
+        {
+          "type": "textarea",
+          "id": "two_columns__color_body_text",
+          "label": "description",
+          "default": "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        },
+        {
+          "type": "text",
+          "id": "two_columns__color_btn_text",
+          "label": "Button text",
+          "default": "Buy now"
+        },
+        {
+          "type": "header",
+          "content": "Color",
+          "info": "Color of heading, body and button"
+        },
+        {
+          "type": "color",
+          "id": "two_columns__color_heading",
+          "label": "Heading color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "two_columns__color_body",
+          "label": "Desc color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "two_columns__bg_color_btn",
+          "label": "Button background color",
+          "default": "#000000"
+        },
+        {
+          "type": "color",
+          "id": "two_columns__color_btn",
+          "label": "Button text color",
+          "default": "#ffffff"
         }
       ]
     }

@@ -242,6 +242,43 @@
         "image_carousel_paddingY": 36
       }
     },
+    "two_columns_RYfMkD": {
+      "type": "two-columns",
+      "blocks": {
+        "two_columns_38gNXi": {
+          "type": "two-columns",
+          "settings": {
+            "two_columns__image": "shopify://shop_images/close-up-beauty-portrait-topless-woman-with-perfect-skin-natural-make-up-holding-supplement-vitamin-omega-3-fish-oil-turquoise-background.jpg",
+            "two_columns__color_heading_text": "Get an exclusive",
+            "two_columns__color_body_text": "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "two_columns__color_btn_text": "Buy now",
+            "two_columns__color_heading": "#cf2c2c",
+            "two_columns__color_body": "#020202",
+            "two_columns__bg_color_btn": "#ba3131",
+            "two_columns__color_btn": "#ffffff"
+          }
+        },
+        "two_columns_n7aeM9": {
+          "type": "two-columns",
+          "settings": {
+            "two_columns__image": "shopify://shop_images/image-fitness-girl-opening-bottle-dietary-supplement-taking-vitamins-stay-healthy-fit.jpg",
+            "two_columns__color_heading_text": "Get an exclusive",
+            "two_columns__color_body_text": "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "two_columns__color_btn_text": "Buy now",
+            "two_columns__color_heading": "#ffffff",
+            "two_columns__color_body": "#ffffff",
+            "two_columns__bg_color_btn": "#000000",
+            "two_columns__color_btn": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "two_columns_38gNXi",
+        "two_columns_n7aeM9"
+      ],
+      "name": "Two-columns",
+      "settings": {}
+    },
     "product_description_JgYzyq": {
       "type": "product-description",
       "blocks": {
@@ -478,6 +515,117 @@
         "image_carousel_paddingY": 36
       }
     },
+    "two_columns_rhyWzT": {
+      "type": "two-columns",
+      "blocks": {
+        "two_columns_my6fzL": {
+          "type": "two-columns",
+          "settings": {
+            "two_columns__image": "shopify://shop_images/image-fitness-girl-opening-bottle-dietary-supplement-taking-vitamins-stay-healthy-fit.jpg",
+            "two_columns__color_heading_text": "Get an exclusive",
+            "two_columns__color_body_text": "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "two_columns__color_btn_text": "Buy now",
+            "two_columns__color_heading": "#ffffff",
+            "two_columns__color_body": "#ffffff",
+            "two_columns__bg_color_btn": "#000000",
+            "two_columns__color_btn": "#ffffff"
+          }
+        },
+        "two_columns_YhBBQj": {
+          "type": "two-columns",
+          "settings": {
+            "two_columns__image": "shopify://shop_images/close-up-beauty-portrait-topless-woman-with-perfect-skin-natural-make-up-holding-supplement-vitamin-omega-3-fish-oil-turquoise-background.jpg",
+            "two_columns__color_heading_text": "Get an exclusive",
+            "two_columns__color_body_text": "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "two_columns__color_btn_text": "Buy now",
+            "two_columns__color_heading": "#ffffff",
+            "two_columns__color_body": "#ffffff",
+            "two_columns__bg_color_btn": "#000000",
+            "two_columns__color_btn": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "two_columns_my6fzL",
+        "two_columns_YhBBQj"
+      ],
+      "name": "Two-columns",
+      "settings": {}
+    },
+    "product_description_Mi3Nre": {
+      "type": "product-description",
+      "blocks": {
+        "intro_QEMUqE": {
+          "type": "intro",
+          "settings": {
+            "product_description_intro": "Our Key Points"
+          }
+        },
+        "heading_QwR3LL": {
+          "type": "heading",
+          "settings": {
+            "product_description_title": "Superior design",
+            "product_description_title_two": "drop lasting quality"
+          }
+        },
+        "description_XaiXey": {
+          "type": "description",
+          "settings": {
+            "product_description_body_description": "Crafted with superior design, engineered with precision, and built to commitment to excellence ensures every detail in meticulously perfected, delivering unparalleled quality and durability."
+          }
+        },
+        "product_description_left_cQM8Xx": {
+          "type": "product_description_left",
+          "settings": {
+            "product_description_title_left_one": "Preserves Purity",
+            "product_description_desc_left_one": "Ensures natural essence, free and from toxins, additives",
+            "product_description_title_left_two": "Preserves Purity",
+            "product_description_desc_left_two": "Ensures natural essence, free and from toxins, additives",
+            "product_description_title_left_three": "Preserves Purity",
+            "product_description_desc_left_three": "Ensures natural essence, free and from toxins, additives"
+          }
+        },
+        "image_dNkDrk": {
+          "type": "image",
+          "settings": {
+            "product_description_image": "shopify://shop_images/G-1_1_1.png"
+          }
+        },
+        "product_description_right_4f7hJ4": {
+          "type": "product_description_right",
+          "settings": {
+            "product_description_title_right_one": "Preserves Purity",
+            "product_description_desc_right_one": "Ensures natural essence, free and from toxins, additives",
+            "product_description_title_right_two": "Preserves Purity",
+            "product_description_desc_right_two": "Ensures natural essence, free and from toxins, additives",
+            "product_description_title_right_three": "Preserves Purity",
+            "product_description_desc_right_three": "Ensures natural essence, free and from toxins, additives"
+          }
+        },
+        "footer_NCypf6": {
+          "type": "footer",
+          "settings": {
+            "product_description_footer_textOne": "Let's make something great work together.",
+            "product_description_footer_textTwo": "Get Free Quote",
+            "product_description_footer_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "intro_QEMUqE",
+        "heading_QwR3LL",
+        "description_XaiXey",
+        "product_description_left_cQM8Xx",
+        "image_dNkDrk",
+        "product_description_right_4f7hJ4",
+        "footer_NCypf6"
+      ],
+      "name": "Product description",
+      "settings": {
+        "product_description_paddingY": 36,
+        "product_description_background_color": "#f9f6f2"
+      }
+    },
     "slider_HejBdt": {
       "type": "slider",
       "blocks": {
@@ -578,37 +726,6 @@
         "product_carousel_list_color": "#ededed"
       }
     },
-    "product_description_Mi3Nre": {
-      "type": "product-description",
-      "name": "Product description",
-      "settings": {
-        "product_description_paddingY": 36,
-        "product_description_background_color": "#f9f6f2"
-      }
-    },
-    "two_columns_RYfMkD": {
-      "type": "two-columns",
-      "blocks": {
-        "two_columns_38gNXi": {
-          "type": "two-columns",
-          "settings": {
-            "two_columns__image": "shopify://shop_images/close-up-beauty-portrait-topless-woman-with-perfect-skin-natural-make-up-holding-supplement-vitamin-omega-3-fish-oil-turquoise-background.jpg"
-          }
-        },
-        "two_columns_n7aeM9": {
-          "type": "two-columns",
-          "settings": {
-            "two_columns__image": "shopify://shop_images/image-fitness-girl-opening-bottle-dietary-supplement-taking-vitamins-stay-healthy-fit.jpg"
-          }
-        }
-      },
-      "block_order": [
-        "two_columns_38gNXi",
-        "two_columns_n7aeM9"
-      ],
-      "name": "Two-columns",
-      "settings": {}
-    },
     "featured_blog_PVebUA": {
       "type": "featured-blog",
       "name": "t:sections.featured-blog.presets.name",
@@ -629,12 +746,12 @@
     },
     "ingredient_DnRTQV": {
       "type": "ingredient",
+      "disabled": true,
       "name": "Mixlix Ingredients",
       "settings": {}
     },
     "faq_NPCGpD": {
       "type": "faq",
-      "disabled": true,
       "name": "Faq",
       "settings": {}
     }
@@ -643,13 +760,14 @@
     "hero_two_7Tqddg",
     "prove_yGBMDc",
     "image_carousel_9JiNxC",
+    "two_columns_RYfMkD",
     "product_description_JgYzyq",
     "product_carousel_EFXgGR",
     "image_carousel_KUgYgg",
+    "two_columns_rhyWzT",
+    "product_description_Mi3Nre",
     "slider_HejBdt",
     "product_carousel_YLCxGC",
-    "product_description_Mi3Nre",
-    "two_columns_RYfMkD",
     "featured_blog_PVebUA",
     "ingredient_DnRTQV",
     "faq_NPCGpD"
