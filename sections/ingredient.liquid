@@ -1,48 +1,54 @@
 <section class="ingredients-section">
-  <div class="ingredients-section__wrapper">
-    <div class="ingredients-section__left-column">
-      <span class="ingredients-section__subtitle">Increased Energy With Mixlix</span>
-      <h1 class="ingredients-section__title">Mixlix Ingredients</h1>
-      <p class="ingredients-section__description">
-        There are many variations of passages of lorem ipsum that available but the majority have alteration in some
-        form by injected humour.
-      </p>
+  <div class="ingredients-section__container">
+    <div class="ingredients-section__wrapper">
+      <div class="ingredients-section__left-column">
+        <span class="ingredients-section__subtitle">Increased Energy With Mixlix</span>
+        <h1 class="ingredients-section__title">Mixlix Ingredients</h1>
+        <p class="ingredients-section__description">
+          There are many variations of passages of lorem ipsum that available but the majority have alteration in some
+          form by injected humour.
+        </p>
 
-      <div class="ingredients-section__feature">
-        <div class="ingredients-section__feature-text">
-          <h3>Helps You Stick To Your Diet</h3>
-          <p>A thing added to something else in order to complete or enhance it.</p>
+        <div class="ingredients-section__feature">
+          <div class="ingredients-section__feature-text">
+            <h3>Helps You Stick To Your Diet</h3>
+            <p>A thing added to something else in order to complete or enhance it.</p>
+          </div>
+          <div class="ingredients-section__feature-icon">💊</div>
         </div>
-        <div class="ingredients-section__feature-icon">💊</div>
+
+        <div class="ingredients-section__feature">
+          <div class="ingredients-section__feature-text">
+            <h3>Only 3g Net Carbs In Every Jar</h3>
+            <p>A thing added to something else in order to complete or enhance it.</p>
+          </div>
+          <div class="ingredients-section__feature-icon">🥄</div>
+        </div>
+
+        <div class="ingredients-section__feature">
+          <div class="ingredients-section__feature-text">
+            <h3>Clean Ingredients Only</h3>
+            <p>A thing added to something else in order to complete or enhance it.</p>
+          </div>
+          <div class="ingredients-section__feature-icon">🍃</div>
+        </div>
+
+        <div class="ingredients-section__feature">
+          <div class="ingredients-section__feature-text">
+            <h3>Ingredients To Fuel Your Body</h3>
+            <p>A thing added to something else in order to complete or enhance it.</p>
+          </div>
+          <div class="ingredients-section__feature-icon">⚡</div>
+        </div>
       </div>
 
-      <div class="ingredients-section__feature">
-        <div class="ingredients-section__feature-text">
-          <h3>Only 3g Net Carbs In Every Jar</h3>
-          <p>A thing added to something else in order to complete or enhance it.</p>
-        </div>
-        <div class="ingredients-section__feature-icon">🥄</div>
+      <div class="ingredients-section__right-column">
+        {%- if section.settings.image != blank -%}
+          {{ section.settings.image | image_url: width: 500 | image_tag: class: 'ingredients-section__image' }}
+        {%- else -%}
+          {{- 'product-6' | placeholder_svg_tag: 'ingredients-section__image' -}}
+        {%- endif -%}
       </div>
-
-      <div class="ingredients-section__feature">
-        <div class="ingredients-section__feature-text">
-          <h3>Clean Ingredients Only</h3>
-          <p>A thing added to something else in order to complete or enhance it.</p>
-        </div>
-        <div class="ingredients-section__feature-icon">🍃</div>
-      </div>
-
-      <div class="ingredients-section__feature">
-        <div class="ingredients-section__feature-text">
-          <h3>Ingredients To Fuel Your Body</h3>
-          <p>A thing added to something else in order to complete or enhance it.</p>
-        </div>
-        <div class="ingredients-section__feature-icon">⚡</div>
-      </div>
-    </div>
-
-    <div class="ingredients-section__right-column">
-      {{- 'product-6' | placeholder_svg_tag: 'ingredients-section__image' -}}
     </div>
   </div>
 </section>
@@ -67,29 +73,34 @@
   .ingredients-section__right-column {
     flex: 1;
     text-align: center;
-  }
-  .ingredients-section__right-column .ingredients-section__right-column {
     max-width: 100%;
     border-radius: 8px;
+    border: 1px solid #e5e5e5;
+  }
+  .ingredients-section__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
 
   .ingredients-section__subtitle {
     color: #75d728;
     font-weight: bold;
-    font-size: 0.9rem;
+    font-size: 12px;
     text-transform: uppercase;
     display: inline-block;
     margin-bottom: 10px;
   }
 
   .ingredients-section__title {
-    font-size: 2.5rem;
+    font-size: 24px;
     font-weight: 800;
     margin-bottom: 10px;
   }
 
   .ingredients-section__description {
-    font-size: 1rem;
+    font-size: 16px;
     color: #666;
     margin-bottom: 30px;
   }
@@ -107,13 +118,13 @@
   }
 
   .ingredients-section__feature-text h3 {
-    font-size: 1.1rem;
+    font-size: 18px;
     font-weight: bold;
     margin-bottom: 6px;
   }
   .ingredients-section__feature-text p {
     color: #555;
-    font-size: 0.9rem;
+    font-size: 16px;
   }
 
   .ingredients-section__feature-icon {
@@ -138,6 +149,13 @@
     .ingredients-section__left-column {
       padding-right: 40px;
     }
+    .ingredients-section__subtitle {
+      font-size: 14px;
+    }
+
+    .ingredients-section__title {
+      font-size: 42px;
+    }
   }
 </style>
 
@@ -145,7 +163,13 @@
 {
   "name": "Mixlix Ingredients",
   "class": "mixlix_ingredients",
-  "settings": [],
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ],
   "presets": [
     {
       "name": "Mixlix Ingredients"
