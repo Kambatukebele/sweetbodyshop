@@ -17,14 +17,14 @@
                 {{ 'product-1' | placeholder_svg_tag }}
               {%- endif -%}
               <div class="card-content">
-                <h3>
+                <h3 style="color: {{ block.settings.image_carousel_heading_color }}">
                   {%- if block.settings.image_carousel_heading != blank -%}
                     {{ block.settings.image_carousel_heading }}
                   {%- else -%}
                     Get exclusive products
                   {%- endif -%}
                 </h3>
-                <p>
+                <p style="color: {{ block.settings.image_carousel_body_color }}">
                   {%- if block.settings.image_carousel_body != blank -%}
                     {{ block.settings.image_carousel_body }}
                   {%- else -%}
@@ -34,7 +34,9 @@
                 {% render 'button',
                   href: block.settings.image_carousel_button_url,
                   title: block.settings.image_carousel_button_text,
-                  class_modifier: 'card-content-button'
+                  class_modifier: 'card-content-button',
+                  color: block.settings.image_carousel_text_color,
+                  background_color: block.settings.image_carousel_bg_color
                 %}
               </div>
             </div>
@@ -108,59 +110,23 @@
     left: 0;
     right: 0;
   }
-  {%- if section.blocks.size > 0 -%}
-    {%- for block in section.blocks -%}
-    {%- case block.type -%}
-      {%- when "image_carousel" -%}
-        .card-content h3 {
-          color: {{ block.settings.image_carousel_heading_color }};
-          font-size: 16px;
-          font-family: {{ settings.type_header_font.family }};
-          text-transform: {{ section.settings.image_carousel_heading_transform }};
-          margin-bottom: 8px;
-        }
-        .card-content p {
-          color: {{ block.settings.image_carousel_body_color }};
-          font-size: 14px;
-          margin-bottom: 12px;
-          font-family: {{ settings.type_body_font.family }};
-          color: {{ section.settings.image_carousel_body_color }};
-        }
-        .card-content .card-content-button {
-          background: {{ block.settings.image_carousel_bg_color }};
-          color: {{ block.settings.image_carousel_text_color }};
-          font-size: 15px;
-          font-weight: 600;
+  .card-content h3 {
+    font-size: 16px;
+    font-family: {{ settings.type_header_font.family }};
+    text-transform: {{ section.settings.image_carousel_heading_transform }};
+    margin-bottom: 8px;
+  }
+  .card-content p {
+    font-size: 14px;
+    margin-bottom: 12px;
+    font-family: {{ settings.type_body_font.family }};
+    color: {{ section.settings.image_carousel_body_color }};
+  }
+  .card-content .card-content-button {
+    font-size: 15px;
+    font-weight: 600;
 
-        }
-
-    {%- endcase -%}
-  {%- endfor -%}
-
-    {%- else -%}
-      .card-content h3 {
-          color: black;
-          font-size: 16px;
-          font-family: {{ settings.type_header_font.family }};
-          text-transform: {{ section.settings.image_carousel_heading_transform }};
-          margin-bottom: 8px;
-        }
-        .card-content p {
-          color: black;
-          font-size: 14px;
-          margin-bottom: 12px;
-          font-family: {{ settings.type_body_font.family }};
-          color: {{ section.settings.image_carousel_body_color }};
-        }
-        .card-content .card-content-button {
-          background: black;
-          color: white;
-          font-size: 15px;
-          font-weight: 600;
-
-        }
-
-  {%- endif -%}
+  }
 
 
   /* Navigation arrows */
@@ -217,9 +183,13 @@
   }
 </style>
 <script>
-  const carousel = document.getElementById('carousel-{{ section.id }}');
-  const prevBtn = document.getElementById('prevBtn-{{ section.id }}');
-  const nextBtn = document.getElementById('nextBtn-{{ section.id }}');
+  const sectionId = `{{ section.id }}`;
+  const carousel = document.getElementById(`carousel-${sectionId}`);
+  const prevBtn = document.getElementById(`prevBtn-${sectionId}`);
+  const nextBtn = document.getElementById(`nextBtn-${sectionId}`);
+
+  console.log(carousel);
+  console.log(1);
 
   prevBtn.addEventListener('click', () => {
     carousel.scrollBy({ left: -carousel.offsetWidth, behavior: 'smooth' });

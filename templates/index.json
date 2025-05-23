@@ -112,21 +112,21 @@
             "image_carousel_image": "shopify://shop_images/Natios_Iron_Banner_02.webp",
             "image_carousel_heading": "Get excluvice deal",
             "image_carousel_body": "Body description",
-            "image_carousel_button_text": "show mores",
+            "image_carousel_button_text": "show more",
             "image_carousel_button_url": "",
             "image_carousel_heading_color": "#ffffff",
             "image_carousel_heading_transform": "none",
             "image_carousel_body_color": "#ffffff",
-            "image_carousel_bg_color": "#000000",
-            "image_carousel_text_color": "#ffffff"
+            "image_carousel_bg_color": "#ffffff",
+            "image_carousel_text_color": "#000000"
           }
         },
         "image_carousel_ppNnfb": {
           "type": "image_carousel",
           "settings": {
             "image_carousel_image": "shopify://shop_images/Natios_Liver_Banner.webp",
-            "image_carousel_heading": "Heading title",
-            "image_carousel_body": "Body description",
+            "image_carousel_heading": "Heading titless",
+            "image_carousel_body": "Body descriptions",
             "image_carousel_button_text": "show more",
             "image_carousel_button_url": "",
             "image_carousel_heading_color": "#000000",
@@ -155,15 +155,15 @@
           "type": "image_carousel",
           "settings": {
             "image_carousel_image": "shopify://shop_images/Natios_Tribulus_Banner_2.webp",
-            "image_carousel_heading": "Heading title",
+            "image_carousel_heading": "Heading titles",
             "image_carousel_body": "Body description",
             "image_carousel_button_text": "show more",
             "image_carousel_button_url": "",
-            "image_carousel_heading_color": "#000000",
+            "image_carousel_heading_color": "#ffffff",
             "image_carousel_heading_transform": "none",
-            "image_carousel_body_color": "#000000",
-            "image_carousel_bg_color": "#000000",
-            "image_carousel_text_color": "#ffffff"
+            "image_carousel_body_color": "#ffffff",
+            "image_carousel_bg_color": "#ffffff",
+            "image_carousel_text_color": "#000000"
           }
         },
         "image_carousel_yiXxYM": {
@@ -189,11 +189,11 @@
             "image_carousel_body": "Body description",
             "image_carousel_button_text": "show more",
             "image_carousel_button_url": "",
-            "image_carousel_heading_color": "#000000",
+            "image_carousel_heading_color": "#f2f2f2",
             "image_carousel_heading_transform": "none",
-            "image_carousel_body_color": "#000000",
-            "image_carousel_bg_color": "#000000",
-            "image_carousel_text_color": "#ffffff"
+            "image_carousel_body_color": "#ffffff",
+            "image_carousel_bg_color": "#e2e2e2",
+            "image_carousel_text_color": "#000000"
           }
         },
         "image_carousel_Db6qae": {
@@ -204,9 +204,9 @@
             "image_carousel_body": "Body description",
             "image_carousel_button_text": "show more",
             "image_carousel_button_url": "",
-            "image_carousel_heading_color": "#000000",
+            "image_carousel_heading_color": "#ffffff",
             "image_carousel_heading_transform": "none",
-            "image_carousel_body_color": "#000000",
+            "image_carousel_body_color": "#ececec",
             "image_carousel_bg_color": "#000000",
             "image_carousel_text_color": "#ffffff"
           }
@@ -219,11 +219,11 @@
             "image_carousel_body": "Body description",
             "image_carousel_button_text": "show more",
             "image_carousel_button_url": "",
-            "image_carousel_heading_color": "#000000",
+            "image_carousel_heading_color": "#ffffff",
             "image_carousel_heading_transform": "none",
-            "image_carousel_body_color": "#000000",
-            "image_carousel_bg_color": "#000000",
-            "image_carousel_text_color": "#ffffff"
+            "image_carousel_body_color": "#ffffff",
+            "image_carousel_bg_color": "#ffffff",
+            "image_carousel_text_color": "#000000"
           }
         }
       },
