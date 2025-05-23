@@ -85,7 +85,7 @@
   .hero-two {
     width: 100%;
     background-color: {{- section.settings.hero_two__background_color -}};
-    height: {{- section.settings.hero_two_height -}};
+    height: calc({{- section.settings.hero_two_height }} - 100px);
     position: relative;
 
   }
@@ -152,10 +152,8 @@
   }
 
   .hero-two__image-block {
-    flex: 1 1 450px;
     text-align: center;
-    min-height: 400px;
-    min-width: 280px;
+    width: 280px;
   }
 
   .hero-two__image-block .hero-two__image {
@@ -214,6 +212,12 @@
     top: 20px;
     right: 10%;
   }
+  @media screen and (min-width: 450px) {
+    .hero-two__image-block {
+      width: 380px;
+    }
+
+  }
 
   @media screen and (min-width: 750px) {
     .hero-two__container {
@@ -264,12 +268,9 @@
     .text-two__extra {
     display: flex;
     }
-     .hero-two__image-block {
-    flex: 1 1 180px;
-    text-align: center;
-    max-height: auto;
-    width: 180px;
-  }
+    .hero-two__image-block {
+      width: 600px;
+    }
   }
 </style>
 {% schema %}
