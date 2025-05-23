@@ -1,42 +1,45 @@
 <section class="benefits">
   <div class="benefits__container">
     <div class="benefits__wrapper">
-      <div class="benefits__item">
-        {{ 'icon-24.svg' | inline_asset_content }}
-        {% comment %} <img src="path/to/your/icons/24h.svg" alt="Rychlé doručení" class="benefits__icon"> {% endcomment %}
-        <div>
-          <h4>Rychlé doručení</h4>
-          <p>následující pracovní den</p>
-        </div>
-      </div>
-      <div class="benefits__item">
-        {{ 'icon-delivery.svg' | inline_asset_content }}
-        <div>
-          <h4>Doprava zdarma</h4>
-          <p>při objednávce nad 1500 Kč</p>
-        </div>
-      </div>
-      <div class="benefits__item">
-        {{ 'icon-customer-service.svg' | inline_asset_content }}
-        <div>
-          <h4>Zákaznická podpora</h4>
-          <p>každý všední den 8:00–16:00</p>
-        </div>
-      </div>
-      <div class="benefits__item">
-        {{ 'icon-gift.svg' | inline_asset_content }}
-        <div>
-          <h4>Dárek zdarma</h4>
-          <p>při objednávce nad 1200 Kč</p>
-        </div>
-      </div>
-      <div class="benefits__item">
-        {{ 'icon-package.svg' | inline_asset_content }}
-        <div>
-          <h4>Produkty skladem</h4>
-          <p>ihned k odeslání</p>
-        </div>
-      </div>
+      {%- assign icons = 'icon-24.svg, icon-delivery.svg, icon-customer-service.svg, icon-gift.svg, icon-package.svg'
+        | split: ','
+      -%}
+      {%- if section.blocks.size > 0 -%}
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'benefits' -%}
+              <div class="benefits__item">
+                {{ icons[forloop.index0] | strip | inline_asset_content }}
+                <div>
+                  <h4>
+                    {%- if block.settings.benefits_title != blank -%}
+                      {{- block.settings.benefits_title -}}
+                    {%- else -%}
+                      Quick delivery
+                    {%- endif -%}
+                  </h4>
+                  <p>
+                    {%- if block.settings.benefits_description != blank -%}
+                      {{- block.settings.benefits_description -}}
+                    {%- else -%}
+                      Quick delivery
+                    {%- endif -%}
+                  </p>
+                </div>
+              </div>
+          {%- endcase -%}
+        {%- endfor -%}
+      {%- else -%}
+        {%- for icon in icons -%}
+          <div class="benefits__item">
+            {{ icon | inline_asset_content }}
+            <div>
+              <h4>Rychlé doručení</h4>
+              <p>následující pracovní den</p>
+            </div>
+          </div>
+        {%- endfor -%}
+      {%- endif -%}
     </div>
   </div>
 </section>
@@ -45,6 +48,8 @@
   .benefits {
     width: 100%;
     height: fit-content;
+    background-color: {{ section.settings.benefits_background_color }};
+    color: {{ section.settings.benefits_text_color }};
   }
 
   .benefits__container {
@@ -88,13 +93,14 @@
     margin: 0;
     font-size: 16px;
     font-weight: 600;
-    color: #333;
+    color: {{ section.settings.benefits_text_color }};
   }
 
   .benefits__item p {
     margin: 0;
     font-size: 14px;
-    color: #666;
+    color: {{ section.settings.benefits_text_color }};
+
   }
 
   @media screen and (min-width: 750px) {
@@ -116,17 +122,75 @@
       scroll-snap-align: start;
     }
   }
+  @media screen and (min-width: 1200px) {
+    .benefits__wrapper {
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      justify-content: space-between;
+    }
+  }
 </style>
 
 {% schema %}
 {
-  "name": "Prove",
+  "name": "Benefits",
   "class": "prove",
-  "settings": [],
+  "settings": [
+    {
+      "type": "color",
+      "id": "benefits_background_color",
+      "label": "Background color",
+      "default": "#000000",
+      "info": "Background color"
+    },
+    {
+      "type": "color",
+      "id": "benefits_text_color",
+      "label": "Text color",
+      "default": "#ffffff",
+      "info": "Text color"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Benefits",
+      "type": "benefits",
+      "limit": 5,
+      "settings": [
+        {
+          "type": "text",
+          "id": "benefits_title",
+          "label": "Title",
+          "default": "Quick delivery",
+          "info": "Benefits title",
+          "placeholder": "Quick delivery"
+        },
+        {
+          "type": "textarea",
+          "id": "benefits_description",
+          "label": "Description",
+          "default": "Free delivery",
+          "info": "Benefits description",
+          "placeholder": "Free delivery"
+        }
+      ]
+    }
+  ],
   "presets": [
     {
-      "name": "Prove",
-      "settings": {}
+      "name": "Benefits",
+      "settings": {
+        "benefits_background_color": "#000000",
+        "benefits_text_color": "#ffffff"
+      },
+      "blocks": [
+        {
+          "type": "benefits"
+        }
+      ]
     }
   ]
 }

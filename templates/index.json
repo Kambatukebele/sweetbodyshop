@@ -53,8 +53,55 @@
     },
     "prove_yGBMDc": {
       "type": "prove",
+      "blocks": {
+        "benefits_JQatn6": {
+          "type": "benefits",
+          "settings": {
+            "benefits_title": "Quick delivery",
+            "benefits_description": "Free delivery"
+          }
+        },
+        "benefits_rbwPwg": {
+          "type": "benefits",
+          "settings": {
+            "benefits_title": "Quick delivery",
+            "benefits_description": "Free delivery"
+          }
+        },
+        "benefits_HQD73y": {
+          "type": "benefits",
+          "settings": {
+            "benefits_title": "Quick delivery",
+            "benefits_description": "Free delivery"
+          }
+        },
+        "benefits_w9WB3V": {
+          "type": "benefits",
+          "settings": {
+            "benefits_title": "Quick delivery",
+            "benefits_description": "Free delivery"
+          }
+        },
+        "benefits_XG7mLn": {
+          "type": "benefits",
+          "settings": {
+            "benefits_title": "Quick delivery",
+            "benefits_description": "Free delivery"
+          }
+        }
+      },
+      "block_order": [
+        "benefits_JQatn6",
+        "benefits_rbwPwg",
+        "benefits_HQD73y",
+        "benefits_w9WB3V",
+        "benefits_XG7mLn"
+      ],
       "name": "Prove",
-      "settings": {}
+      "settings": {
+        "benefits_background_color": "#f5f5f5",
+        "benefits_text_color": "#000000"
+      }
     },
     "image_carousel_9JiNxC": {
       "type": "image-carousel",
