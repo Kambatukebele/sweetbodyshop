@@ -1,7 +1,10 @@
 <section class="carousel-section">
-  <button class="arrow left" id="prevBtn">&#10094;</button>
+  <span id="prevBtn-{{ section.id }}" class="arrow left">
+    {{ 'icon-chevron-right.svg' | inline_asset_content }}
+  </span>
+  {% comment %} <button class="arrow left" id="prevBtn-{{ section.id }}">&#10094;</button> {% endcomment %}
 
-  <div class="carousel-container" id="carousel">
+  <div class="carousel-container" id="carousel-{{ section.id }}">
     <!-- Repeat this card block 8 times with different content/images -->
     {%- if section.blocks.size > 0 -%}
       {%- for block in section.blocks -%}
@@ -14,9 +17,25 @@
                 {{ 'product-1' | placeholder_svg_tag }}
               {%- endif -%}
               <div class="card-content">
-                <h3>Exkluzivní péče o játra s NATIOS Liver Complex💥</h3>
-                <p>Standardizované extrakty pro komplexní podporu jater.</p>
-                <button>Zobrazit</button>
+                <h3>
+                  {%- if block.settings.image_carousel_heading != blank -%}
+                    {{ block.settings.image_carousel_heading }}
+                  {%- else -%}
+                    Get exclusive products
+                  {%- endif -%}
+                </h3>
+                <p>
+                  {%- if block.settings.image_carousel_body != blank -%}
+                    {{ block.settings.image_carousel_body }}
+                  {%- else -%}
+                    50% OFF on every items in the store and free shipping to your address
+                  {%- endif -%}
+                </p>
+                {% render 'button',
+                  href: block.settings.image_carousel_button_url,
+                  title: block.settings.image_carousel_button_text,
+                  class_modifier: 'card-content-button'
+                %}
               </div>
             </div>
         {%- endcase -%}
@@ -35,9 +54,12 @@
       {%- endfor -%}
     {%- endif -%}
   </div>
-
-  <button class="arrow right" id="nextBtn">&#10095;</button>
+  <span id="nextBtn-{{ section.id }}" class="arrow right">
+    {{ 'icon-chevron-right.svg' | inline_asset_content }}
+  </span>
+  {% comment %} <button class="arrow right" id="nextBtn-{{ section.id }}">&#10095;</button> {% endcomment %}
 </section>
+
 <style>
   .carousel-section {
     padding-top: {{- section.settings.image_carousel_paddingY -}}px;
@@ -86,57 +108,87 @@
     left: 0;
     right: 0;
   }
+  {%- if section.blocks.size > 0 -%}
+    {%- for block in section.blocks -%}
+    {%- case block.type -%}
+      {%- when "image_carousel" -%}
+        .card-content h3 {
+          color: {{ block.settings.image_carousel_heading_color }};
+          font-size: 16px;
+          font-family: {{ settings.type_header_font.family }};
+          text-transform: {{ section.settings.image_carousel_heading_transform }};
+          margin-bottom: 8px;
+        }
+        .card-content p {
+          color: {{ block.settings.image_carousel_body_color }};
+          font-size: 14px;
+          margin-bottom: 12px;
+          font-family: {{ settings.type_body_font.family }};
+          color: {{ section.settings.image_carousel_body_color }};
+        }
+        .card-content .card-content-button {
+          background: {{ block.settings.image_carousel_bg_color }};
+          color: {{ block.settings.image_carousel_text_color }};
+          font-size: 15px;
+          font-weight: 600;
 
-  .card-content h3 {
-    font-size: 18px;
-    font-family: {{ settings.type_header_font.family }};
-    color: {{ section.settings.image_carousel_heading_color }};
-    text-transform: {{ section.settings.image_carousel_heading_transform }};
-    margin-bottom: 8px;
-  }
+        }
 
-  .card-content p {
-    font-size: 14px;
-    margin-bottom: 12px;
-    font-family: {{ settings.type_body_font.family }};
-    color: {{ section.settings.image_carousel_body_color }};
-  }
+    {%- endcase -%}
+  {%- endfor -%}
 
-  .card-content button {
-    background: {{ section.settings.image_carousel_bg_color }};
-    color: {{ section.settings.image_carousel_text_color }};
-    font-size: 14px;
-    font-weight: 600;
-    color: #fff;
-    padding: 16px 14px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-  }
+    {%- else -%}
+      .card-content h3 {
+          color: black;
+          font-size: 16px;
+          font-family: {{ settings.type_header_font.family }};
+          text-transform: {{ section.settings.image_carousel_heading_transform }};
+          margin-bottom: 8px;
+        }
+        .card-content p {
+          color: black;
+          font-size: 14px;
+          margin-bottom: 12px;
+          font-family: {{ settings.type_body_font.family }};
+          color: {{ section.settings.image_carousel_body_color }};
+        }
+        .card-content .card-content-button {
+          background: black;
+          color: white;
+          font-size: 15px;
+          font-weight: 600;
+
+        }
+
+  {%- endif -%}
+
 
   /* Navigation arrows */
-  .arrow {
+   .arrow {
     position: absolute;
+    background: white;
     top: 50%;
     transform: translateY(-50%);
-    background: #fff;
     border: none;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     width: 40px;
     height: 40px;
-    font-size: 24px;
     cursor: pointer;
     z-index: 10;
-    border-radius: 50%;
+    border-radius: 50%;{% comment %}{% endcomment %}
   }
 
   .arrow.left {
     left: 5px;
+    transform: rotate(180deg);
   }
 
   .arrow.right {
     right: 5px;
   }
+
+
+
 
   /* Responsive breakpoints */
   @media (min-width: 640px) {
@@ -145,21 +197,29 @@
     }
   }
 
+  @media (min-width: 750px) {
+    .card-content h3 {
+      font-size: 18px;
+    }
+
+    .card-content p {
+    font-size: 16px;
+
+    }
+  }
   @media (min-width: 900px) {
     .card {
       flex: 0 0 23%;
     }
-  }
-  @media (min-width: 1200px) {
-    .card-content h3 {
+     .card-content h3 {
       font-size: 20px;
     }
   }
 </style>
 <script>
-  const carousel = document.getElementById('carousel');
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
+  const carousel = document.getElementById('carousel-{{ section.id }}');
+  const prevBtn = document.getElementById('prevBtn-{{ section.id }}');
+  const nextBtn = document.getElementById('nextBtn-{{ section.id }}');
 
   prevBtn.addEventListener('click', () => {
     carousel.scrollBy({ left: -carousel.offsetWidth, behavior: 'smooth' });
@@ -184,58 +244,6 @@
       "step": 1,
       "unit": "px",
       "default": 36
-    },
-    {
-      "type": "header",
-      "content": "Heading, body and button color"
-    },
-    {
-      "type": "color",
-      "id": "image_carousel_heading_color",
-      "label": "Heading color",
-      "default": "#000"
-    },
-    {
-      "type": "select",
-      "id": "image_carousel_heading_transform",
-      "label": "Heading text transform",
-      "options": [
-        {
-          "label": "None",
-          "value": "none"
-        },
-        {
-          "label": "Uppercase",
-          "value": "uppercase"
-        },
-        {
-          "label": "Lowercase",
-          "value": "lowercase"
-        },
-        {
-          "label": "Capitalize",
-          "value": "capitalize"
-        }
-      ],
-      "default": "none"
-    },
-    {
-      "type": "color",
-      "id": "image_carousel_body_color",
-      "label": "Body color",
-      "default": "#000"
-    },
-    {
-      "type": "color",
-      "id": "image_carousel_bg_color",
-      "label": "Background button_color",
-      "default": "#000"
-    },
-    {
-      "type": "color",
-      "id": "image_carousel_text_color",
-      "label": "Text button_color",
-      "default": "#fff"
     }
   ],
   "blocks": [
@@ -248,6 +256,92 @@
           "type": "image_picker",
           "id": "image_carousel_image",
           "label": "Image"
+        },
+        {
+          "type": "header",
+          "content": "Heading, body and button text"
+        },
+        {
+          "type": "text",
+          "id": "image_carousel_heading",
+          "label": "Title",
+          "default": "Heading title",
+          "info": "This is the heading title",
+          "placeholder": "Heading title"
+        },
+        {
+          "type": "textarea",
+          "id": "image_carousel_body",
+          "label": "Description",
+          "default": "Body description",
+          "info": "Body description",
+          "placeholder": "Body description"
+        },
+        {
+          "type": "text",
+          "id": "image_carousel_button_text",
+          "label": "Button text",
+          "default": "show more",
+          "info": "Button text",
+          "placeholder": "Buy now"
+        },
+        {
+          "type": "url",
+          "id": "image_carousel_button_url",
+          "label": "Button URL",
+          "info": "Button url"
+        },
+        {
+          "type": "header",
+          "content": "Heading, body and button color"
+        },
+        {
+          "type": "color",
+          "id": "image_carousel_heading_color",
+          "label": "Heading color",
+          "default": "#000000"
+        },
+        {
+          "type": "select",
+          "id": "image_carousel_heading_transform",
+          "label": "Heading text transform",
+          "options": [
+            {
+              "label": "None",
+              "value": "none"
+            },
+            {
+              "label": "Uppercase",
+              "value": "uppercase"
+            },
+            {
+              "label": "Lowercase",
+              "value": "lowercase"
+            },
+            {
+              "label": "Capitalize",
+              "value": "capitalize"
+            }
+          ],
+          "default": "none"
+        },
+        {
+          "type": "color",
+          "id": "image_carousel_body_color",
+          "label": "Body color",
+          "default": "#000"
+        },
+        {
+          "type": "color",
+          "id": "image_carousel_bg_color",
+          "label": "Background button_color",
+          "default": "#5C1A1B"
+        },
+        {
+          "type": "color",
+          "id": "image_carousel_text_color",
+          "label": "Text button_color",
+          "default": "#fff"
         }
       ]
     }
@@ -256,11 +350,7 @@
     {
       "name": "Image carousel",
       "settings": {
-        "image_carousel_paddingY": 36,
-        "image_carousel_heading_color": "#000",
-        "image_carousel_body_color": "#000",
-        "image_carousel_bg_color": "#000",
-        "image_carousel_text_color": "#fff"
+        "image_carousel_paddingY": 36
       },
       "blocks": []
     }
