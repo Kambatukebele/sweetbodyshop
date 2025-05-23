@@ -244,10 +244,99 @@
     },
     "product_description_JgYzyq": {
       "type": "product-description",
+      "blocks": {
+        "intro_WcYyDC": {
+          "type": "intro",
+          "settings": {
+            "product_description_intro": "Our Key Pointssss"
+          }
+        },
+        "heading_iegNEc": {
+          "type": "heading",
+          "settings": {
+            "product_description_title": "Superior designss",
+            "product_description_title_two": "drop lasting qualityss"
+          }
+        },
+        "description_4tTQNY": {
+          "type": "description",
+          "settings": {
+            "product_description_body_description": "Crafted with superior design, engineered with precision, and built to commitment to excellence ensures every detail in meticulously perfected, delivering unparalleled quality and durability.sss"
+          }
+        },
+        "product_description_left_mtUtwM": {
+          "type": "product_description_left",
+          "settings": {
+            "product_description_title_left_one": "Preserves Purity",
+            "product_description_desc_left_one": "Ensures natural essence, free and from toxins, additives",
+            "product_description_title_left_two": "Preserves Purity",
+            "product_description_desc_left_two": "Ensures natural essence, free and from toxins, additives",
+            "product_description_title_left_three": "Preserves Purity",
+            "product_description_desc_left_three": "Ensures natural essence, free and from toxins, additives"
+          }
+        },
+        "image_cttrPp": {
+          "type": "image",
+          "settings": {
+            "product_description_image": "shopify://shop_images/IMG_6129_1_0a97012b-bf7c-4b3c-920b-cfe14aa0ebf3.png"
+          }
+        },
+        "product_description_right_V86erz": {
+          "type": "product_description_right",
+          "settings": {
+            "product_description_title_right_one": "Preserves Purity",
+            "product_description_desc_right_one": "Ensures natural essence, free and from toxins, additives",
+            "product_description_title_right_two": "Preserves Purity",
+            "product_description_desc_right_two": "Ensures natural essence, free and from toxins, additives",
+            "product_description_title_right_three": "Preserves Purity",
+            "product_description_desc_right_three": "Ensures natural essence, free and from toxins, additives"
+          }
+        },
+        "footer_EQfC6F": {
+          "type": "footer",
+          "settings": {
+            "product_description_footer_textOne": "Let's make something great work together.ss",
+            "product_description_footer_textTwo": "Get Free Quotess",
+            "product_description_footer_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "intro_WcYyDC",
+        "heading_iegNEc",
+        "description_4tTQNY",
+        "product_description_left_mtUtwM",
+        "image_cttrPp",
+        "product_description_right_V86erz",
+        "footer_EQfC6F"
+      ],
       "name": "Product description",
       "settings": {
         "product_description_paddingY": 36,
-        "product_description_image": "shopify://shop_images/IMG_6129_1_0a97012b-bf7c-4b3c-920b-cfe14aa0ebf3.png"
+        "product_description_background_color": "#f9f6f2"
+      }
+    },
+    "product_carousel_EFXgGR": {
+      "type": "product-carousel",
+      "name": "Product carousel",
+      "settings": {
+        "product_carousel_enable": false,
+        "product_carousel_enable_border": false,
+        "product_carousel_paddingY": 36,
+        "product_carousel_image": "shopify://shop_images/pexels-antonio-fernandez-124839204-10009413.jpg",
+        "product_carousel_subtitle": "POUR ELLE",
+        "product_carousel_title": "ÉQUILIBRE ET DÉSIR AU FÉMININ",
+        "product_carousel_description": "Besoin de conseils avant de commander ? Laissez votre numéro et recevez un appel discret d’une conseillère.",
+        "product_carousel_button_title": "Me faire rappeler",
+        "product_carousel_button_url": "",
+        "product_carousel_button_bg_color": "#e3c770",
+        "product_carousel_button_text_color": "#ffffff",
+        "product_carousel_products": [
+          "libido-booster-pour-femmes-copy",
+          "libido-booster-pour-femmes"
+        ],
+        "product_carousel_list_enable": true,
+        "product_carousel_list_color": "#ededed"
       }
     },
     "image_carousel_KUgYgg": {
@@ -389,29 +478,6 @@
         "image_carousel_paddingY": 36
       }
     },
-    "product_carousel_EFXgGR": {
-      "type": "product-carousel",
-      "name": "Product carousel",
-      "settings": {
-        "product_carousel_enable": false,
-        "product_carousel_enable_border": false,
-        "product_carousel_paddingY": 36,
-        "product_carousel_image": "shopify://shop_images/pexels-antonio-fernandez-124839204-10009413.jpg",
-        "product_carousel_subtitle": "POUR ELLE",
-        "product_carousel_title": "ÉQUILIBRE ET DÉSIR AU FÉMININ",
-        "product_carousel_description": "Besoin de conseils avant de commander ? Laissez votre numéro et recevez un appel discret d’une conseillère.",
-        "product_carousel_button_title": "Me faire rappeler",
-        "product_carousel_button_url": "",
-        "product_carousel_button_bg_color": "#e3c770",
-        "product_carousel_button_text_color": "#ffffff",
-        "product_carousel_products": [
-          "libido-booster-pour-femmes-copy",
-          "libido-booster-pour-femmes"
-        ],
-        "product_carousel_list_enable": true,
-        "product_carousel_list_color": "#ededed"
-      }
-    },
     "slider_HejBdt": {
       "type": "slider",
       "blocks": {
@@ -517,7 +583,7 @@
       "name": "Product description",
       "settings": {
         "product_description_paddingY": 36,
-        "product_description_image": "shopify://shop_images/B-11_92b85505-dc88-4e57-90f9-89bf91efc563.png"
+        "product_description_background_color": "#f9f6f2"
       }
     },
     "two_columns_RYfMkD": {
@@ -578,8 +644,8 @@
     "prove_yGBMDc",
     "image_carousel_9JiNxC",
     "product_description_JgYzyq",
-    "image_carousel_KUgYgg",
     "product_carousel_EFXgGR",
+    "image_carousel_KUgYgg",
     "slider_HejBdt",
     "product_carousel_YLCxGC",
     "product_description_Mi3Nre",

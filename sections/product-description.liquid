@@ -1,88 +1,219 @@
 <section class="product-description">
   <div class="product-description__container">
-    <div class="product-description__wrapper">
-      <div class="product-description__header">
-        <p class="product-description__intro">Our Key Points</p>
-        <h2 class="product-description__title">
-          Superior design, precision
-          <span>drop lasting quality</span>
-        </h2>
-        <p class="product-description__desc">
-          Crafted with superior design, engineered with precision, and built to commitment to excellence ensures every
-          detail is meticulously perfected, delivering unparalleled quality and durability.
-        </p>
+    {%- if section.blocks.size > 0 -%}
+      <div class="product-description__wrapper">
+        {%- for block in section.blocks -%}
+          <div class="product-description__header">
+            {%- case block.type -%}
+              {%- when 'intro' -%}
+                <p class="product-description__intro">
+                  {{ block.settings.product_description_intro }}
+                </p>
+              {%- when 'heading' -%}
+                <h2 class="product-description__title">
+                  {{ block.settings.product_description_title }}
+                  <span>{{ block.settings.product_description_title_two }}</span>
+                </h2>
+              {%- when 'description' -%}
+                <p class="product-description__desc">
+                  {{ block.settings.product_description_body_description }}
+                </p>
+            {%- endcase -%}
+          </div>
+        {%- endfor -%}
+
+        <div class="product-description__content">
+          <div class="product-description__text-list">
+            {%- for block in section.blocks -%}
+              {%- case block.type -%}
+                {%- when 'product_description_left' -%}
+                  <div class="product-description__item">
+                    <div class="product-description__icon"></div>
+                    <div class="product-description__info">
+                      <h4>
+                        {{ block.settings.product_description_title_left_one }}
+                      </h4>
+                      <p>{{ block.settings.product_description_desc_left_one }}</p>
+                    </div>
+                  </div>
+                  <div class="product-description__item">
+                    <div class="product-description__icon"></div>
+                    <div class="product-description__info">
+                      <h4>
+                        {{ block.settings.product_description_title_left_two }}
+                      </h4>
+                      <p>{{ block.settings.product_description_desc_left_two }}</p>
+                    </div>
+                  </div>
+                  <div class="product-description__item">
+                    <div class="product-description__icon"></div>
+                    <div class="product-description__info">
+                      <h4>
+                        {{ block.settings.product_description_title_left_two }}
+                      </h4>
+                      <p>{{ block.settings.product_description_desc_left_two }}</p>
+                    </div>
+                  </div>
+              {%- endcase -%}
+            {% endfor %}
+          </div>
+
+          <div class="product-description__image-block">
+            {%- for block in section.blocks -%}
+              {%- case block.type -%}
+                {%- when 'image' -%}
+                  {%- if block.settings.product_description_image != blank -%}
+                    {{-
+                      block.settings.product_description_image
+                      | image_url: width: 700
+                      | image_tag: class: 'product-description__image'
+                    -}}
+                  {%- endif -%}
+              {%- endcase -%}
+            {%- endfor -%}
+          </div>
+
+          <div class="product-description__text-list product-description__right">
+            {%- for block in section.blocks -%}
+              {%- case block.type -%}
+                {%- when 'product_description_right' -%}
+                  <div class="product-description__item">
+                    <div class="product-description__icon"></div>
+                    <div class="product-description__info">
+                      <h4>
+                        {{ block.settings.product_description_title_right_one }}
+                      </h4>
+                      <p>{{ block.settings.product_description_desc_right_one }}</p>
+                    </div>
+                  </div>
+                  <div class="product-description__item">
+                    <div class="product-description__icon"></div>
+                    <div class="product-description__info">
+                      <h4>
+                        {{ block.settings.product_description_title_right_two }}
+                      </h4>
+                      <p>{{ block.settings.product_description_desc_right_two }}</p>
+                    </div>
+                  </div>
+                  <div class="product-description__item">
+                    <div class="product-description__icon"></div>
+                    <div class="product-description__info">
+                      <h4>
+                        {{ block.settings.product_description_title_right_three }}
+                      </h4>
+                      <p>{{ block.settings.product_description_desc_right_three }}</p>
+                    </div>
+                  </div>
+              {%- endcase -%}
+            {% endfor %}
+          </div>
+        </div>
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'footer' -%}
+              <div class="oil-feature__footer">
+                <p>
+                  {{ block.settings.product_description_footer_textOne }}.
+                  <a href="{{ block.settings.product_description_footer_link }}">
+                    {{- block.settings.product_description_footer_textTwo -}}
+                  </a>
+                </p>
+              </div>
+          {%- endcase -%}
+        {%- endfor -%}
       </div>
 
-      <div class="product-description__content">
-        <div class="product-description__text-list">
-          <div class="product-description__item">
-            <div class="product-description__icon"></div>
-            <div class="product-description__info">
-              <h4>Preserves Purity</h4>
-              <p>Ensures natural essence, free and from toxins, additives</p>
-            </div>
+    {%- else -%}
+      <div class="product-description__wrapper">
+        <div class="product-description__header">
+          <p class="product-description__intro">Our Key Points</p>
+          <h2 class="product-description__title">
+            Superior design, precision
+            <span>drop lasting quality</span>
+          </h2>
+          <p class="product-description__desc">
+            Crafted with superior design, engineered with precision, and built to commitment to excellence ensures every
+            detail is meticulously perfected, delivering unparalleled quality and durability.
+          </p>
+        </div>
+
+        <div class="product-description__content">
+          <div class="product-description__text-list">
+            {%- if section.blocks.size > 0 %}
+              {%- for block in section.blocks -%}
+                {%- case block.type -%}
+                  {%- when 'product_description_left' -%}
+                    <div class="product-description__item">
+                      <div class="product-description__icon"></div>
+                      <div class="product-description__info">
+                        <h4>
+                          {{ block.settings.product_description_title_left }}
+                        </h4>
+                        <p>{{ block.settings.product_description_desc_left }}</p>
+                      </div>
+                    </div>
+                {%- endcase -%}
+              {% endfor %}
+            {%- else -%}
+              {%- for item in (1..3) -%}
+                <div class="product-description__item">
+                  <div class="product-description__icon"></div>
+                  <div class="product-description__info">
+                    <h4>Preserves Purity</h4>
+                    <p>Ensures natural essence, free and from toxins, additives</p>
+                  </div>
+                </div>
+              {%- endfor -%}
+            {%- endif -%}
           </div>
 
-          <div class="product-description__item">
-            <div class="product-description__icon"></div>
-            <div class="product-description__info">
-              <h4>Travel Friendly</h4>
-              <p>Ensures natural essence, free and from toxins, additives</p>
-            </div>
+          <div class="product-description__image-block">
+            {%- if section.settings.product_description_image != blank -%}
+              {{-
+                section.settings.product_description_image
+                | image_url: width: 700
+                | image_tag: class: 'product-description__image'
+              -}}
+            {%- else -%}
+              {{ 'product-6' | placeholder_svg_tag: 'product-description__image' }}
+            {%- endif -%}
           </div>
 
-          <div class="product-description__item">
-            <div class="product-description__icon"></div>
-            <div class="product-description__info">
-              <h4>Preserves Purity</h4>
-              <p>Ensures natural essence, free and from toxins, additives</p>
-            </div>
+          <div class="product-description__text-list product-description__right">
+            {%- if section.blocks.size > 0 %}
+              {%- for block in section.blocks -%}
+                {%- case block.type -%}
+                  {%- when 'product_description_right' -%}
+                    <div class="product-description__item">
+                      <div class="product-description__icon"></div>
+                      <div class="product-description__info">
+                        <h4>
+                          {{ block.settings.product_description_title_right }}
+                        </h4>
+                        <p>{{ block.settings.product_description_desc_right }}</p>
+                      </div>
+                    </div>
+                {%- endcase -%}
+              {% endfor %}
+            {%- else -%}
+              {%- for item in (1..3) -%}
+                <div class="product-description__item">
+                  <div class="product-description__icon"></div>
+                  <div class="product-description__info">
+                    <h4>Preserves Purity</h4>
+                    <p>Ensures natural essence, free and from toxins, additives</p>
+                  </div>
+                </div>
+              {%- endfor -%}
+            {%- endif -%}
           </div>
         </div>
 
-        <div class="product-description__image-block">
-          {%- if section.settings.product_description_image != blank -%}
-            {{-
-              section.settings.product_description_image
-              | image_url: width: 700
-              | image_tag: class: 'product-description__image'
-            -}}
-          {%- else -%}
-            {{ 'product-6' | placeholder_svg_tag: 'product-description__image' }}
-          {%- endif -%}
-        </div>
-
-        <div class="product-description__text-list product-description__right">
-          <div class="product-description__item">
-            <div class="product-description__icon"></div>
-            <div class="product-description__info">
-              <h4>100% Pure Oils</h4>
-              <p>Ensures natural essence, free and from toxins, additives</p>
-            </div>
-          </div>
-
-          <div class="product-description__item">
-            <div class="product-description__icon"></div>
-            <div class="product-description__info">
-              <h4>Eco Friendly</h4>
-              <p>Ensures natural essence, free and from toxins, additives</p>
-            </div>
-          </div>
-
-          <div class="product-description__item">
-            <div class="product-description__icon"></div>
-            <div class="product-description__info">
-              <h4>Trusted by Experts</h4>
-              <p>Ensures natural essence, free and from toxins, additives</p>
-            </div>
-          </div>
+        <div class="oil-feature__footer">
+          <p>Let's make something great work together. <a href="#">Get Free Quote</a></p>
         </div>
       </div>
-
-      <div class="oil-feature__footer">
-        <p>Let's make something great work together. <a href="#">Get Free Quote</a></p>
-      </div>
-    </div>
+    {%- endif -%}
   </div>
 </section>
 
@@ -90,7 +221,7 @@
    .product-description {
      width: 100%;
      height: fit-content;
-     background-color: #f9f6f2;
+     background-color: {{- section.settings.product_description_background_color -}};
    }
 
    .product-description__container {
@@ -108,11 +239,11 @@
      font-style: italic;
      color: #9c7b38;
      font-weight: 500;
-     font-size: 1rem;
+     font-size: 14px;
    }
 
    .product-description__title {
-     font-size: 26px;
+     font-size: 24px;
      font-family: {{ settings.type_header_font.family }};
      font-weight: 700;
      color: #0b3f1e;
@@ -122,7 +253,6 @@
    .product-description__title span {
      display: block;
      font-style: italic;
-     font-size: 26px;
      font-weight: 400;
      color: #304022;
      margin-top: 0.25rem;
@@ -132,7 +262,7 @@
      max-width: 720px;
      margin: 1rem auto 2rem;
      font-family: {{ settings.type_body_font.family }};
-     font-size: 14px;
+     font-size: 16px;
      color: #555;
    }
 
@@ -169,13 +299,15 @@
    }
 
    .product-description__info h4 {
-     font-size: 18px;
+    text-align: center;
+     font-size: 16px;
      font-family: {{ settings.type_header_font.family }};
      font-weight: 600;
      margin: 0;
    }
 
    .product-description__info p {
+    text-align: center;
      font-size: 14px;
      font-family: {{ settings.type_body_font.family }};
      font-weight: 400;
@@ -201,7 +333,7 @@
 
     .oil-feature__footer {
      margin-top: 3rem;
-     font-size: 14px;
+     font-size: 16px;
    }
 
   .oil-feature__footer a {
@@ -214,11 +346,7 @@
         flex-direction: row;
       }
       .product-description__title {
-        font-size: 36px;
-      }
-
-      .product-description__title span {
-        font-size: 36px;
+        font-size: 32px;
       }
 
       .product-description__item {
@@ -241,11 +369,7 @@
    }
    @media screen and (min-width: 1200px) {
       .product-description__title {
-        font-size: 46px;
-      }
-
-      .product-description__title span {
-        font-size: 46px;
+        font-size: 36px;
       }
    }
 </style>
@@ -254,7 +378,7 @@
 {
   "name": "Product description",
   "tag": "section",
-  "class": "oil-dropper-feature",
+  "class": "product_description",
   "settings": [
     {
       "type": "range",
@@ -268,21 +392,275 @@
     },
     {
       "type": "header",
-      "content": "Image"
+      "content": "Background color"
     },
     {
-      "type": "image_picker",
-      "id": "product_description_image",
-      "label": "Image"
+      "type": "color",
+      "id": "product_description_background_color",
+      "label": "Background color",
+      "default": "#f9f6f2"
     }
   ],
-  "blocks": [],
+  "blocks": [
+    {
+      "name": "Intro",
+      "type": "intro",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "product_description_intro",
+          "label": "Intro",
+          "default": "Our Key Points",
+          "info": "section intro",
+          "placeholder": "Our Key Points"
+        }
+      ]
+    },
+    {
+      "name": "Heading",
+      "type": "heading",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "product_description_title",
+          "label": "Heading H2",
+          "default": "Superior design",
+          "info": "Heading",
+          "placeholder": "Superior design"
+        },
+        {
+          "type": "text",
+          "id": "product_description_title_two",
+          "label": "Heading H2 two",
+          "default": "drop lasting quality",
+          "info": "Heading",
+          "placeholder": "drop lasting quality"
+        }
+      ]
+    },
+    {
+      "name": "Description",
+      "type": "description",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "product_description_body_description",
+          "label": "Product Description",
+          "default": "Crafted with superior design, engineered with precision, and built to commitment to excellence ensures every detail in meticulously perfected, delivering unparalleled quality and durability."
+        }
+      ]
+    },
+    {
+      "name": "Left Description",
+      "type": "product_description_left",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "text",
+          "id": "product_description_title_left_one",
+          "label": "heading One",
+          "default": "Preserves Purity",
+          "info": "Left title",
+          "placeholder": "Preserves Purity"
+        },
+        {
+          "type": "textarea",
+          "id": "product_description_desc_left_one",
+          "label": "Body One",
+          "default": "Ensures natural essence, free and from toxins, additives",
+          "info": "Left body",
+          "placeholder": "Ensures natural essence, free and from toxins, additives"
+        },
+        {
+          "type": "text",
+          "id": "product_description_title_left_two",
+          "label": "heading Two",
+          "default": "Preserves Purity",
+          "info": "Left title",
+          "placeholder": "Preserves Purity"
+        },
+        {
+          "type": "textarea",
+          "id": "product_description_desc_left_two",
+          "label": "Body Two",
+          "default": "Ensures natural essence, free and from toxins, additives",
+          "info": "Left body",
+          "placeholder": "Ensures natural essence, free and from toxins, additives"
+        },
+        {
+          "type": "text",
+          "id": "product_description_title_left_three",
+          "label": "heading Three",
+          "default": "Preserves Purity",
+          "info": "Left title",
+          "placeholder": "Preserves Purity"
+        },
+        {
+          "type": "textarea",
+          "id": "product_description_desc_left_three",
+          "label": "Body Three",
+          "default": "Ensures natural essence, free and from toxins, additives",
+          "info": "Left body",
+          "placeholder": "Ensures natural essence, free and from toxins, additives"
+        }
+      ]
+    },
+    {
+      "name": "Image",
+      "type": "image",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "product_description_image",
+          "label": "Image"
+        }
+      ]
+    },
+    {
+      "name": "Right Description",
+      "type": "product_description_right",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "text",
+          "id": "product_description_title_right_one",
+          "label": "heading One",
+          "default": "Preserves Purity",
+          "info": "Right title",
+          "placeholder": "Preserves Purity"
+        },
+        {
+          "type": "textarea",
+          "id": "product_description_desc_right_one",
+          "label": "Body One",
+          "default": "Ensures natural essence, free and from toxins, additives",
+          "info": "Right body",
+          "placeholder": "Ensures natural essence, free and from toxins, additives"
+        },
+        {
+          "type": "text",
+          "id": "product_description_title_right_two",
+          "label": "heading Two",
+          "default": "Preserves Purity",
+          "info": "Right title",
+          "placeholder": "Preserves Purity"
+        },
+        {
+          "type": "textarea",
+          "id": "product_description_desc_right_two",
+          "label": "Body Two",
+          "default": "Ensures natural essence, free and from toxins, additives",
+          "info": "Right body",
+          "placeholder": "Ensures natural essence, free and from toxins, additives"
+        },
+
+        {
+          "type": "text",
+          "id": "product_description_title_right_three",
+          "label": "heading Three",
+          "default": "Preserves Purity",
+          "info": "Right title",
+          "placeholder": "Preserves Purity"
+        },
+        {
+          "type": "textarea",
+          "id": "product_description_desc_right_three",
+          "label": "Body Three",
+          "default": "Ensures natural essence, free and from toxins, additives",
+          "info": "Right body",
+          "placeholder": "Ensures natural essence, free and from toxins, additives"
+        }
+      ]
+    },
+    {
+      "name": "Footer",
+      "type": "footer",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "product_description_footer_textOne",
+          "label": "Text One footer",
+          "default": "Let's make something great work together."
+        },
+        {
+          "type": "text",
+          "id": "product_description_footer_textTwo",
+          "label": "Text Two footer",
+          "default": "Get Free Quote"
+        },
+        {
+          "type": "url",
+          "id": "product_description_footer_link",
+          "label": "Text two URL"
+        }
+      ]
+    }
+  ],
   "presets": [
     {
       "name": "Product description",
       "settings": {
-        "product_description_paddingY": 36
-      }
+        "product_description_paddingY": 36,
+        "product_description_background_color": "#f9f6f2"
+      },
+      "blocks": [
+        {
+          "type": "intro",
+          "settings": {
+            "product_description_intro": "Our Key Points"
+          }
+        },
+        {
+          "type": "heading",
+          "settings": {
+            "product_description_title": "Superior design",
+            "product_description_title_two": "drop lasting quality"
+          }
+        },
+        {
+          "type": "description",
+          "settings": {
+            "product_description_body_description": "Crafted with superior design, engineered with precision, and built to commitment to excellence ensures every detail is meticulously perfected, delivering unparalleled quality and durability."
+          }
+        },
+        {
+          "type": "product_description_left",
+          "settings": {
+            "product_description_title_left_one": "Preserves Purity",
+            "product_description_desc_left_one": "Ensures natural essence, free and from toxins, additives",
+            "product_description_title_left_two": "Preserves Purity",
+            "product_description_desc_left_two": "Ensures natural essence, free and from toxins, additives",
+            "product_description_title_left_three": "Preserves Purity",
+            "product_description_desc_left_three": "Ensures natural essence, free and from toxins, additives"
+          }
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "product_description_right",
+          "settings": {
+            "product_description_title_right_one": "Preserves Purity",
+            "product_description_desc_right_one": "Ensures natural essence, free and from toxins, additives",
+            "product_description_title_right_two": "Preserves Purity",
+            "product_description_desc_right_two": "Ensures natural essence, free and from toxins, additives",
+            "product_description_title_right_three": "Preserves Purity",
+            "product_description_desc_right_three": "Ensures natural essence, free and from toxins, additives"
+          }
+        },
+        {
+          "type": "footer",
+          "settings": {
+            "product_description_footer_textOne": "Let's make something great work together.",
+            "product_description_footer_textTwo": "Get Free Quote"
+          }
+        }
+      ]
     }
   ]
 }
