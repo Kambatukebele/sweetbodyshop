@@ -11,12 +11,96 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "newsletter_x4kPJW": {
+      "type": "newsletter",
+      "blocks": {
+        "newsletter_hrjX4D": {
+          "type": "newsletter",
+          "settings": {
+            "newsletter_title": "Request a discrete call backss",
+            "newsletter_description": "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
+          }
+        }
+      },
+      "block_order": [
+        "newsletter_hrjX4D"
+      ],
+      "name": "t:sections.newsletter.presets.name",
+      "settings": {
+        "newsletter_bg_color": "#bca886",
+        "newsletter_heading_color": "#000000",
+        "newsletter_description_color": "#121212",
+        "newsletter_button_bg_color": "#101010",
+        "newsletter_button_color": "#ffffff"
+      }
+    },
     "footer": {
       "type": "footer",
-      "settings": {}
+      "blocks": {
+        "footer_logo_wwTCtt": {
+          "type": "footer_logo",
+          "settings": {
+            "footer_logo_image": "shopify://shop_images/logo_1.svg",
+            "footer_logo_description": "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
+          }
+        },
+        "footer_about_YabHMy": {
+          "type": "footer_about",
+          "settings": {
+            "footer_about_heading": "About the company",
+            "footer_about_subheading": "About us",
+            "footer_about_subheading_url": ""
+          }
+        },
+        "footer_site_NDHXKc": {
+          "type": "footer_site",
+          "settings": {
+            "footer_site_heading": "For you",
+            "footer_site_subheading_one": "one",
+            "footer_site_subheading_two": "one",
+            "footer_site_subheading_three": "one",
+            "footer_site_subheading_four": "one",
+            "footer_site_subheading_five": "one",
+            "footer_site_subheading_six": "one",
+            "footer_site_subheading_seven": "one",
+            "footer_site_subheading_eight": "one"
+          }
+        },
+        "footer_info_dHbc9g": {
+          "type": "footer_info",
+          "settings": {
+            "footer_info_heading": "Information",
+            "footer_info_subheading_one": "one",
+            "footer_info_subheading_two": "onne",
+            "footer_info_subheading_three": "one",
+            "footer_info_subheading_four": "one"
+          }
+        },
+        "footer_contact_cjXwCw": {
+          "type": "footer_contact",
+          "settings": {
+            "footer_contact_heading": "Customer service",
+            "footer_contact_phone": "+33 123 456 789",
+            "footer_contact_phone_description": "Du Lundi - au Vendredi 08:00 - 16:00",
+            "footer_contact_email": "info@test.com",
+            "footer_contact_email_description": "Call anytime"
+          }
+        }
+      },
+      "block_order": [
+        "footer_logo_wwTCtt",
+        "footer_about_YabHMy",
+        "footer_site_NDHXKc",
+        "footer_info_dHbc9g",
+        "footer_contact_cjXwCw"
+      ],
+      "settings": {
+        "footer_bg_color": "#f9f9f9"
+      }
     }
   },
   "order": [
+    "newsletter_x4kPJW",
     "footer"
   ]
 }

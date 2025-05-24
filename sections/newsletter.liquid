@@ -1,124 +1,128 @@
-{{ 'component-newsletter.css' | asset_url | stylesheet_tag }}
-{{ 'newsletter-section.css' | asset_url | stylesheet_tag }}
-
-{%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  }
-
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
-  }
-{%- endstyle -%}
-
-<div class="newsletter center {% if section.settings.full_width == false %}newsletter--narrow page-width{% endif %}">
-  <div class="newsletter__wrapper color-{{ section.settings.color_scheme }} gradient content-container isolate{% if section.settings.full_width %} content-container--full-width{% endif %} section-{{ section.id }}-padding">
-    {%- for block in section.blocks -%}
-      {%- case block.type -%}
-        {%- when '@app' -%}
-          {% render block %}
-        {%- when 'heading' -%}
-          <h2
-            class="inline-richtext {{ block.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-            {{ block.shopify_attributes }}
-            {% if settings.animations_reveal_on_scroll %}
-              data-cascade
-              style="--animation-order: {{ forloop.index }};"
-            {% endif %}
-          >
-            {{ block.settings.heading }}
-          </h2>
-        {%- when 'paragraph' -%}
-          <div
-            class="newsletter__subheading rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-            {{ block.shopify_attributes }}
-            {% if settings.animations_reveal_on_scroll %}
-              data-cascade
-              style="--animation-order: {{ forloop.index }};"
-            {% endif %}
-          >
-            {{ block.settings.text }}
-          </div>
-        {%- when 'email_form' -%}
-          <div {{ block.shopify_attributes }}>
-            {% form 'customer', class: 'newsletter-form' %}
-              <input type="hidden" name="contact[tags]" value="newsletter">
-              <div
-                class="newsletter-form__field-wrapper{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-                {% if settings.animations_reveal_on_scroll %}
-                  data-cascade
-                  style="--animation-order: {{ forloop.index }};"
-                {% endif %}
-              >
-                <div class="field">
-                  <input
-                    id="NewsletterForm--{{ section.id }}"
-                    type="email"
-                    name="contact[email]"
-                    class="field__input"
-                    value="{{ form.email }}"
-                    aria-required="true"
-                    autocorrect="off"
-                    autocapitalize="off"
-                    autocomplete="email"
-                    {% if form.errors %}
-                      autofocus
-                      aria-invalid="true"
-                      aria-describedby="Newsletter-error--{{ section.id }}"
-                    {% elsif form.posted_successfully? %}
-                      aria-describedby="Newsletter-success--{{ section.id }}"
-                    {% endif %}
-                    placeholder="{{ 'newsletter.label' | t }}"
-                    required
-                  >
-                  <label class="field__label" for="NewsletterForm--{{ section.id }}">
-                    {{ 'newsletter.label' | t }}
-                  </label>
-                  <button
-                    type="submit"
-                    class="newsletter-form__button field__button"
-                    name="commit"
-                    id="Subscribe"
-                    aria-label="{{ 'newsletter.button_label' | t }}"
-                  >
-                    <span class="svg-wrapper">
-                      {{- 'icon-arrow.svg' | inline_asset_content -}}
-                    </span>
-                  </button>
-                </div>
-                {%- if form.errors -%}
-                  <small class="newsletter-form__message form__message" id="Newsletter-error--{{ section.id }}">
-                    <span class="svg-wrapper">
-                      {{- 'icon-error.svg' | inline_asset_content -}}
-                    </span>
-                    {{- form.errors.translated_fields.email | capitalize }}
-                    {{ form.errors.messages.email -}}
-                  </small>
+<div class="newsletter">
+  <div class="newsletter-content">
+    {%- if section.blocks.size > 0 -%}
+      <div>
+        {% for block in section.blocks %}
+          {%- case block.type -%}
+            {%- when 'newsletter' -%}
+              <h3>
+                {%- if block.settings.newsletter_title != blank -%}
+                  {{ block.settings.newsletter_title }}
+                {%- else -%}
+                  Give your information here<br>
+                  Leave us your email
                 {%- endif -%}
-              </div>
-              {%- if form.posted_successfully? -%}
-                <h3
-                  class="newsletter-form__message newsletter-form__message--success form__message"
-                  id="Newsletter-success--{{ section.id }}"
-                  tabindex="-1"
-                  autofocus
-                >
-                  <span class="svg-wrapper">
-                    {{- 'icon-success.svg' | inline_asset_content -}}
-                  </span>
-                  {{- 'newsletter.success' | t }}
-                </h3>
-              {%- endif -%}
-            {% endform %}
-          </div>
-      {%- endcase -%}
-    {%- endfor -%}
+              </h3>
+              <p>
+                {%- if block.settings.newsletter_description -%}
+                  {{ block.settings.newsletter_description }}
+                {%- else -%}
+                  Stay informedswsfdfdfdfdf
+                {%- endif -%}
+              </p>
+          {%- endcase -%}
+        {% endfor %}
+      </div>
+    {%- else -%}
+      <div>
+        <h3>
+          Give your information here<br>
+          Leave us your email
+        </h3>
+        <p>Stay informed</p>
+      </div>
+    {%- endif -%}
+
+    <form class="newsletter-form">
+      <div class="input-group">
+        <input type="text" placeholder="Enter your name here..." name="name" required>
+        <input type="text" placeholder="Enter your name here..." name="phone_number" required>
+      </div>
+      <input type="email" placeholder="Vaše e-mailová adresa..." name="email" required>
+      <button type="submit">Appelez moi discretement</button>
+      <small>Vložením e-mailu souhlasíte s <a href="#">podmínkami ochrany osobních údajů</a></small>
+    </form>
   </div>
 </div>
+
+<style>
+   .newsletter {
+    background-color: {{ section.settings.newsletter_bg_color}};
+    padding: 40px 20px;
+  }
+
+  .newsletter-content {
+    max-width: var(--page-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .newsletter h3 {
+    margin: 0;
+    font-size: 20px;
+    font-family: {{ settings.type_header_font.family }};
+    font-weight: {{ settings.type_header_font.weight }};
+    color: {{  section.settings.newsletter_heading_color }};
+    text-align: center;
+  }
+
+  .newsletter p {
+    font-size: 15px;
+    color: {{  section.settings.newsletter_description_color }};
+    font-family: {{ settings.type_body_font.family }};
+    font-weight: {{ settings.type_body_font.weight }};
+     text-align: center;
+  }
+
+  .newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .newsletter-form .input-group{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .newsletter-form input {
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    min-width: 250px;
+  }
+
+  .newsletter-form button {
+    padding: 16px 20px;
+    background: {{ section.settings.newsletter_button_bg_color }};
+    color: {{ section.settings.newsletter_button_color }};
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .newsletter-form small {
+    font-size: 11px;
+    color: #555;
+  }
+
+  .newsletter-form a {
+    text-decoration: underline;
+  }
+  @media screen and (min-width: 750px){
+    .newsletter p {
+      width: 470px;
+    }
+  }
+</style>
 
 {% schema %}
 {
@@ -126,126 +130,80 @@
   "tag": "section",
   "class": "section",
   "disabled_on": {
-    "groups": ["header"]
+    "groups": ["header"],
+    "templates": ["*"]
   },
   "settings": [
     {
-      "type": "paragraph",
-      "content": "t:sections.newsletter.settings.paragraph.content"
+      "type": "color",
+      "id": "newsletter_bg_color",
+      "label": "Background color",
+      "default": "#f6ebd8"
     },
     {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "t:sections.all.colors.label",
-      "default": "scheme-1"
+      "type": "color",
+      "id": "newsletter_heading_color",
+      "label": "Heading color",
+      "default": "#000000"
     },
     {
-      "type": "checkbox",
-      "id": "full_width",
-      "default": true,
-      "label": "t:sections.newsletter.settings.full_width.label"
+      "type": "color",
+      "id": "newsletter_description_color",
+      "label": "Body description color",
+      "default": "#000000"
     },
     {
-      "type": "header",
-      "content": "t:sections.all.padding.section_padding_heading"
+      "type": "color",
+      "id": "newsletter_button_bg_color",
+      "label": "Button background color",
+      "default": "#000000"
     },
     {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
-      "default": 40
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
-      "default": 52
+      "type": "color",
+      "id": "newsletter_button_color",
+      "label": "Button text color",
+      "default": "#ffffff"
     }
   ],
   "blocks": [
     {
-      "type": "heading",
-      "name": "t:sections.newsletter.blocks.heading.name",
+      "name": "Newsletter",
+      "type": "newsletter",
       "limit": 1,
       "settings": [
         {
-          "type": "inline_richtext",
-          "id": "heading",
-          "default": "t:sections.newsletter.blocks.heading.settings.heading.default",
-          "label": "t:sections.newsletter.blocks.heading.settings.heading.label"
+          "type": "text",
+          "id": "newsletter_title",
+          "label": "newsletter Heading",
+          "default": "Request a discrete call back"
         },
         {
-          "type": "select",
-          "id": "heading_size",
-          "options": [
-            {
-              "value": "h2",
-              "label": "t:sections.all.heading_size.options__1.label"
-            },
-            {
-              "value": "h1",
-              "label": "t:sections.all.heading_size.options__2.label"
-            },
-            {
-              "value": "h0",
-              "label": "t:sections.all.heading_size.options__3.label"
-            },
-            {
-              "value": "hxl",
-              "label": "t:sections.all.heading_size.options__4.label"
-            },
-            {
-              "value": "hxxl",
-              "label": "t:sections.all.heading_size.options__5.label"
-            }
-          ],
-          "default": "h1",
-          "label": "t:sections.all.heading_size.label"
+          "type": "textarea",
+          "id": "newsletter_description",
+          "label": "Newsletter Description",
+          "default": "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
         }
       ]
-    },
-    {
-      "type": "paragraph",
-      "name": "t:sections.newsletter.blocks.paragraph.name",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "richtext",
-          "id": "text",
-          "default": "t:sections.newsletter.blocks.paragraph.settings.paragraph.default",
-          "label": "t:sections.newsletter.blocks.paragraph.settings.paragraph.label"
-        }
-      ]
-    },
-    {
-      "type": "email_form",
-      "name": "t:sections.newsletter.blocks.email_form.name",
-      "limit": 1
-    },
-    {
-      "type": "@app"
     }
   ],
   "presets": [
     {
       "name": "t:sections.newsletter.presets.name",
+      "settings": {
+        "newsletter_bg_color": "#f6ebd8",
+        "newsletter_heading_color": "#000000",
+        "newsletter_description_color": "#000000",
+        "newsletter_button_bg_color": "#000000",
+        "newsletter_button_color": "#ffffff"
+      },
       "blocks": [
         {
-          "type": "heading"
-        },
-        {
-          "type": "paragraph"
-        },
-        {
-          "type": "email_form"
+          "name": "Newsletter",
+          "type": "newsletter",
+          "settings": {
+            "newsletter_title": "Request a discrete call back",
+            "newsletter_description": "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
+          }
         }
       ]
     }

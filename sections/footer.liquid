@@ -1,65 +1,146 @@
-<div class="newsletter">
-  <div class="newsletter-content">
-    <div>
-      <h3>
-        Informace o slevách, akcích, novinkách<br>
-        a soutěžích přednostně na váš e-mail
-      </h3>
-      <p>Zůstaňte s námi v kontaktu a nenechte si nic ujít!</p>
-    </div>
-    <form class="newsletter-form">
-      <input type="email" placeholder="Vaše e-mailová adresa..." required>
-      <button type="submit">Přihlásit se</button>
-      <small>Vložením e-mailu souhlasíte s <a href="#">podmínkami ochrany osobních údajů</a></small>
-    </form>
-  </div>
-</div>
-
 <footer>
-  <div class="footer-main">
-    <div class="footer-col">
-      <h2>venira</h2>
-      <p>Produkty pro krásu a zdraví pro vaši spokojenost.</p>
+  {%- if section.blocks.size > 0 -%}
+    <div class="footer-main">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'footer_logo' -%}
+            <div class="footer-col">
+              {%- if block.settings.footer_logo_image -%}
+                {{ block.settings.footer_logo_image | image_url: width: 200 | image_tag }}
+              {%- else -%}
+                <h2>{{ shop.name }}</h2>
+              {%- endif -%}
+              {%- if block.settings.footer_logo_description -%}
+                <p>{{ block.settings.footer_logo_description }}</p>
+              {%- else -%}
+                <p>Produkty pro krásu a zdraví pro vaši spokojenost.</p>
+              {%- endif -%}
+            </div>
+          {%- when 'footer_about' -%}
+            <div class="footer-col">
+              {%- if block.settings.footer_about_heading != blank -%}
+                <h3>{{ block.settings.footer_about_heading }}</h3>
+              {%- else -%}
+                <h3>O Veniře</h3>
+              {%- endif -%}
+
+              <ul>
+                <li>
+                  <a href="{{ block.settings.footer_about_subheading_url }}">
+                    {{- block.settings.footer_about_subheading -}}
+                  </a>
+                </li>
+              </ul>
+            </div>
+          {%- when 'footer_site' -%}
+            <div class="footer-col">
+              <h3>{{ block.settings.footer_site_heading }}</h3>
+              <ul>
+                <li>
+                  <a href="#">{{ block.settings.footer_site_subheading_one }}</a>
+                </li>
+                <li>
+                  <a href="#">{{ block.settings.footer_site_subheading_two }}</a>
+                </li>
+                <li>
+                  <a href="#">{{ block.settings.footer_site_subheading_three }}</a>
+                </li>
+                <li>
+                  <a href="#">{{ block.settings.footer_site_subheading_four }}</a>
+                </li>
+                <li>
+                  <a href="#">{{ block.settings.footer_site_subheading_five }}</a>
+                </li>
+                <li>
+                  <a href="#">{{ block.settings.footer_site_subheading_six }}</a>
+                </li>
+                <li>
+                  <a href="#">{{ block.settings.footer_site_subheading_seven }}</a>
+                </li>
+                <li>
+                  <a href="#">{{ block.settings.footer_site_subheading_eight }}</a>
+                </li>
+              </ul>
+            </div>
+          {%- when 'footer_info' -%}
+            <div class="footer-col">
+              <h3>{{ block.settings.footer_info_heading }}</h3>
+              <ul>
+                <li>
+                  <a href="#">{{ block.settings.footer_info_subheading_one }}</a>
+                </li>
+                <li>
+                  <a href="#">{{ block.settings.footer_info_subheading_two }}</a>
+                </li>
+                <li>
+                  <a href="#">{{ block.settings.footer_info_subheading_three }}</a>
+                </li>
+                <li>
+                  <a href="#">{{ block.settings.footer_info_subheading_four }}</a>
+                </li>
+              </ul>
+            </div>
+          {%- when 'footer_contact' -%}
+            <div class="footer-col support">
+              <h3>
+                {{ block.settings.footer_contact_heading }}
+                <span class="online-dot"></span>
+              </h3>
+              <p class="phone">{{ block.settings.footer_contact_phone }}</p>
+              <small>{{ block.settings.footer_contact_phone_description }}</small>
+              <p class="email">{{ block.settings.footer_contact_email }}</p>
+              <small>{{ block.settings.footer_contact_email_description }}</small>
+            </div>
+          {%- else -%}
+        {%- endcase -%}
+      {%- endfor -%}
     </div>
-    <div class="footer-col">
-      <h3>O Veniře</h3>
-      <ul>
-        <li><a href="#">O nás</a></li>
-        <li><a href="#">Kariéra</a></li>
-      </ul>
+  {%- else -%}
+    <div class="footer-main">
+      <div class="footer-col">
+        <h2>venira</h2>
+        <p>Produkty pro krásu a zdraví pro vaši spokojenost.</p>
+      </div>
+      <div class="footer-col">
+        <h3>O Veniře</h3>
+        <ul>
+          <li><a href="#">O nás</a></li>
+          <li><a href="#">Kariéra</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Pro vás</h3>
+        <ul>
+          <li><a href="#">Kontakt / Zákaznická podpora</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Recenze a hodnocení</a></li>
+          <li><a href="#">Dárkový poukaz</a></li>
+          <li><a href="#">Dárkový rádce</a></li>
+          <li><a href="#">Doprava a platba</a></li>
+          <li><a href="#">Výhody nákupu u nás</a></li>
+          <li><a href="#">Často kladené otázky</a></li>
+          <li><a href="#">Vydělávejte s námi / Affiliate program</a></li>
+          <li><a href="#">Velkoobchod</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Důležité informace</h3>
+        <ul>
+          <li><a href="#">Reklamace, vrácení a výměna zboží</a></li>
+          <li><a href="#">Podmínky ochrany osobních údajů</a></li>
+          <li><a href="#">Obchodní podmínky</a></li>
+          <li><a href="#">Cookies</a></li>
+        </ul>
+      </div>
+      <div class="footer-col support">
+        <h3>Zákaznická podpora <span class="online-dot"></span></h3>
+        <p class="phone">+420 770 118 595</p>
+        <small>Po–Pá 8:00 – 16:00 hod.</small>
+        <p class="email">info@venira.cz</p>
+        <small>Kdykoliv</small>
+      </div>
     </div>
-    <div class="footer-col">
-      <h3>Pro vás</h3>
-      <ul>
-        <li><a href="#">Kontakt / Zákaznická podpora</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Recenze a hodnocení</a></li>
-        <li><a href="#">Dárkový poukaz</a></li>
-        <li><a href="#">Dárkový rádce</a></li>
-        <li><a href="#">Doprava a platba</a></li>
-        <li><a href="#">Výhody nákupu u nás</a></li>
-        <li><a href="#">Často kladené otázky</a></li>
-        <li><a href="#">Vydělávejte s námi / Affiliate program</a></li>
-        <li><a href="#">Velkoobchod</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h3>Důležité informace</h3>
-      <ul>
-        <li><a href="#">Reklamace, vrácení a výměna zboží</a></li>
-        <li><a href="#">Podmínky ochrany osobních údajů</a></li>
-        <li><a href="#">Obchodní podmínky</a></li>
-        <li><a href="#">Cookies</a></li>
-      </ul>
-    </div>
-    <div class="footer-col support">
-      <h3>Zákaznická podpora <span class="online-dot"></span></h3>
-      <p class="phone">+420 770 118 595</p>
-      <small>Po–Pá 8:00 – 16:00 hod.</small>
-      <p class="email">info@venira.cz</p>
-      <small>Kdykoliv</small>
-    </div>
-  </div>
+  {%- endif -%}
 
   <div class="footer-bottom">
     <div class="logos">
@@ -87,71 +168,8 @@
 </footer>
 
 <style>
-  .newsletter {
-    background: #f6ebd8;
-    padding: 40px 20px;
-  }
-
-  .newsletter-content {
-    max-width: var(--page-width);
-    margin: 0 auto;
-    padding: 0 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-
-  .newsletter h3 {
-    margin: 0;
-    font-size: 20px;
-    font-family: {{ settings.type_header_font.family }};
-    font-weight: {{ settings.type_header_font.weight }};
-  }
-
-  .newsletter p {
-    font-size: 15px;
-    color: #555;
-    font-family: {{ settings.type_body_font.family }};
-    font-weight: {{ settings.type_body_font.weight }};
-  }
-
-  .newsletter-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .newsletter-form input {
-    padding: 16px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    min-width: 250px;
-  }
-
-  .newsletter-form button {
-    padding: 16px 20px;
-    background: #000;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-  }
-
-  .newsletter-form small {
-    font-size: 11px;
-    color: #555;
-  }
-
-  .newsletter-form a {
-    text-decoration: underline;
-  }
-
   footer {
-    background: #f9f9f9;
+    background: {{ section.settings.footer_bg_color }};
     padding: 40px 20px;
   }
 
@@ -248,4 +266,191 @@
   .footer-bottom .socials a {
     display: inline-block;
   }
+  @media screen and  (min-width:990px){
+    .newsletter-form .input-group{
+      flex-direction: row;
+    }
+  }
 </style>
+
+{% schema %}
+{
+  "name": "Footer",
+  "class": "footer",
+  "settings": [
+    {
+      "type": "color",
+      "id": "footer_bg_color",
+      "label": "Footer background color",
+      "default": "#f9f9f9"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Footer Logo",
+      "type": "footer_logo",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "footer_logo_image",
+          "label": "Logo"
+        },
+        {
+          "type": "textarea",
+          "id": "footer_logo_description",
+          "label": "Company Short description",
+          "default": "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
+        }
+      ]
+    },
+    {
+      "name": "Footer About",
+      "type": "footer_about",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "footer_about_heading",
+          "label": "Heading About",
+          "default": "About the company"
+        },
+        {
+          "type": "textarea",
+          "id": "footer_about_subheading",
+          "label": "Footer subheading",
+          "default": "About us"
+        },
+        {
+          "type": "url",
+          "id": "footer_about_subheading_url",
+          "label": "Subheading URL"
+        }
+      ]
+    },
+    {
+      "name": "Footer Contact",
+      "type": "footer_contact",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "footer_contact_heading",
+          "label": "Heading Contact",
+          "default": "Customer service"
+        },
+        {
+          "type": "text",
+          "id": "footer_contact_phone",
+          "label": "Contact phone",
+          "default": "+33 123 456 789"
+        },
+        {
+          "type": "textarea",
+          "id": "footer_contact_phone_description",
+          "label": "Contact phone description",
+          "default": "Du Lundi - au Vendredi 08:00 - 16:00"
+        },
+        {
+          "type": "text",
+          "id": "footer_contact_email",
+          "label": "Contact email",
+          "default": "info@test.com"
+        },
+        {
+          "type": "textarea",
+          "id": "footer_contact_email_description",
+          "label": "Contact email description",
+          "default": "Call anytime"
+        }
+      ]
+    },
+    {
+      "name": "Footer Info",
+      "type": "footer_info",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "footer_info_heading",
+          "label": "Heading Info",
+          "default": "Information"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "footer_info_subheading_one",
+          "label": "Subheading one"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "footer_info_subheading_two",
+          "label": "Subheading one"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "footer_info_subheading_three",
+          "label": "Subheading one"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "footer_info_subheading_four",
+          "label": "Subheading one"
+        }
+      ]
+    },
+    {
+      "name": "Footer site",
+      "type": "footer_site",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "footer_site_heading",
+          "label": "Heading Site",
+          "default": "For you"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "footer_site_subheading_one",
+          "label": "Subheading one"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "footer_site_subheading_two",
+          "label": "Subheading one"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "footer_site_subheading_three",
+          "label": "Subheading one"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "footer_site_subheading_four",
+          "label": "Subheading one"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "footer_site_subheading_five",
+          "label": "Subheading one"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "footer_site_subheading_six",
+          "label": "Subheading one"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "footer_site_subheading_seven",
+          "label": "Subheading one"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "footer_site_subheading_eight",
+          "label": "Subheading one"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
