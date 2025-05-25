@@ -183,21 +183,24 @@
   }
 </style>
 <script>
-  const sectionId = `{{ section.id }}`;
-  const carousel = document.getElementById(`carousel-${sectionId}`);
-  const prevBtn = document.getElementById(`prevBtn-${sectionId}`);
-  const nextBtn = document.getElementById(`nextBtn-${sectionId}`);
+  window.initCarousel =
+    window.initCarousel ||
+    function (sectionId) {
+      const carousel = document.getElementById(`carousel-${sectionId}`);
+      const prevBtn = document.getElementById(`prevBtn-${sectionId}`);
+      const nextBtn = document.getElementById(`nextBtn-${sectionId}`);
 
-  console.log(carousel);
-  console.log(1);
+      console.log(carousel);
 
-  prevBtn.addEventListener('click', () => {
-    carousel.scrollBy({ left: -carousel.offsetWidth, behavior: 'smooth' });
-  });
+      prevBtn.addEventListener('click', () => {
+        carousel.scrollBy({ left: -carousel.offsetWidth, behavior: 'smooth' });
+      });
 
-  nextBtn.addEventListener('click', () => {
-    carousel.scrollBy({ left: carousel.offsetWidth, behavior: 'smooth' });
-  });
+      nextBtn.addEventListener('click', () => {
+        carousel.scrollBy({ left: carousel.offsetWidth, behavior: 'smooth' });
+      });
+    };
+  initCarousel('{{ section.id }}');
 </script>
 
 {% schema %}

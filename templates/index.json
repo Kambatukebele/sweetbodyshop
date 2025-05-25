@@ -39,16 +39,16 @@
       ],
       "name": "Hero Two",
       "settings": {
-        "hero_two__background_color": "#ffffff",
+        "hero_two__background_color": "#4a2c39",
         "hero_two_height": "100vh",
         "hero_two_height_desktop": "70vh",
         "hero_two_image": "shopify://shop_images/image-1_5ab36ff3-9b63-43d3-860b-1043492c1558.png_v_1613787668.png",
-        "hero_two__heading_color": "#050505",
-        "hero_two__second_heading_color": "#5c1a1b",
-        "hero_two__body_color": "#212121",
-        "hero_two__button_bg_color": "#5c1a1b",
+        "hero_two__heading_color": "#faf3ec",
+        "hero_two__second_heading_color": "#faf3ec",
+        "hero_two__body_color": "#faf3ec",
+        "hero_two__button_bg_color": "#9b7149",
         "hero_two__button_bg_color_hover": "#5c6c7c",
-        "hero_two__button_text_color": "#ffffff"
+        "hero_two__button_text_color": "#fef9f5"
       }
     },
     "prove_yGBMDc": {
@@ -252,9 +252,9 @@
             "two_columns__color_heading_text": "Get an exclusive",
             "two_columns__color_body_text": "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             "two_columns__color_btn_text": "Buy now",
-            "two_columns__color_heading": "#cf2c2c",
+            "two_columns__color_heading": "#121212",
             "two_columns__color_body": "#020202",
-            "two_columns__bg_color_btn": "#ba3131",
+            "two_columns__bg_color_btn": "#9b7149",
             "two_columns__color_btn": "#ffffff"
           }
         },
@@ -350,7 +350,7 @@
       "name": "Product description",
       "settings": {
         "product_description_paddingY": 36,
-        "product_description_background_color": "#f9f6f2"
+        "product_description_background_color": "#4a2c39"
       }
     },
     "product_carousel_EFXgGR": {
@@ -803,7 +803,7 @@
     "featured_blog_PVebUA": {
       "type": "featured-blog",
       "custom_css": [
-        ".card{border-radius: 10px;}"
+        ".card {border-radius: 10px;}"
       ],
       "name": "t:sections.featured-blog.presets.name",
       "settings": {
