@@ -1,4 +1,4 @@
-<section class="wrapper">
+<section class="wrapper-{{ section.id }}">
   {%- if section.blocks.size > 0 -%}
     {%- for element in section.blocks -%}
       {%- case element.type -%}
@@ -40,7 +40,7 @@
   {%- endif -%}
 </section>
 <style>
-  .wrapper {
+  .wrapper-{{ section.id }} {
     width: 100%;
     margin-inline: auto;
     position: relative;
