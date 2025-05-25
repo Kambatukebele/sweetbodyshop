@@ -181,11 +181,17 @@
     flex-wrap: wrap;
     gap: 40px;
     justify-content: space-between;
+    align-items: start;
   }
 
   .footer-col {
     flex: 1;
     min-width: 200px;
+
+  }
+  .footer-col img {
+    min-width: 200px;
+    margin-top: 20px;
   }
 
   .footer-col h2 {
@@ -193,6 +199,7 @@
     font-family: {{ settings.type_header_font.family }};
     font-weight: {{ settings.type_header_font.weight }};
     margin-bottom: 10px;
+
   }
 
   .footer-col h3 {
@@ -200,12 +207,15 @@
     font-family: {{ settings.type_header_font.family }};
     font-weight: {{ settings.type_header_font.weight }};
     margin-bottom: 10px;
+
+
   }
 
   .footer-col ul {
     list-style: none;
     padding: 0;
     margin: 0;
+
   }
 
   .footer-col li {
