@@ -374,11 +374,13 @@
         "product_carousel_description": "Besoin de conseils avant de commander ? Laissez votre numéro et recevez un appel discret d’une conseillère.",
         "product_carousel_button_title": "Me faire rappeler",
         "product_carousel_button_url": "",
-        "product_carousel_button_bg_color": "#e3c770",
+        "product_carousel_button_bg_color": "#000000",
         "product_carousel_button_text_color": "#ffffff",
         "product_carousel_products": [
           "libido-booster-pour-femmes-copy",
-          "libido-booster-pour-femmes"
+          "libido-booster-pour-femmes",
+          "horny-goat-weed",
+          "libido-booster-homme"
         ],
         "product_carousel_list_enable": true,
         "product_carousel_list_color": "#ededed"
