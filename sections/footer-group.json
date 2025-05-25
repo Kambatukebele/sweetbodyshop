@@ -11,6 +11,53 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "review_section_rB6UfA": {
+      "type": "review-section",
+      "blocks": {
+        "review_HcVbVU": {
+          "type": "review",
+          "settings": {
+            "review_img": "shopify://shop_images/IMG_6129_1_0a97012b-bf7c-4b3c-920b-cfe14aa0ebf3.png",
+            "review_title": "Review one",
+            "review_author": "James",
+            "review_date": "20.11.29",
+            "review_comment": "Review comment",
+            "review_svg": ""
+          }
+        },
+        "review_BYHUFU": {
+          "type": "review",
+          "settings": {
+            "review_img": "shopify://shop_images/G-1_1_1.png",
+            "review_title": "Review one",
+            "review_author": "James",
+            "review_date": "20.11.29",
+            "review_comment": "Review comment",
+            "review_svg": ""
+          }
+        },
+        "review_z4xE4c": {
+          "type": "review",
+          "settings": {
+            "review_img": "shopify://shop_images/B-11.png",
+            "review_title": "Review one",
+            "review_author": "James",
+            "review_date": "20.11.29",
+            "review_comment": "Review comment",
+            "review_svg": ""
+          }
+        }
+      },
+      "block_order": [
+        "review_HcVbVU",
+        "review_BYHUFU",
+        "review_z4xE4c"
+      ],
+      "name": "Reviews",
+      "settings": {
+        "review_bg_color": "#ffffff"
+      }
+    },
     "newsletter_x4kPJW": {
       "type": "newsletter",
       "blocks": {
@@ -100,6 +147,7 @@
     }
   },
   "order": [
+    "review_section_rB6UfA",
     "newsletter_x4kPJW",
     "footer"
   ]
