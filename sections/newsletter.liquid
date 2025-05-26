@@ -33,12 +33,21 @@
       </div>
     {%- endif -%}
 
-    <form class="newsletter-form">
+    <form class="newsletter-form" method="post" id="newsletter-form">
       <div class="input-group">
-        <input type="text" placeholder="Enter your name here..." name="name" required>
-        <input type="text" placeholder="Enter your name here..." name="phone_number" required>
+        <label class="input-group__label">
+          <span>Name</span>
+          <input type="text" placeholder="Ex: Adrian" name="name" required>
+        </label>
+        <label class="input-group__label">
+          <span>Phone number</span>
+          <input type="text" placeholder="+33 6 12 34 56 78" name="phone_number" required>
+        </label>
       </div>
-      <input type="email" placeholder="Vaše e-mailová adresa..." name="email" required>
+      <label class="input-group__label">
+        <span>Email</span>
+        <input type="email" placeholder="adrian@example.com" name="email" required>
+      </label>
       <button type="submit">Appelez moi discretement</button>
       <small>Vložením e-mailu souhlasíte s <a href="#">podmínkami ochrany osobních údajů</a></small>
     </form>
@@ -90,6 +99,11 @@
     flex-direction: column;
     gap: 10px;
   }
+  .input-group__label{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
 
   .newsletter-form input {
     padding: 16px;
@@ -123,6 +137,20 @@
     }
   }
 </style>
+
+<script>
+  const newsletterForm = document.getElementById('newsletter-form');
+  newsletterForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    {% comment %} const formData = new formData(this);
+    fetch('https://sweetstore.com/api/newsletter-data', {
+      method: 'POST',
+      body: formData,
+    }).then((response) => {
+      alert('Form submitted!');
+    }); {% endcomment %}
+  });
+</script>
 
 {% schema %}
 {
