@@ -149,17 +149,11 @@
       email: this.email.value,
     };
 
-    const website = 'https://lightgray-dugong-905323.hostingersite.com/';
-
     try {
       const response = await fetch('https://lightgray-dugong-905323.hostingersite.com/submit-lead.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: 'John Doe',
-          phone_number: '123456789',
-          email: 'john@example.com',
-        }),
+        body: JSON.stringify(formData),
       });
 
       if (response.ok) {
