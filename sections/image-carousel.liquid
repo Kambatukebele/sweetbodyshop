@@ -190,8 +190,6 @@
       const prevBtn = document.getElementById(`prevBtn-${sectionId}`);
       const nextBtn = document.getElementById(`nextBtn-${sectionId}`);
 
-      console.log(carousel);
-
       prevBtn.addEventListener('click', () => {
         carousel.scrollBy({ left: -carousel.offsetWidth, behavior: 'smooth' });
       });
