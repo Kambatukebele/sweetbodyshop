@@ -33,7 +33,7 @@
       </div>
     {%- endif -%}
 
-    <form class="newsletter-form" method="post" id="newsletter-form">
+    <form class="newsletter-form" id="newsletter-form">
       <div class="input-group">
         <label class="input-group__label">
           <span>Name</span>
@@ -140,15 +140,33 @@
 
 <script>
   const newsletterForm = document.getElementById('newsletter-form');
-  newsletterForm.addEventListener('submit', function (e) {
+  newsletterForm.addEventListener('submit', async function (e) {
     e.preventDefault();
-    {% comment %} const formData = new formData(this);
-    fetch('https://sweetstore.com/api/newsletter-data', {
-      method: 'POST',
-      body: formData,
-    }).then((response) => {
-      alert('Form submitted!');
-    }); {% endcomment %}
+
+    const formData = {
+      name: this.name.value,
+      phone_number: this.phone_number.value,
+      email: this.email.value,
+    };
+
+    const website = 'http://sweetbodyshop-web/';
+
+    try {
+      const response = await fetch(website + 'api/submit-lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        alert('Submitted successfully!');
+      } else {
+        alert('Failed to submit. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('An error occurred while submitting the form. Please try again.');
+    }
   });
 </script>
 
