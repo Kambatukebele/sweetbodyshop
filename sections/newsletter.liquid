@@ -149,10 +149,10 @@
       email: this.email.value,
     };
 
-    const website = 'http://sweetbodyshop-web/';
+    const website = 'https://lightgray-dugong-905323.hostingersite.com/';
 
     try {
-      const response = await fetch(website + 'api/submit-lead', {
+      const response = await fetch(website + 'submit-lead.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
