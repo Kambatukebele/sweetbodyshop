@@ -53,9 +53,8 @@
         "review_BYHUFU",
         "review_z4xE4c"
       ],
-      "name": "Reviews",
       "settings": {
-        "review_bg_color": "#ffffff"
+        "review_bg_color": "#ece8f1"
       }
     },
     "newsletter_x4kPJW": {
@@ -72,12 +71,11 @@
       "block_order": [
         "newsletter_hrjX4D"
       ],
-      "name": "t:sections.newsletter.presets.name",
       "settings": {
-        "newsletter_bg_color": "#bca886",
+        "newsletter_bg_color": "#f7f7f8",
         "newsletter_heading_color": "#000000",
         "newsletter_description_color": "#121212",
-        "newsletter_button_bg_color": "#101010",
+        "newsletter_button_bg_color": "#9068be",
         "newsletter_button_color": "#ffffff"
       }
     },

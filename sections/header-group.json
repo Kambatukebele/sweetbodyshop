@@ -41,10 +41,10 @@
       "settings": {
         "promotion_enable_custom_background_color_id": true,
         "promotion_color_scheme_id": "scheme_1",
-        "promotion_custom_background_color_id": "#dddef5",
-        "promotion_custom_text_color_id": "#030303",
+        "promotion_custom_background_color_id": "#9068be",
+        "promotion_custom_text_color_id": "#ffffff",
         "promotion_enable_line_divider_id": true,
-        "promotion_bottom_color_line_divider_id": "#dddef5",
+        "promotion_bottom_color_line_divider_id": "#9068be",
         "promotion_background_height_id": 40,
         "promotion_font_size_id": 14,
         "promotion_animation_mobile_id": 60,

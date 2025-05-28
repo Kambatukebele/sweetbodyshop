@@ -148,7 +148,7 @@
       }
     },
     "prove_yGBMDc": {
-      "type": "prove",
+      "type": "benefits",
       "blocks": {
         "benefits_JQatn6": {
           "type": "benefits",
@@ -194,7 +194,7 @@
         "benefits_XG7mLn"
       ],
       "settings": {
-        "benefits_background_color": "#f5f5f5",
+        "benefits_background_color": "#ffffff",
         "benefits_text_color": "#000000"
       }
     },
@@ -302,7 +302,7 @@
         "text_scrolling_font_size": 29,
         "text_scrolling_font_weight": 700,
         "text_scrolling_height": 100,
-        "text_scrolling_background_color": "#5c1a1b",
+        "text_scrolling_background_color": "#9068be",
         "text_scrolling_text_color": "#ffffff",
         "text_scrolling_animation_duration": 98,
         "text_scrolling_text_transform": "uppercase"
@@ -320,7 +320,7 @@
         "product_carousel_description": "Besoin de conseils avant de commander ? Laissez votre numéro et recevez un appel discret d’une conseillère.",
         "product_carousel_button_title": "Me faire rappeler",
         "product_carousel_button_url": "",
-        "product_carousel_button_bg_color": "#000000",
+        "product_carousel_button_bg_color": "#0f6c3d",
         "product_carousel_button_text_color": "#ffffff",
         "product_carousel_products": [
           "libido-booster-pour-femmes-copy",
@@ -330,144 +330,6 @@
         ],
         "product_carousel_list_enable": true,
         "product_carousel_list_color": "#ededed"
-      }
-    },
-    "image_carousel_KUgYgg": {
-      "type": "image-carousel",
-      "blocks": {
-        "image_carousel_rDBUYD": {
-          "type": "image_carousel",
-          "settings": {
-            "image_carousel_image": "shopify://shop_images/HUBNOUCI_KURA.webp",
-            "image_carousel_heading": "Heading title",
-            "image_carousel_body": "Body description",
-            "image_carousel_button_text": "show more",
-            "image_carousel_button_url": "",
-            "image_carousel_heading_color": "#000000",
-            "image_carousel_heading_transform": "none",
-            "image_carousel_body_color": "#000000",
-            "image_carousel_bg_color": "#000000",
-            "image_carousel_text_color": "#ffffff"
-          }
-        },
-        "image_carousel_zNyRd4": {
-          "type": "image_carousel",
-          "settings": {
-            "image_carousel_image": "shopify://shop_images/SUPER_GREENS.webp",
-            "image_carousel_heading": "Heading title",
-            "image_carousel_body": "Body description",
-            "image_carousel_button_text": "show more",
-            "image_carousel_button_url": "",
-            "image_carousel_heading_color": "#000000",
-            "image_carousel_heading_transform": "none",
-            "image_carousel_body_color": "#000000",
-            "image_carousel_bg_color": "#000000",
-            "image_carousel_text_color": "#ffffff"
-          }
-        },
-        "image_carousel_MLayCR": {
-          "type": "image_carousel",
-          "settings": {
-            "image_carousel_image": "shopify://shop_images/MATCHA.webp",
-            "image_carousel_heading": "Heading title",
-            "image_carousel_body": "Body description",
-            "image_carousel_button_text": "show more",
-            "image_carousel_button_url": "",
-            "image_carousel_heading_color": "#000000",
-            "image_carousel_heading_transform": "none",
-            "image_carousel_body_color": "#000000",
-            "image_carousel_bg_color": "#000000",
-            "image_carousel_text_color": "#ffffff"
-          }
-        },
-        "image_carousel_jyUHUU": {
-          "type": "image_carousel",
-          "settings": {
-            "image_carousel_image": "shopify://shop_images/NOVINKA_BYE_BYE_CELLU.webp",
-            "image_carousel_heading": "Heading title",
-            "image_carousel_body": "Body description",
-            "image_carousel_button_text": "show more",
-            "image_carousel_button_url": "",
-            "image_carousel_heading_color": "#000000",
-            "image_carousel_heading_transform": "none",
-            "image_carousel_body_color": "#000000",
-            "image_carousel_bg_color": "#000000",
-            "image_carousel_text_color": "#ffffff"
-          }
-        },
-        "image_carousel_Nn8UJ4": {
-          "type": "image_carousel",
-          "settings": {
-            "image_carousel_image": "shopify://shop_images/BEAUTY_BOMB.webp",
-            "image_carousel_heading": "Heading title",
-            "image_carousel_body": "Body description",
-            "image_carousel_button_text": "show more",
-            "image_carousel_button_url": "",
-            "image_carousel_heading_color": "#000000",
-            "image_carousel_heading_transform": "none",
-            "image_carousel_body_color": "#000000",
-            "image_carousel_bg_color": "#000000",
-            "image_carousel_text_color": "#ffffff"
-          }
-        },
-        "image_carousel_aPPc7R": {
-          "type": "image_carousel",
-          "settings": {
-            "image_carousel_image": "shopify://shop_images/MATCHA.webp",
-            "image_carousel_heading": "Heading title",
-            "image_carousel_body": "Body description",
-            "image_carousel_button_text": "show more",
-            "image_carousel_button_url": "",
-            "image_carousel_heading_color": "#000000",
-            "image_carousel_heading_transform": "none",
-            "image_carousel_body_color": "#000000",
-            "image_carousel_bg_color": "#000000",
-            "image_carousel_text_color": "#ffffff"
-          }
-        },
-        "image_carousel_3j3bjt": {
-          "type": "image_carousel",
-          "settings": {
-            "image_carousel_image": "shopify://shop_images/Natios_Liver_Banner.webp",
-            "image_carousel_heading": "Heading title",
-            "image_carousel_body": "Body description",
-            "image_carousel_button_text": "show more",
-            "image_carousel_button_url": "",
-            "image_carousel_heading_color": "#000000",
-            "image_carousel_heading_transform": "none",
-            "image_carousel_body_color": "#000000",
-            "image_carousel_bg_color": "#000000",
-            "image_carousel_text_color": "#ffffff"
-          }
-        },
-        "image_carousel_qQqa6E": {
-          "type": "image_carousel",
-          "settings": {
-            "image_carousel_image": "shopify://shop_images/SUPER_GREENS.webp",
-            "image_carousel_heading": "Heading title",
-            "image_carousel_body": "Body description",
-            "image_carousel_button_text": "show more",
-            "image_carousel_button_url": "",
-            "image_carousel_heading_color": "#000000",
-            "image_carousel_heading_transform": "none",
-            "image_carousel_body_color": "#000000",
-            "image_carousel_bg_color": "#000000",
-            "image_carousel_text_color": "#ffffff"
-          }
-        }
-      },
-      "block_order": [
-        "image_carousel_rDBUYD",
-        "image_carousel_zNyRd4",
-        "image_carousel_MLayCR",
-        "image_carousel_jyUHUU",
-        "image_carousel_Nn8UJ4",
-        "image_carousel_aPPc7R",
-        "image_carousel_3j3bjt",
-        "image_carousel_qQqa6E"
-      ],
-      "settings": {
-        "image_carousel_paddingY": 36
       }
     },
     "product_carousel_YLCxGC": {
@@ -482,7 +344,7 @@
         "product_carousel_description": "Redécouvrez une virilité affirmée avec nos formules masculines",
         "product_carousel_button_title": "Me faire rappeler",
         "product_carousel_button_url": "",
-        "product_carousel_button_bg_color": "#5c1a1b",
+        "product_carousel_button_bg_color": "#0f6c3d",
         "product_carousel_button_text_color": "#ffffff",
         "product_carousel_products": [
           "libido-booster-pour-femmes-copy",
@@ -497,13 +359,13 @@
     "slider_D4j76M": {
       "type": "slider",
       "settings": {
-        "show_line_separator": true,
+        "show_line_separator": false,
         "border_bottom_color": "#f2f2f2",
-        "text_scrolling_font_size": 26,
+        "text_scrolling_font_size": 33,
         "text_scrolling_font_weight": 500,
-        "text_scrolling_height": 77,
-        "text_scrolling_background_color": "#000000",
-        "text_scrolling_text_color": "#ffffff",
+        "text_scrolling_height": 100,
+        "text_scrolling_background_color": "#ffffff",
+        "text_scrolling_text_color": "#9e44ff",
         "text_scrolling_animation_duration": 50,
         "text_scrolling_text_transform": "none"
       }
@@ -555,15 +417,15 @@
         "question_response_GWAbfE"
       ],
       "settings": {
-        "faq_background_color": "#ffffff",
+        "faq_background_color": "#f7f7f8",
         "faq_sub_heading": "Faqss",
         "faq_heading": "Get every answers from heress",
-        "faq_sub_heading_color": "#000000",
+        "faq_sub_heading_color": "#020202",
         "faq_heading_color": "#ffffff",
         "question_response_background_color": "#fdfdfd",
         "question_text_color": "#000000",
         "response_text_color": "#000000",
-        "icon_background_color": "#000000"
+        "icon_background_color": "#9e44ff"
       }
     },
     "featured_blog_PVebUA": {
@@ -593,7 +455,6 @@
     "two_columns_RYfMkD",
     "slider_HejBdt",
     "product_carousel_EFXgGR",
-    "image_carousel_KUgYgg",
     "product_carousel_YLCxGC",
     "slider_D4j76M",
     "faq_NPCGpD",
