@@ -9,100 +9,6 @@
  */
 {
   "sections": {
-    "hero_two_7Tqddg": {
-      "type": "hero-two",
-      "blocks": {
-        "heading_cTHAea": {
-          "type": "heading",
-          "settings": {
-            "hero_two__title": "Transformez",
-            "hero_two__title_second": "votre intimité"
-          }
-        },
-        "body_UxdrFJ": {
-          "type": "body",
-          "settings": {
-            "hero_two__body": "Une gamme discrète, puissante et 100 % axée résultats. Livraison rapide et appel privé disponible pour conseils personnalisés."
-          }
-        },
-        "button_yHerMt": {
-          "type": "button",
-          "settings": {
-            "hero_two__button_text": "Découvrir nos produits"
-          }
-        }
-      },
-      "block_order": [
-        "heading_cTHAea",
-        "body_UxdrFJ",
-        "button_yHerMt"
-      ],
-      "name": "Hero Two",
-      "settings": {
-        "hero_two__background_color": "#4a2c39",
-        "hero_two_height": "100vh",
-        "hero_two_height_desktop": "70vh",
-        "hero_two_image": "shopify://shop_images/image-1_5ab36ff3-9b63-43d3-860b-1043492c1558.png_v_1613787668.png",
-        "hero_two__heading_color": "#faf3ec",
-        "hero_two__second_heading_color": "#faf3ec",
-        "hero_two__body_color": "#faf3ec",
-        "hero_two__button_bg_color": "#9b7149",
-        "hero_two__button_bg_color_hover": "#5c6c7c",
-        "hero_two__button_text_color": "#fef9f5"
-      }
-    },
-    "prove_yGBMDc": {
-      "type": "prove",
-      "blocks": {
-        "benefits_JQatn6": {
-          "type": "benefits",
-          "settings": {
-            "benefits_title": "Quick delivery",
-            "benefits_description": "Free delivery"
-          }
-        },
-        "benefits_rbwPwg": {
-          "type": "benefits",
-          "settings": {
-            "benefits_title": "Quick delivery",
-            "benefits_description": "Free delivery"
-          }
-        },
-        "benefits_HQD73y": {
-          "type": "benefits",
-          "settings": {
-            "benefits_title": "Quick delivery",
-            "benefits_description": "Free delivery"
-          }
-        },
-        "benefits_w9WB3V": {
-          "type": "benefits",
-          "settings": {
-            "benefits_title": "Quick delivery",
-            "benefits_description": "Free delivery"
-          }
-        },
-        "benefits_XG7mLn": {
-          "type": "benefits",
-          "settings": {
-            "benefits_title": "Quick delivery",
-            "benefits_description": "Free delivery"
-          }
-        }
-      },
-      "block_order": [
-        "benefits_JQatn6",
-        "benefits_rbwPwg",
-        "benefits_HQD73y",
-        "benefits_w9WB3V",
-        "benefits_XG7mLn"
-      ],
-      "name": "Prove",
-      "settings": {
-        "benefits_background_color": "#f5f5f5",
-        "benefits_text_color": "#000000"
-      }
-    },
     "image_carousel_9JiNxC": {
       "type": "image-carousel",
       "blocks": {
@@ -237,9 +143,59 @@
         "image_carousel_Db6qae",
         "image_carousel_xTawE9"
       ],
-      "name": "Image carousel",
       "settings": {
         "image_carousel_paddingY": 36
+      }
+    },
+    "prove_yGBMDc": {
+      "type": "prove",
+      "blocks": {
+        "benefits_JQatn6": {
+          "type": "benefits",
+          "settings": {
+            "benefits_title": "Quick delivery",
+            "benefits_description": "Free delivery"
+          }
+        },
+        "benefits_rbwPwg": {
+          "type": "benefits",
+          "settings": {
+            "benefits_title": "Quick delivery",
+            "benefits_description": "Free delivery"
+          }
+        },
+        "benefits_HQD73y": {
+          "type": "benefits",
+          "settings": {
+            "benefits_title": "Quick delivery",
+            "benefits_description": "Free delivery"
+          }
+        },
+        "benefits_w9WB3V": {
+          "type": "benefits",
+          "settings": {
+            "benefits_title": "Quick delivery",
+            "benefits_description": "Free delivery"
+          }
+        },
+        "benefits_XG7mLn": {
+          "type": "benefits",
+          "settings": {
+            "benefits_title": "Quick delivery",
+            "benefits_description": "Free delivery"
+          }
+        }
+      },
+      "block_order": [
+        "benefits_JQatn6",
+        "benefits_rbwPwg",
+        "benefits_HQD73y",
+        "benefits_w9WB3V",
+        "benefits_XG7mLn"
+      ],
+      "settings": {
+        "benefits_background_color": "#f5f5f5",
+        "benefits_text_color": "#000000"
       }
     },
     "two_columns_RYfMkD": {
@@ -254,7 +210,7 @@
             "two_columns__color_btn_text": "Buy now",
             "two_columns__color_heading": "#121212",
             "two_columns__color_body": "#020202",
-            "two_columns__bg_color_btn": "#9b7149",
+            "two_columns__bg_color_btn": "#030303",
             "two_columns__color_btn": "#ffffff"
           }
         },
@@ -276,115 +232,7 @@
         "two_columns_38gNXi",
         "two_columns_n7aeM9"
       ],
-      "name": "Two-columns",
       "settings": {}
-    },
-    "product_description_JgYzyq": {
-      "type": "product-description",
-      "blocks": {
-        "intro_WcYyDC": {
-          "type": "intro",
-          "settings": {
-            "product_description_intro": "Our Key Points"
-          }
-        },
-        "heading_iegNEc": {
-          "type": "heading",
-          "settings": {
-            "product_description_title": "Superior designs",
-            "product_description_title_two": "drop lasting qualitys"
-          }
-        },
-        "description_4tTQNY": {
-          "type": "description",
-          "settings": {
-            "product_description_body_description": "Crafted with superior design, engineered with precision, and built to commitment to excellence ensures every detail in meticulously perfected, delivering unparalleled quality and durability."
-          }
-        },
-        "product_description_left_mtUtwM": {
-          "type": "product_description_left",
-          "settings": {
-            "product_description_title_left_one": "Preserves Purity",
-            "product_description_desc_left_one": "Ensures natural essence, free and from toxins, additives",
-            "product_description_title_left_two": "Preserves Purity",
-            "product_description_desc_left_two": "Ensures natural essence, free and from toxins, additives",
-            "product_description_title_left_three": "Preserves Purity",
-            "product_description_desc_left_three": "Ensures natural essence, free and from toxins, additives"
-          }
-        },
-        "image_cttrPp": {
-          "type": "image",
-          "settings": {
-            "product_description_image": "shopify://shop_images/IMG_6129_1_0a97012b-bf7c-4b3c-920b-cfe14aa0ebf3.png"
-          }
-        },
-        "product_description_right_V86erz": {
-          "type": "product_description_right",
-          "settings": {
-            "product_description_title_right_one": "Preserves Purity",
-            "product_description_desc_right_one": "Ensures natural essence, free and from toxins, additives",
-            "product_description_title_right_two": "Preserves Purity",
-            "product_description_desc_right_two": "Ensures natural essence, free and from toxins, additives",
-            "product_description_title_right_three": "Preserves Purity",
-            "product_description_desc_right_three": "Ensures natural essence, free and from toxins, additives"
-          }
-        },
-        "footer_EQfC6F": {
-          "type": "footer",
-          "settings": {
-            "product_description_footer_textOne": "Let's make something great work together.ss",
-            "product_description_footer_textTwo": "Get Free Quotess",
-            "product_description_footer_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "intro_WcYyDC",
-        "heading_iegNEc",
-        "description_4tTQNY",
-        "product_description_left_mtUtwM",
-        "image_cttrPp",
-        "product_description_right_V86erz",
-        "footer_EQfC6F"
-      ],
-      "name": "Product description",
-      "settings": {
-        "product_description_paddingY": 36,
-        "product_description_background_color": "#4a2c39",
-        "product_description_info_color": "#c59c6c",
-        "product_description_heading_color_one": "#ececec",
-        "product_description_heading_color_two": "#000000",
-        "product_description_color": "#f1f1f1",
-        "product_description_heading_left_right_color": "#e9e9e9",
-        "product_description_body_left_right_color": "#ececec",
-        "product_description_footer_text_color": "#ffffff",
-        "product_description_footer_link_color": "#c59c6c"
-      }
-    },
-    "product_carousel_EFXgGR": {
-      "type": "product-carousel",
-      "name": "Product carousel",
-      "settings": {
-        "product_carousel_enable": false,
-        "product_carousel_enable_border": false,
-        "product_carousel_paddingY": 36,
-        "product_carousel_image": "shopify://shop_images/pexels-antonio-fernandez-124839204-10009413.jpg",
-        "product_carousel_subtitle": "POUR ELLE",
-        "product_carousel_title": "ÉQUILIBRE ET DÉSIR AU FÉMININ",
-        "product_carousel_description": "Besoin de conseils avant de commander ? Laissez votre numéro et recevez un appel discret d’une conseillère.",
-        "product_carousel_button_title": "Me faire rappeler",
-        "product_carousel_button_url": "",
-        "product_carousel_button_bg_color": "#000000",
-        "product_carousel_button_text_color": "#ffffff",
-        "product_carousel_products": [
-          "libido-booster-pour-femmes-copy",
-          "libido-booster-pour-femmes",
-          "horny-goat-weed",
-          "libido-booster-homme"
-        ],
-        "product_carousel_list_enable": true,
-        "product_carousel_list_color": "#ededed"
-      }
     },
     "slider_HejBdt": {
       "type": "slider",
@@ -448,7 +296,6 @@
         "scrolling_element_w49m4n",
         "scrolling_element_HHnPNT"
       ],
-      "name": "Slider",
       "settings": {
         "show_line_separator": false,
         "border_bottom_color": "#000000",
@@ -459,6 +306,30 @@
         "text_scrolling_text_color": "#ffffff",
         "text_scrolling_animation_duration": 98,
         "text_scrolling_text_transform": "uppercase"
+      }
+    },
+    "product_carousel_EFXgGR": {
+      "type": "product-carousel",
+      "settings": {
+        "product_carousel_enable": false,
+        "product_carousel_enable_border": false,
+        "product_carousel_paddingY": 36,
+        "product_carousel_image": "shopify://shop_images/pexels-antonio-fernandez-124839204-10009413.jpg",
+        "product_carousel_subtitle": "POUR ELLE",
+        "product_carousel_title": "ÉQUILIBRE ET DÉSIR AU FÉMININ",
+        "product_carousel_description": "Besoin de conseils avant de commander ? Laissez votre numéro et recevez un appel discret d’une conseillère.",
+        "product_carousel_button_title": "Me faire rappeler",
+        "product_carousel_button_url": "",
+        "product_carousel_button_bg_color": "#000000",
+        "product_carousel_button_text_color": "#ffffff",
+        "product_carousel_products": [
+          "libido-booster-pour-femmes-copy",
+          "libido-booster-pour-femmes",
+          "horny-goat-weed",
+          "libido-booster-homme"
+        ],
+        "product_carousel_list_enable": true,
+        "product_carousel_list_color": "#ededed"
       }
     },
     "image_carousel_KUgYgg": {
@@ -595,133 +466,12 @@
         "image_carousel_3j3bjt",
         "image_carousel_qQqa6E"
       ],
-      "name": "Image carousel",
       "settings": {
         "image_carousel_paddingY": 36
       }
     },
-    "two_columns_rhyWzT": {
-      "type": "two-columns",
-      "blocks": {
-        "two_columns_my6fzL": {
-          "type": "two-columns",
-          "settings": {
-            "two_columns__image": "shopify://shop_images/image-fitness-girl-opening-bottle-dietary-supplement-taking-vitamins-stay-healthy-fit.jpg",
-            "two_columns__color_heading_text": "Get an exclusive",
-            "two_columns__color_body_text": "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "two_columns__color_btn_text": "Buy now",
-            "two_columns__color_heading": "#ffffff",
-            "two_columns__color_body": "#ffffff",
-            "two_columns__bg_color_btn": "#000000",
-            "two_columns__color_btn": "#ffffff"
-          }
-        },
-        "two_columns_YhBBQj": {
-          "type": "two-columns",
-          "settings": {
-            "two_columns__image": "shopify://shop_images/close-up-beauty-portrait-topless-woman-with-perfect-skin-natural-make-up-holding-supplement-vitamin-omega-3-fish-oil-turquoise-background.jpg",
-            "two_columns__color_heading_text": "Get an exclusive",
-            "two_columns__color_body_text": "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "two_columns__color_btn_text": "Buy now",
-            "two_columns__color_heading": "#ffffff",
-            "two_columns__color_body": "#ffffff",
-            "two_columns__bg_color_btn": "#000000",
-            "two_columns__color_btn": "#ffffff"
-          }
-        }
-      },
-      "block_order": [
-        "two_columns_my6fzL",
-        "two_columns_YhBBQj"
-      ],
-      "name": "Two-columns",
-      "settings": {}
-    },
-    "product_description_Mi3Nre": {
-      "type": "product-description",
-      "blocks": {
-        "intro_QEMUqE": {
-          "type": "intro",
-          "settings": {
-            "product_description_intro": "Our Key Points"
-          }
-        },
-        "heading_QwR3LL": {
-          "type": "heading",
-          "settings": {
-            "product_description_title": "Superior design",
-            "product_description_title_two": "drop lasting quality"
-          }
-        },
-        "description_XaiXey": {
-          "type": "description",
-          "settings": {
-            "product_description_body_description": "Crafted with superior design, engineered with precision, and built to commitment to excellence ensures every detail in meticulously perfected, delivering unparalleled quality and durability."
-          }
-        },
-        "product_description_left_cQM8Xx": {
-          "type": "product_description_left",
-          "settings": {
-            "product_description_title_left_one": "Preserves Purity",
-            "product_description_desc_left_one": "Ensures natural essence, free and from toxins, additives",
-            "product_description_title_left_two": "Preserves Purity",
-            "product_description_desc_left_two": "Ensures natural essence, free and from toxins, additives",
-            "product_description_title_left_three": "Preserves Purity",
-            "product_description_desc_left_three": "Ensures natural essence, free and from toxins, additives"
-          }
-        },
-        "image_dNkDrk": {
-          "type": "image",
-          "settings": {
-            "product_description_image": "shopify://shop_images/G-1_1_1.png"
-          }
-        },
-        "product_description_right_4f7hJ4": {
-          "type": "product_description_right",
-          "settings": {
-            "product_description_title_right_one": "Preserves Purity",
-            "product_description_desc_right_one": "Ensures natural essence, free and from toxins, additives",
-            "product_description_title_right_two": "Preserves Purity",
-            "product_description_desc_right_two": "Ensures natural essence, free and from toxins, additives",
-            "product_description_title_right_three": "Preserves Purity",
-            "product_description_desc_right_three": "Ensures natural essence, free and from toxins, additives"
-          }
-        },
-        "footer_NCypf6": {
-          "type": "footer",
-          "settings": {
-            "product_description_footer_textOne": "Let's make something great work together.",
-            "product_description_footer_textTwo": "Get Free Quote",
-            "product_description_footer_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "intro_QEMUqE",
-        "heading_QwR3LL",
-        "description_XaiXey",
-        "product_description_left_cQM8Xx",
-        "image_dNkDrk",
-        "product_description_right_4f7hJ4",
-        "footer_NCypf6"
-      ],
-      "name": "Product description",
-      "settings": {
-        "product_description_paddingY": 36,
-        "product_description_background_color": "#f9f6f2",
-        "product_description_info_color": "#000000",
-        "product_description_heading_color_one": "#000000",
-        "product_description_heading_color_two": "#000000",
-        "product_description_color": "#000000",
-        "product_description_heading_left_right_color": "#000000",
-        "product_description_body_left_right_color": "#000000",
-        "product_description_footer_text_color": "#000000",
-        "product_description_footer_link_color": "#000000"
-      }
-    },
     "product_carousel_YLCxGC": {
       "type": "product-carousel",
-      "name": "Product carousel",
       "settings": {
         "product_carousel_enable": true,
         "product_carousel_enable_border": true,
@@ -746,7 +496,6 @@
     },
     "slider_D4j76M": {
       "type": "slider",
-      "name": "Slider",
       "settings": {
         "show_line_separator": true,
         "border_bottom_color": "#f2f2f2",
@@ -805,7 +554,6 @@
         "question_response_qnBbfU",
         "question_response_GWAbfE"
       ],
-      "name": "Faq",
       "settings": {
         "faq_background_color": "#ffffff",
         "faq_sub_heading": "Faqss",
@@ -823,7 +571,6 @@
       "custom_css": [
         ".card {border-radius: 10px;}"
       ],
-      "name": "t:sections.featured-blog.presets.name",
       "settings": {
         "blog": "news",
         "post_limit": 3,
@@ -838,29 +585,18 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
-    },
-    "ingredient_DnRTQV": {
-      "type": "ingredient",
-      "disabled": true,
-      "name": "Mixlix Ingredients",
-      "settings": {}
     }
   },
   "order": [
-    "hero_two_7Tqddg",
-    "prove_yGBMDc",
     "image_carousel_9JiNxC",
+    "prove_yGBMDc",
     "two_columns_RYfMkD",
-    "product_description_JgYzyq",
-    "product_carousel_EFXgGR",
     "slider_HejBdt",
+    "product_carousel_EFXgGR",
     "image_carousel_KUgYgg",
-    "two_columns_rhyWzT",
-    "product_description_Mi3Nre",
     "product_carousel_YLCxGC",
     "slider_D4j76M",
     "faq_NPCGpD",
-    "featured_blog_PVebUA",
-    "ingredient_DnRTQV"
+    "featured_blog_PVebUA"
   ]
 }
