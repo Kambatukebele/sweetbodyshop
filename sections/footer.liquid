@@ -143,26 +143,11 @@
   {%- endif -%}
 
   <div class="footer-bottom">
-    <div class="logos">
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Z%C3%A1silkovna_logo.svg/2560px-Z%C3%A1silkovna_logo.svg.png"
-        alt="Zásilkovna"
-      >
-      <img src="https://www.zasilkovna.cz/files/logos/payment/gopay.svg" alt="GoPay">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa">
-      <!-- Add more logos as needed -->
-    </div>
-    <div class="socials">
-      <a href="#"><img src="https://img.icons8.com/ios-filled/24/instagram-new.png" alt="Instagram"></a>
-      <a href="#"><img src="https://img.icons8.com/ios-filled/24/facebook.png" alt="Facebook"></a>
-      <a href="#"><img src="https://img.icons8.com/ios-filled/24/tiktok.png" alt="TikTok"></a>
-      <a href="#"><img src="https://img.icons8.com/ios-filled/24/youtube-play.png" alt="YouTube"></a>
-      <a href="#"><img src="https://img.icons8.com/ios-filled/24/linkedin.png" alt="LinkedIn"></a>
-      <a href="#"><img src="https://img.icons8.com/ios-filled/24/pinterest.png" alt="Pinterest"></a>
-    </div>
-    <div class="ratings">
-      <img src="https://www.heureka.cz/direct/img/heureka-stars.png" alt="Heureka">
-      <img src="https://www.zbozi.cz/static/img/rating/stars-5.svg" alt="Zbozi.cz">
+    <div class="copyright">
+      <p>
+        &copy; {{ 'now' | date: '%Y' }}
+        {{ shop.name }}. All rights reserved.
+      </p>
     </div>
   </div>
 </footer>
@@ -199,6 +184,7 @@
     font-family: {{ settings.type_header_font.family }};
     font-weight: {{ settings.type_header_font.weight }};
     margin-bottom: 10px;
+    color: {{ section.settings.footer_text_color }};
 
   }
 
@@ -207,7 +193,11 @@
     font-family: {{ settings.type_header_font.family }};
     font-weight: {{ settings.type_header_font.weight }};
     margin-bottom: 10px;
+    color: {{ section.settings.footer_text_color }};
 
+  }
+  .footer-col p, .footer-col small {
+    color: {{ section.settings.footer_text_color }};
 
   }
 
@@ -226,6 +216,7 @@
     text-decoration: none;
     color: #000;
     font-size: 14px;
+    color: {{ section.settings.footer_text_color }};
   }
 
   .footer-col a:hover {
@@ -236,12 +227,14 @@
     font-weight: bold;
     font-size: 16px;
     margin: 5px 0;
+    color: {{ section.settings.footer_text_color }};
   }
 
   .support .email {
     font-weight: bold;
     font-size: 16px;
     margin: 10px 0 0;
+    color: {{ section.settings.footer_text_color }};
   }
 
   .online-dot {
@@ -251,6 +244,7 @@
     background: green;
     border-radius: 50%;
     margin-left: 5px;
+    color: {{ section.settings.footer_text_color }};
   }
 
   .footer-bottom {
@@ -258,7 +252,7 @@
     margin: 0 auto;
     padding: 0 1.5rem;
     padding-top: 20px;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid {{- section.settings.footer_line_separator_color -}};
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -266,15 +260,13 @@
     gap: 20px;
   }
 
-  .footer-bottom .logos img,
-  .footer-bottom .socials img,
-  .footer-bottom .ratings img {
-    height: 30px;
-    margin-right: 10px;
+  .copyright p{
+    color: {{ section.settings.footer_text_color }};
   }
 
-  .footer-bottom .socials a {
-    display: inline-block;
+  .socials {
+    display: flex;
+
   }
   @media screen and  (min-width:990px){
     .newsletter-form .input-group{
@@ -292,7 +284,19 @@
       "type": "color",
       "id": "footer_bg_color",
       "label": "Footer background color",
-      "default": "#f9f9f9"
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "footer_text_color",
+      "label": "Footer text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "footer_line_separator_color",
+      "label": "Line separator color",
+      "default": "#ffffff"
     }
   ],
   "blocks": [

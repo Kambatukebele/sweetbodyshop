@@ -1,0 +1,110 @@
+<div class="comparison-container">
+  <div class="resizable-panel" id="left-panel">
+    {{ 'product-1' | placeholder_svg_tag }}
+  </div>
+  <div class="resizable-panel" id="right-panel">
+    {{ 'product-1' | placeholder_svg_tag }}
+  </div>
+  <div class="slider" id="drag-handle">
+    <span>↔</span>
+  </div>
+</div>
+
+<style>
+  .comparison-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .resizable-panel {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .resizable-panel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  #left-panel {
+    width: 50%;
+  }
+
+  #right-panel {
+    width: 50%;
+  }
+
+  .slider {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 12px;
+    background: #fff;
+    border-left: 2px solid #000;
+    border-right: 2px solid #000;
+    z-index: 10;
+    cursor: ew-resize;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    font-size: 20px;
+  }
+</style>
+
+<script>
+  const container = document.querySelector('.comparison-container');
+  const leftPanel = document.getElementById('left-panel');
+  const rightPanel = document.getElementById('right-panel');
+  const slider = document.getElementById('drag-handle');
+
+  let isDragging = false;
+
+  const updatePanels = (clientX) => {
+    const rect = container.getBoundingClientRect();
+    let offset = clientX - rect.left;
+
+    // Clamp within bounds
+    offset = Math.max(0, Math.min(offset, rect.width));
+
+    const leftWidth = offset;
+    const rightWidth = rect.width - offset;
+
+    leftPanel.style.width = `${leftWidth}px`;
+    rightPanel.style.width = `${rightWidth}px`;
+    slider.style.left = `${leftWidth - slider.offsetWidth / 2}px`;
+  };
+
+  slider.addEventListener('mousedown', () => (isDragging = true));
+  window.addEventListener('mouseup', () => (isDragging = false));
+  window.addEventListener('mousemove', (e) => {
+    if (isDragging) updatePanels(e.clientX);
+  });
+
+  // Touch support
+  slider.addEventListener('touchstart', () => (isDragging = true));
+  window.addEventListener('touchend', () => (isDragging = false));
+  window.addEventListener('touchmove', (e) => {
+    if (isDragging) {
+      const touch = e.touches[0];
+      updatePanels(touch.clientX);
+    }
+  });
+</script>
+{% schema %}
+{
+  "name": "Image comparison",
+  "class": "image_comparison",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Image comparison",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

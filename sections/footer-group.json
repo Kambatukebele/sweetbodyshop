@@ -85,7 +85,7 @@
         "footer_logo_wwTCtt": {
           "type": "footer_logo",
           "settings": {
-            "footer_logo_image": "shopify://shop_images/logo_1.svg",
+            "footer_logo_image": "shopify://shop_images/logo-white-sweetbodyshop.svg",
             "footer_logo_description": "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
           }
         },
@@ -140,7 +140,8 @@
         "footer_contact_cjXwCw"
       ],
       "settings": {
-        "footer_bg_color": "#f9f9f9"
+        "footer_bg_color": "#000000",
+        "footer_text_color": "#ffffff"
       }
     }
   },
