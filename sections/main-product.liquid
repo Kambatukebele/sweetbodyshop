@@ -1,3 +1,22 @@
+{% comment %}
+  {%- if product.metafields.custom.why_you_ll_love_it_client -%}
+    <p style="font-weight:600;font-size:18px">
+      The
+      {{ product.title }}
+      is perfect is you want to:
+    </p>
+    {%- assign lists = product.metafields.custom.why_you_ll_love_it_client | parse_json -%}
+    {{ lists | strip }}
+    {% comment %}
+      <ul class="mega_one-lists">
+        {% for item in lists %}
+          {{ item.value }}
+        {% endfor %}
+      </ul>
+    {% endcomment %}
+  {%- endif -%}
+{% endcomment %}
+
 <product-info
   id="MainProduct-{{ section.id }}"
   class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}"
@@ -356,7 +375,10 @@
                                 </dt>
                                 <dd>
                                   <span class="price-per-item--current">
-                                    {{- 'products.product.volume_pricing.price_at_each_html' | t: price: variant_price -}}
+                                    {{-
+                                      'products.product.volume_pricing.price_at_each_html'
+                                      | t: price: variant_price
+                                    -}}
                                   </span>
                                 </dd>
                               </dl>
@@ -1674,7 +1696,7 @@
         {
           "type": "header",
           "content": "t:sections.main-product.blocks.icon_with_text.settings.pairing_2.label"
-        },        
+        },
         {
           "type": "select",
           "id": "icon_2",
@@ -1874,7 +1896,7 @@
         {
           "type": "header",
           "content": "t:sections.main-product.blocks.icon_with_text.settings.pairing_3.label"
-        },        
+        },
         {
           "type": "select",
           "id": "icon_3",
@@ -2176,7 +2198,7 @@
       ],
       "default": "hide",
       "label": "t:sections.main-product.settings.mobile_thumbnails.label"
-    },    
+    },
     {
       "type": "select",
       "id": "media_position",

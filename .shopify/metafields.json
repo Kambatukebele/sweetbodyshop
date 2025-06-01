@@ -7,7 +7,18 @@
   "location": [],
   "market": [],
   "order": [],
-  "page": [],
+  "page": [
+    {
+      "key": "about_this_product",
+      "namespace": "custom",
+      "name": "About this product",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    }
+  ],
   "product": [
     {
       "key": "age-group",
@@ -77,6 +88,16 @@
       "type": {
         "name": "list.metaobject_reference",
         "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "why_you_ll_love_it_client",
+      "namespace": "custom",
+      "name": "Why you'll love it:",
+      "description": "Explain why this product will be loved by the client",
+      "type": {
+        "name": "list.single_line_text_field",
+        "category": "TEXT"
       }
     }
   ],
