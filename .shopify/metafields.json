@@ -80,52 +80,82 @@
       }
     },
     {
-      "key": "why_you_ll_love_it_client",
+      "key": "precautions_d_emploi",
       "namespace": "custom",
-      "name": "Why you'll love it:",
-      "description": "Explain why this product will be loved by the client",
-      "type": {
-        "name": "list.single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "about_this_product",
-      "namespace": "custom",
-      "name": "About this product",
-      "description": "About the product text",
-      "type": {
-        "name": "multi_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "product_facts",
-      "namespace": "custom",
-      "name": "Product facts",
-      "description": "Products facts",
-      "type": {
-        "name": "multi_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "how_to_use_product",
-      "namespace": "custom",
-      "name": "How to use product",
+      "name": "Précautions d’emploi",
       "description": "",
       "type": {
-        "name": "multi_line_text_field",
+        "name": "rich_text_field",
         "category": "TEXT"
       }
     },
     {
-      "key": "what_s_in_the_product",
+      "key": "ideal_si_vous_souhaitez",
       "namespace": "custom",
-      "name": "what's in the product",
+      "name": "Idéal si vous souhaitez",
       "description": "",
       "type": {
-        "name": "multi_line_text_field",
+        "name": "rich_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "que_contient_le_produit",
+      "namespace": "custom",
+      "name": "Que contient le produit ?",
+      "description": "",
+      "type": {
+        "name": "rich_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "posologie_recommandee",
+      "namespace": "custom",
+      "name": "Posologie recommandée",
+      "description": "",
+      "type": {
+        "name": "rich_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "comment_utiliser_le_produit",
+      "namespace": "custom",
+      "name": "Comment utiliser le produit ",
+      "description": "",
+      "type": {
+        "name": "rich_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "faits_sur_le_produit",
+      "namespace": "custom",
+      "name": "Faits sur le produit",
+      "description": "",
+      "type": {
+        "name": "rich_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "a_propos_de_ce_produit",
+      "namespace": "custom",
+      "name": "À propos de ce produit",
+      "description": "",
+      "type": {
+        "name": "rich_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "pourquoi_vous_allez_l_adorer",
+      "namespace": "custom",
+      "name": "Pourquoi vous allez l’adorer ?",
+      "description": "",
+      "type": {
+        "name": "rich_text_field",
         "category": "TEXT"
       }
     }

@@ -13,18 +13,20 @@
 
           <div class="card-content">
             <h3 style="color: {{ section.settings.image_carousel_heading_color }}">
-              {{ product.title }}
+              {{ product.title | truncatewords: 15 }}
             </h3>
             <p style="color: {{ section.settings.image_carousel_body_color }}">
               {{ product.description | truncatewords: 15 }}
             </p>
-            {% render 'button',
-              href: product.url,
-              title: 'Buy now',
-              class_modifier: 'card-content-button',
-              color: section.settings.image_carousel_text_color,
-              background_color: section.settings.image_carousel_bg_color
-            %}
+            {% comment %}
+              {% render 'button',
+                href: product.url,
+                title: 'Buy now',
+                class_modifier: 'card-content-button',
+                color: section.settings.image_carousel_text_color,
+                background_color: section.settings.image_carousel_bg_color
+              %}
+            {% endcomment %}
           </div>
         </div>
       {%- endfor -%}
@@ -75,6 +77,7 @@
 
   .card {
     flex: 0 0 80%;
+    width: 200px;
     background: #fff;
     border-radius: 10px;
     overflow: hidden;
@@ -91,10 +94,10 @@
 
   .card-content {
     padding: 16px;
-    position: absolute;
+    {% comment %} position: absolute;
     bottom: 0;
     left: 0;
-    right: 0;
+    right: 0; {% endcomment %}
   }
   .card-content h3 {
     font-size: 16px;

@@ -97,22 +97,39 @@
         "benefits_text_color": "#000000"
       }
     },
-    "image_carousel_9JiNxC": {
-      "type": "image-carousel",
+    "product_featured_G6FHmA": {
+      "type": "product-featured",
+      "name": "Product featured",
       "settings": {
-        "image_carousel_paddingY": 36,
-        "image_carousel_product_list": [
-          "boric-acid",
+        "collection": [
           "breast-and-buttoms-cream",
           "horny-goat-weed",
           "libido-booster",
-          "mr-big-cream"
+          "mr-big-cream",
+          "boric-acid"
         ],
-        "image_carousel_heading_color": "#000000",
-        "image_carousel_heading_transform": "none",
-        "image_carousel_body_color": "#000000",
-        "image_carousel_bg_color": "#5c1a1b",
-        "image_carousel_text_color": "#ffffff"
+        "products_to_show": 25,
+        "title": "",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 5,
+        "enable_desktop_slider": true,
+        "full_width": true,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "color_scheme": "",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "two_columns_RYfMkD": {
@@ -369,7 +386,7 @@
   "order": [
     "slideshow_8NAp4j",
     "prove_yGBMDc",
-    "image_carousel_9JiNxC",
+    "product_featured_G6FHmA",
     "two_columns_RYfMkD",
     "slider_HejBdt",
     "product_carousel_EFXgGR",
