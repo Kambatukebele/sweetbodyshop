@@ -5,7 +5,7 @@
         {%- when 'scrolling_element' -%}
           <div
             style="text-transform: {{ section.settings.text_scrolling_text_transform }};"
-            class="item item{{- forloop.index }} {{- element.shopify_attributes -}}"
+            class="item-{{ section.id }} item-{{ section.id }}{{ forloop.index }} {{- element.shopify_attributes -}}"
           >
             {{ element.settings.scrolling_element_text }}
           </div>
@@ -13,32 +13,57 @@
       {%- endcase -%}
     {%- endfor -%}
   {%- else -%}
-    <div style="text-transform: {{ section.settings.text_scrolling_text_transform }};" class="item item1">
+    <div
+      style="text-transform: {{ section.settings.text_scrolling_text_transform }};"
+      class="item-{{ section.id }} item-{{ section.id }}1"
+    >
       Example text goes here
     </div>
-    <div style="text-transform: {{ section.settings.text_scrolling_text_transform }};" class="item item2">
+    <div
+      style="text-transform: {{ section.settings.text_scrolling_text_transform }};"
+      class="item-{{ section.id }} item-{{ section.id }}2"
+    >
       Example text goes here
     </div>
-    <div style="text-transform: {{ section.settings.text_scrolling_text_transform }};" class="item item3">
+    <div
+      style="text-transform: {{ section.settings.text_scrolling_text_transform }};"
+      class="item-{{ section.id }} item-{{ section.id }}3"
+    >
       Example text goes here
     </div>
-    <div style="text-transform: {{ section.settings.text_scrolling_text_transform }};" class="item item4">
+    <div
+      style="text-transform: {{ section.settings.text_scrolling_text_transform }};"
+      class="item-{{ section.id }} item-{{ section.id }}4"
+    >
       Example text goes here
     </div>
-    <div style="text-transform: {{ section.settings.text_scrolling_text_transform }};" class="item item5">
+    <div
+      style="text-transform: {{ section.settings.text_scrolling_text_transform }};"
+      class="item-{{ section.id }} item-{{ section.id }}5"
+    >
       Example text goes here
     </div>
-    <div style="text-transform: {{ section.settings.text_scrolling_text_transform }};" class="item item6">
+    <div
+      style="text-transform: {{ section.settings.text_scrolling_text_transform }};"
+      class="item-{{ section.id }} item-{{ section.id }}6"
+    >
       Example text goes here
     </div>
-    <div style="text-transform: {{ section.settings.text_scrolling_text_transform }};" class="item item7">
+    <div
+      style="text-transform: {{ section.settings.text_scrolling_text_transform }};"
+      class="item-{{ section.id }} item-{{ section.id }}7"
+    >
       Example text goes here
     </div>
-    <div style="text-transform: {{ section.settings.text_scrolling_text_transform }};" class="item item8">
+    <div
+      style="text-transform: {{ section.settings.text_scrolling_text_transform }};"
+      class="item-{{ section.id }} item-{{ section.id }}8"
+    >
       Example text goes here
     </div>
   {%- endif -%}
 </section>
+
 <style>
   .wrapper-{{ section.id }} {
     width: 100%;
@@ -59,10 +84,11 @@
       left: -400px;
     }
   }
-  .item {
+  .item-{{ section.id }} {
     position: absolute;
     width: 400px;
     display: flex;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.13);
     justify-content: center;
     align-items: center;
     height: {{ section.settings.text_scrolling_height }}px;
@@ -75,28 +101,28 @@
     animation-timing-function: linear;
     animation-iteration-count: infinite;
   }
-  .item1 {
+  .item-{{ section.id }}1 {
     animation-delay: calc({{- section.settings.text_scrolling_animation_duration -}}s / 8 * (8 - 1) * -1);
   }
-  .item2 {
+  .item-{{ section.id }}2 {
     animation-delay: calc({{- section.settings.text_scrolling_animation_duration -}}s / 8 * (8 - 2) * -1);
   }
-  .item3 {
+  .item-{{ section.id }}3 {
     animation-delay: calc({{- section.settings.text_scrolling_animation_duration -}}s / 8 * (8 - 3) * -1);
   }
-  .item4 {
+  .item-{{ section.id }}4 {
     animation-delay: calc({{- section.settings.text_scrolling_animation_duration -}}s / 8 * (8 - 4) * -1);
   }
-  .item5 {
+  .item-{{ section.id }}5 {
     animation-delay: calc({{- section.settings.text_scrolling_animation_duration -}}s / 8 * (8 - 5) * -1);
   }
-  .item6 {
+  .item-{{ section.id }}6 {
     animation-delay: calc({{- section.settings.text_scrolling_animation_duration -}}s / 8 * (8 - 6) * -1);
   }
-  .item7 {
+  .item-{{ section.id }}7 {
     animation-delay: calc({{- section.settings.text_scrolling_animation_duration -}}s / 8 * (8 - 7) * -1);
   }
-  .item8 {
+  .item-{{ section.id }}8 {
     animation-delay: calc({{- section.settings.text_scrolling_animation_duration -}}s / 8 * (8 - 8) * -1);
   }
 </style>
@@ -139,7 +165,7 @@
     {
       "type": "range",
       "id": "text_scrolling_font_weight",
-      "label": "Font size",
+      "label": "Font weight",
       "min": 100,
       "max": 900,
       "unit": "px",

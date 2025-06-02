@@ -132,42 +132,6 @@
         "padding_bottom": 36
       }
     },
-    "two_columns_RYfMkD": {
-      "type": "two-columns",
-      "blocks": {
-        "two_columns_38gNXi": {
-          "type": "two-columns",
-          "settings": {
-            "two_columns__image": "shopify://shop_images/close-up-beauty-portrait-topless-woman-with-perfect-skin-natural-make-up-holding-supplement-vitamin-omega-3-fish-oil-turquoise-background.jpg",
-            "two_columns__color_heading_text": "Get an exclusive",
-            "two_columns__color_body_text": "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "two_columns__color_btn_text": "Buy now",
-            "two_columns__color_heading": "#121212",
-            "two_columns__color_body": "#020202",
-            "two_columns__bg_color_btn": "#030303",
-            "two_columns__color_btn": "#ffffff"
-          }
-        },
-        "two_columns_n7aeM9": {
-          "type": "two-columns",
-          "settings": {
-            "two_columns__image": "shopify://shop_images/image-fitness-girl-opening-bottle-dietary-supplement-taking-vitamins-stay-healthy-fit.jpg",
-            "two_columns__color_heading_text": "Get an exclusive",
-            "two_columns__color_body_text": "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "two_columns__color_btn_text": "Buy now",
-            "two_columns__color_heading": "#ffffff",
-            "two_columns__color_body": "#ffffff",
-            "two_columns__bg_color_btn": "#000000",
-            "two_columns__color_btn": "#ffffff"
-          }
-        }
-      },
-      "block_order": [
-        "two_columns_38gNXi",
-        "two_columns_n7aeM9"
-      ],
-      "settings": {}
-    },
     "slider_HejBdt": {
       "type": "slider",
       "blocks": {
@@ -233,13 +197,13 @@
       "settings": {
         "show_line_separator": false,
         "border_bottom_color": "#000000",
-        "text_scrolling_font_size": 29,
-        "text_scrolling_font_weight": 700,
-        "text_scrolling_height": 100,
-        "text_scrolling_background_color": "#9068be",
+        "text_scrolling_font_size": 23,
+        "text_scrolling_font_weight": 100,
+        "text_scrolling_height": 60,
+        "text_scrolling_background_color": "#c33635",
         "text_scrolling_text_color": "#ffffff",
         "text_scrolling_animation_duration": 98,
-        "text_scrolling_text_transform": "uppercase"
+        "text_scrolling_text_transform": "none"
       }
     },
     "product_carousel_EFXgGR": {
@@ -387,7 +351,6 @@
     "slideshow_8NAp4j",
     "prove_yGBMDc",
     "product_featured_G6FHmA",
-    "two_columns_RYfMkD",
     "slider_HejBdt",
     "product_carousel_EFXgGR",
     "product_carousel_YLCxGC",
