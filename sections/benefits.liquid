@@ -9,7 +9,9 @@
           {%- case block.type -%}
             {%- when 'benefits' -%}
               <div class="benefits__item">
-                {{ icons[forloop.index0] | strip | inline_asset_content }}
+                <div class="">
+                  {{ icons[forloop.index0] | strip | inline_asset_content }}
+                </div>
                 <div>
                   <h4>
                     {%- if block.settings.benefits_title != blank -%}
@@ -75,7 +77,7 @@
   .benefits__item {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.2rem;
     flex: 1 1 18%;
     width: 280px;
     flex: 0 0 auto;
