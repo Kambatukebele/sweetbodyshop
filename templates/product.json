@@ -32,12 +32,12 @@
           "type": "icon-with-text",
           "settings": {
             "layout": "vertical",
-            "icon_1": "price_tag",
-            "heading_1": "<strong>Discrétion garantie</strong>",
-            "icon_2": "leaf",
-            "heading_2": "<strong>Appel et conseils privés</strong>",
-            "icon_3": "truck",
-            "heading_3": "<strong>Livraison gratuite</strong>"
+            "icon_1": "none",
+            "heading_1": "🛡️ Discrétion garantie",
+            "icon_2": "none",
+            "heading_2": "📞 Appel et conseils privés",
+            "icon_3": "none",
+            "heading_3": "📦 Livraison gratuite"
           }
         },
         "price": {
@@ -152,8 +152,8 @@
       ],
       "settings": {
         "enable_sticky_info": true,
-        "color_scheme": "scheme-4db46d5d-5c24-40ff-85bf-a2df984ae3e0",
-        "media_size": "medium",
+        "color_scheme": "scheme-1",
+        "media_size": "small",
         "constrain_to_viewport": true,
         "media_fit": "contain",
         "gallery_layout": "thumbnail_slider",
@@ -190,20 +190,10 @@
         "judge_me_reviews_all_reviews_text_PVkKdn": {
           "type": "shopify://apps/judge-me-reviews/blocks/all_reviews_text/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {}
-        },
-        "judge_me_reviews_review_widget_HraJdV": {
-          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {}
-        },
-        "judge_me_reviews_medals_4eqWV9": {
-          "type": "shopify://apps/judge-me-reviews/blocks/medals/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {}
         }
       },
       "block_order": [
-        "judge_me_reviews_all_reviews_text_PVkKdn",
-        "judge_me_reviews_review_widget_HraJdV",
-        "judge_me_reviews_medals_4eqWV9"
+        "judge_me_reviews_all_reviews_text_PVkKdn"
       ],
       "settings": {
         "include_margins": true
