@@ -212,19 +212,18 @@
         "product_carousel_enable": false,
         "product_carousel_enable_border": false,
         "product_carousel_paddingY": 36,
-        "product_carousel_image": "shopify://shop_images/pexels-antonio-fernandez-124839204-10009413.jpg",
+        "product_carousel_image": "shopify://shop_images/pexels-innamykytas-29530543.jpg",
         "product_carousel_subtitle": "POUR ELLE",
-        "product_carousel_title": "ÉQUILIBRE ET DÉSIR AU FÉMININ",
-        "product_carousel_description": "Besoin de conseils avant de commander ? Laissez votre numéro et recevez un appel discret d’une conseillère.",
+        "product_carousel_title": "Bien-Être Féminin Naturel – Confiance, Équilibre & Plaisir",
+        "product_carousel_description": "Découvrez notre sélection de soins naturels spécialement conçus pour les femmes. Que ce soit pour stimuler la libido, raffermir et galber votre silhouette ou rééquilibrer votre flore intime, chaque produit est formulé avec des ingrédients d’origine végétale, efficaces et doux pour votre corps. Prenez soin de vous, naturellement.",
         "product_carousel_button_title": "Me faire rappeler",
         "product_carousel_button_url": "",
         "product_carousel_button_bg_color": "#0f6c3d",
         "product_carousel_button_text_color": "#ffffff",
         "product_carousel_products": [
-          "libido-booster-pour-femmes-copy",
-          "libido-booster-pour-femmes",
-          "horny-goat-weed",
-          "libido-booster-homme"
+          "breast-and-buttoms-cream",
+          "libido-booster",
+          "boric-acid"
         ],
         "product_carousel_list_enable": true,
         "product_carousel_list_color": "#ededed"
@@ -238,17 +237,15 @@
         "product_carousel_paddingY": 36,
         "product_carousel_image": "shopify://shop_images/pexels-dani-alejandro-1468024-2827479.jpg",
         "product_carousel_subtitle": "POUR LUI",
-        "product_carousel_title": "PUISSANCE, PERFORMANCE, CONFIANCE",
-        "product_carousel_description": "Redécouvrez une virilité affirmée avec nos formules masculines",
+        "product_carousel_title": "Performance & Vitalité Masculine – Naturellement Plus Fort",
+        "product_carousel_description": "Explorez notre gamme dédiée au bien-être masculin. Des formules puissantes à base de plantes pour booster la libido, améliorer l’endurance sexuelle et renforcer la confiance. Que vous recherchiez un effet tonifiant ou un soutien ciblé pour vos performances, nos soins naturels répondent à vos besoins, sans compromis.",
         "product_carousel_button_title": "Me faire rappeler",
         "product_carousel_button_url": "",
         "product_carousel_button_bg_color": "#0f6c3d",
         "product_carousel_button_text_color": "#ffffff",
         "product_carousel_products": [
-          "libido-booster-pour-femmes-copy",
           "mr-big-cream",
-          "horny-goat-weed",
-          "libido-booster-homme"
+          "horny-goat-weed"
         ],
         "product_carousel_list_enable": true,
         "product_carousel_list_color": "#ededed"

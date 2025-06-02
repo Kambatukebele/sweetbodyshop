@@ -37,13 +37,6 @@
               dolore magna aliqua.
             {%- endif -%}
           </p>
-          {%- assign classButton = 'product-carousel__collection-button' -%}
-          {% assign sectionId = classButton | append: '-' | append: section.id -%}
-          {% render 'button',
-            href: section.settings.product_carousel_button_url,
-            title: section.settings.product_carousel_button_title,
-            class_modifier: sectionId
-          %}
         </div>
       </div>
       <!-- Products -->
@@ -63,13 +56,6 @@
                 {%- endif -%}
               </div>
               <div class="product-carousel__product-info">
-                <span class="product-carousel__product-description">
-                  {%- if item-product.description != blank -%}
-                    {{ item-product.description | truncatewords: 4 }}
-                  {%- else -%}
-                    Pure Radiance Skincare
-                  {%- endif -%}
-                </span>
                 <h4 class="product-carousel__product-title">
                   {%- if item-product.title != blank -%}
                     {{ item-product.title }}
@@ -77,13 +63,22 @@
                     Crystal Clear Cleansing Foam
                   {%- endif -%}
                 </h4>
-                <span class="product-carousel__product-price">
-                  {%- if item-product.price != blank -%}
-                    {{ item-product.price | money }}
-                  {%- else -%}
-                    $25.00
-                  {%- endif -%}
-                </span>
+                <div class="product-carousel__product-price-block">
+                  <span class="product-carousel__product-price-compare">
+                    {%- if item-product.price != blank -%}
+                      {{ item-product.price | money }}
+                    {%- else -%}
+                      $25.00
+                    {%- endif -%}
+                  </span>
+                  <span class="product-carousel__product-price">
+                    {%- if item-product.price != blank -%}
+                      {{ item-product.price | money }}
+                    {%- else -%}
+                      $25.00
+                    {%- endif -%}
+                  </span>
+                </div>
               </div>
             </a>
           {%- endfor -%}
@@ -203,8 +198,7 @@
     .product-carousel__product-image-block-{{ section.id }}{
       width: 100%;
       min-height: 180px;
-      padding-top: 20px;
-      padding-bottom: 20px;
+
       border: {%- if section.settings.product_carousel_list_enable == true -%} 1px solid {{ section.settings.product_carousel_list_color }} {%- else -%} none {%- endif -%};
       border-radius: 10px;
       overflow: hidden;
@@ -212,7 +206,7 @@
     .product-carousel__product-image{
       width: 100%;
       height: 100%;
-      object-fit: contain;
+      object-fit: cover;
     }
     .product-carousel__product-info{
       display: flex;
@@ -237,6 +231,14 @@
       margin-top: 0px !important;
       margin-bottom: 0px !important;
       color: black;
+      padding: 10px 0px;
+    }
+    .product-carousel__product-price-compare{
+      font-size: 14px;
+      font-family: {{ settings.type_body_font.family }};
+      font-weight: {{ settings.type_body_font.weight }};
+      color: black;
+      text-decoration: line-through;
     }
     .product-carousel__product-price{
       font-size: 14px;
