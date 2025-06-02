@@ -251,56 +251,42 @@
         "product_carousel_list_color": "#ededed"
       }
     },
-    "slider_D4j76M": {
-      "type": "slider",
-      "settings": {
-        "show_line_separator": false,
-        "border_bottom_color": "#f2f2f2",
-        "text_scrolling_font_size": 33,
-        "text_scrolling_font_weight": 500,
-        "text_scrolling_height": 100,
-        "text_scrolling_background_color": "#ffffff",
-        "text_scrolling_text_color": "#9e44ff",
-        "text_scrolling_animation_duration": 50,
-        "text_scrolling_text_transform": "none"
-      }
-    },
     "faq_NPCGpD": {
       "type": "faq",
       "blocks": {
         "question_response_Ped8w3": {
           "type": "question_response",
           "settings": {
-            "question": "What is the capital of France",
-            "answer": "Francess"
+            "question": "Ces produits sont-ils vraiment efficaces ?",
+            "answer": "Oui. Tous nos produits sont formulés à partir d’ingrédients actifs naturels reconnus pour leur efficacité : extraits de plantes, huiles végétales, vitamines… Les résultats varient selon les personnes, mais une utilisation régulière et conforme est la clé pour des effets visibles et durables."
           }
         },
         "question_response_axHt3f": {
           "type": "question_response",
           "settings": {
-            "question": "What is the capital of France",
-            "answer": "France"
+            "question": "Est-ce sans danger pour la santé ?",
+            "answer": "Nos soins et compléments sont conçus pour un usage sécurisé, dans le respect du corps. Ils ne contiennent ni parabènes, ni hormones synthétiques, ni ingrédients controversés. Toutefois, ils sont déconseillés aux femmes enceintes, allaitantes et aux personnes sous traitement médical sans avis médical préalable."
           }
         },
         "question_response_FyJYHR": {
           "type": "question_response",
           "settings": {
-            "question": "What is the capital of France",
-            "answer": "France"
+            "question": "Quelle est la durée idéale d’utilisation pour voir les résultats ?",
+            "answer": "La majorité de nos produits nécessitent une cure de 4 à 8 semaines pour des résultats optimaux. Certaines personnes ressentent les effets dès les premiers jours (libido, confort intime), tandis que d’autres constatent une amélioration progressive (volume, fermeté, équilibre)."
           }
         },
         "question_response_qnBbfU": {
           "type": "question_response",
           "settings": {
-            "question": "What is the capital of France",
-            "answer": "France"
+            "question": "Peut-on utiliser plusieurs produits en même temps ?",
+            "answer": "Absolument. Nos produits sont conçus pour être complémentaires. Par exemple, vous pouvez associer une crème raffermissante avec un complément libido, ou utiliser l’acide borique tout en maintenant une routine de soin externe. Respectez les modes d’emploi pour chaque produit."
           }
         },
         "question_response_GWAbfE": {
           "type": "question_response",
           "settings": {
-            "question": "What is the capital of France",
-            "answer": "France"
+            "question": "La livraison est-elle discrète ?",
+            "answer": "Oui. Toutes nos commandes sont expédiées dans un emballage neutre, sans aucune mention du contenu ou du nom du site. Votre vie privée est une priorité absolue."
           }
         }
       },
@@ -313,14 +299,14 @@
       ],
       "settings": {
         "faq_background_color": "#f7f7f8",
-        "faq_sub_heading": "Faqss",
-        "faq_heading": "Get every answers from heress",
+        "faq_sub_heading": "FAQ",
+        "faq_heading": "Foire aux questions",
         "faq_sub_heading_color": "#020202",
         "faq_heading_color": "#ffffff",
         "question_response_background_color": "#fdfdfd",
         "question_text_color": "#000000",
         "response_text_color": "#000000",
-        "icon_background_color": "#9e44ff"
+        "icon_background_color": "#c33635"
       }
     },
     "featured_blog_PVebUA": {
@@ -351,7 +337,6 @@
     "slider_HejBdt",
     "product_carousel_EFXgGR",
     "product_carousel_YLCxGC",
-    "slider_D4j76M",
     "faq_NPCGpD",
     "featured_blog_PVebUA"
   ]
