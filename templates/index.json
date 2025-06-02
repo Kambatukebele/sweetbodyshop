@@ -9,6 +9,43 @@
  */
 {
   "sections": {
+    "slideshow_8NAp4j": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_JVEcyL": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/people-2569220_1920.jpg",
+            "image_overlay_opacity": 60,
+            "heading": "Soins Intimes Naturels pour Hommes et Femmes – Volume, Libido & Bien-Être",
+            "heading_size": "h1",
+            "subheading": "Découvrez nos soins naturels pour raffermir, stimuler la libido et rééquilibrer l’intimité. Crèmes, gummies & capsules pour votre bien-être.",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "box_align": "bottom-left",
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "color_scheme": "scheme-4665c9b2-add1-4db8-b08c-708944f559ab"
+          }
+        }
+      },
+      "block_order": [
+        "slide_JVEcyL"
+      ],
+      "name": "t:sections.slideshow.presets.name",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "large",
+        "slider_visual": "dots",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Diaporama sur votre marque"
+      }
+    },
     "image_carousel_9JiNxC": {
       "type": "image-carousel",
       "settings": {
@@ -330,6 +367,7 @@
     }
   },
   "order": [
+    "slideshow_8NAp4j",
     "image_carousel_9JiNxC",
     "prove_yGBMDc",
     "two_columns_RYfMkD",

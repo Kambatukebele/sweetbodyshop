@@ -41,7 +41,7 @@
       "settings": {
         "promotion_enable_custom_background_color_id": true,
         "promotion_color_scheme_id": "scheme_1",
-        "promotion_custom_background_color_id": "#9068be",
+        "promotion_custom_background_color_id": "#c33635",
         "promotion_custom_text_color_id": "#ffffff",
         "promotion_enable_line_divider_id": true,
         "promotion_bottom_color_line_divider_id": "#9068be",
