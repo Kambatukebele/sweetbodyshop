@@ -17,7 +17,7 @@
           "settings": {
             "image": "shopify://shop_images/people-2569220_1920.jpg",
             "image_overlay_opacity": 60,
-            "heading": "Soins Intimes Naturels pour Hommes et Femmes – Volume, Libido & Bien-Être",
+            "heading": "Soins Intimes Naturels pour Hommes et Femmes. Volume, Libido & Bien-Être",
             "heading_size": "h1",
             "subheading": "Découvrez nos soins naturels pour raffermir, stimuler la libido et rééquilibrer l’intimité. Crèmes, gummies & capsules pour votre bien-être.",
             "button_label": "",
@@ -46,6 +46,57 @@
         "accessibility_info": "Diaporama sur votre marque"
       }
     },
+    "prove_yGBMDc": {
+      "type": "benefits",
+      "blocks": {
+        "benefits_JQatn6": {
+          "type": "benefits",
+          "settings": {
+            "benefits_title": "Livraison 24/48h",
+            "benefits_description": "Expédition rapide pour que vous receviez vos produits en un temps record."
+          }
+        },
+        "benefits_rbwPwg": {
+          "type": "benefits",
+          "settings": {
+            "benefits_title": "Livraison discrète",
+            "benefits_description": "Emballage neutre et confidentiel, sans mention du contenu."
+          }
+        },
+        "benefits_HQD73y": {
+          "type": "benefits",
+          "settings": {
+            "benefits_title": "Service client dédié",
+            "benefits_description": "Une question ? Notre équipe vous accompagne en toute discrétion."
+          }
+        },
+        "benefits_w9WB3V": {
+          "type": "benefits",
+          "settings": {
+            "benefits_title": "Cadeaux exclusifs",
+            "benefits_description": "Des surprises dans vos commandes, parce que vous le méritez."
+          }
+        },
+        "benefits_XG7mLn": {
+          "type": "benefits",
+          "settings": {
+            "benefits_title": "Commande soignée",
+            "benefits_description": "Produits emballés avec soin pour une réception sans mauvaise surprise."
+          }
+        }
+      },
+      "block_order": [
+        "benefits_JQatn6",
+        "benefits_rbwPwg",
+        "benefits_HQD73y",
+        "benefits_w9WB3V",
+        "benefits_XG7mLn"
+      ],
+      "settings": {
+        "benefits_background_color": "#ffffff",
+        "benefits_text_color": "#000000"
+      }
+    },
     "image_carousel_9JiNxC": {
       "type": "image-carousel",
       "settings": {
@@ -62,57 +113,6 @@
         "image_carousel_body_color": "#000000",
         "image_carousel_bg_color": "#5c1a1b",
         "image_carousel_text_color": "#ffffff"
-      }
-    },
-    "prove_yGBMDc": {
-      "type": "benefits",
-      "blocks": {
-        "benefits_JQatn6": {
-          "type": "benefits",
-          "settings": {
-            "benefits_title": "Quick delivery",
-            "benefits_description": "Free delivery"
-          }
-        },
-        "benefits_rbwPwg": {
-          "type": "benefits",
-          "settings": {
-            "benefits_title": "Quick delivery",
-            "benefits_description": "Free delivery"
-          }
-        },
-        "benefits_HQD73y": {
-          "type": "benefits",
-          "settings": {
-            "benefits_title": "Quick delivery",
-            "benefits_description": "Free delivery"
-          }
-        },
-        "benefits_w9WB3V": {
-          "type": "benefits",
-          "settings": {
-            "benefits_title": "Quick delivery",
-            "benefits_description": "Free delivery"
-          }
-        },
-        "benefits_XG7mLn": {
-          "type": "benefits",
-          "settings": {
-            "benefits_title": "Quick delivery",
-            "benefits_description": "Free delivery"
-          }
-        }
-      },
-      "block_order": [
-        "benefits_JQatn6",
-        "benefits_rbwPwg",
-        "benefits_HQD73y",
-        "benefits_w9WB3V",
-        "benefits_XG7mLn"
-      ],
-      "settings": {
-        "benefits_background_color": "#ffffff",
-        "benefits_text_color": "#000000"
       }
     },
     "two_columns_RYfMkD": {
@@ -368,8 +368,8 @@
   },
   "order": [
     "slideshow_8NAp4j",
-    "image_carousel_9JiNxC",
     "prove_yGBMDc",
+    "image_carousel_9JiNxC",
     "two_columns_RYfMkD",
     "slider_HejBdt",
     "product_carousel_EFXgGR",
