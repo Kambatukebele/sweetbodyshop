@@ -7,18 +7,7 @@
   "location": [],
   "market": [],
   "order": [],
-  "page": [
-    {
-      "key": "about_this_product",
-      "namespace": "custom",
-      "name": "About this product",
-      "description": "",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    }
-  ],
+  "page": [],
   "product": [
     {
       "key": "age-group",
@@ -97,6 +86,46 @@
       "description": "Explain why this product will be loved by the client",
       "type": {
         "name": "list.single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "about_this_product",
+      "namespace": "custom",
+      "name": "About this product",
+      "description": "About the product text",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "product_facts",
+      "namespace": "custom",
+      "name": "Product facts",
+      "description": "Products facts",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "how_to_use_product",
+      "namespace": "custom",
+      "name": "How to use product",
+      "description": "",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "what_s_in_the_product",
+      "namespace": "custom",
+      "name": "what's in the product",
+      "description": "",
+      "type": {
+        "name": "multi_line_text_field",
         "category": "TEXT"
       }
     }

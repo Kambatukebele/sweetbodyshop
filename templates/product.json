@@ -40,12 +40,6 @@
             "heading_3": "<strong>Livraison gratuite</strong>"
           }
         },
-        "custom_liquid_xyzKzP": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": ""
-          }
-        },
         "price": {
           "type": "price",
           "settings": {}
@@ -65,30 +59,66 @@
           "type": "description",
           "settings": {}
         },
-        "collapsible_tab_j9bPgh": {
+        "collapsible_tab_tVikyb": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "About this product",
-            "icon": "check_mark",
-            "content": "<p>between your thighs. </p><p>BV is commonly caused by a bacterial shift in your vaginal pH due to sex, condoms, lube — or even your menstrual blood. </p><p>In fact, 1 in 3 people with vaginas has BV (84% are asymptomatic) and 138 million suffer from recurrent yeast infections. </p><p>Kushae's <strong>proven proprietary blend</strong> — medical-grade Boric acid, aloe, apple cider vinegar, and probiotics — quickly and gently restores your natural pH balance, and eliminates the need for antibiotics for good. </p><p>Now you can take charge of your vaginal health and walk with confidence. </p><p><strong>Quick-glance </strong></p><ul><li>21 suppositories included (<a href=\"https://www.kushae.com/products/kushae-boric-acid-suppositories-probiotics-aloe-with-3-applicators-kushae-pouch\" target=\"_blank\">click here to buy suppositories with applicators</a>) </li><li><strong>Created by a woman OB/GYN (and diva approved) </strong></li><li>Fast and effective treatment for BV and yeast infections – full symptom resolution often seen in 1-2 days</li><li><strong>Only the best natural non-toxic ingredients never tested on animals </strong></li><li>Perfect for your self-care routine</li></ul>",
+            "heading": "💗 Pourquoi vous allez l’adorer ?",
+            "icon": "none",
+            "content": "{{ product.metafields.custom.pourquoi_vous_allez_l_adorer | metafield_tag }}",
             "page": ""
           }
         },
-        "collapsible_tab_xLG8rT": {
+        "collapsible_tab_hkPFfw": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Product facts",
-            "icon": "check_mark",
-            "content": "<p>Mucous membranes in the vagina and vaginal wall, and vulva, rapidly absorb toxins and chemicals. That’s why our Boric Acid + Aloe & Probiotics Vaginal Suppositories are MADE WITHOUT: </p><p>Parabens, Sulfates, SLS (sodium lauryl sulfate), Glycerin, Alcohol, Artificial Colors/Dyes</p><p>Parabens <strong>can disrupt hormones in the body</strong> (which can harm<strong> fertility</strong>) and can<strong> increase the risk of cancer. </strong>We said no to parabens. </p><p>Sulfates – including sodium lauryl sulfate (SLS) – can cause skin <strong>irritation and allergic reactions</strong>, especially for people with sensitive skin. And warm water makes it worse. None of that here. </p><p>Glycerin is sugar-based and can <strong>cause yeast infections.</strong> Not interested.   </p><p>Alcohol can disrupt your skin's barrier resulting in <strong>redness and inflamed skin</strong> – especially for those with sensitive skin. We kept it out. </p><p>FD&C (Food, Drugs and Cosmetics) artificial colors and dyes can contain <strong>toxins and contaminants like lead and arsenic.</strong> Hard no. </p><p><em>Our suppository capsules are made of vegetable cellulose and are free of gelatin.</em></p><p>Not only that, but we made our Borid Acid Suppositories without harming any animals. Because we care about them too. </p>",
+            "heading": "✅ Idéal si vous souhaitez :",
+            "icon": "none",
+            "content": "{{ product.metafields.custom.ideal_si_vous_souhaitez | metafield_tag }}",
             "page": ""
           }
         },
-        "collapsible_tab_gWBG3y": {
+        "collapsible_tab_q8ixmi": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "How to use the product",
-            "icon": "check_mark",
-            "content": "<p><em>Wash hands and nails well with soap and warm water before handling.</em></p><p>You can insert these little capsules into your vagina with clean fingers (available for purchase with applicators). You don’t even have to lie down. </p><p>It’s so easy! </p><p>Use after sexual intercourse, menstruation cycle, or anytime your pH feels \"off.\" </p><p>Our co-founder and OB/GYN Dr. Barb recommends the following doses and step-by-step instructions for her patients in accordance with the American College of Obstetrics and Gynecology (ACOG) guidelines:</p><p><strong>For Yeast</strong></p><p>Acute (current infection): Insert 1 suppository capsule into vagina twice a day for 7-10 days.</p><p>Prophylaxis (for women prone to yeast infections who want to prevent future infections): Insert 1 suppository capsule into vagina twice weekly for 3 months.</p><p><strong>For BV</strong></p><p>Acute (current infection): Insert 1 suppository capsule into vagina twice a day for 7-10 days.</p><p>Prophylaxis (for women prone to yeast infections who want to prevent future infections): Insert 1 suppository capsule into vagina twice weekly for 3 months.</p><p><em>We recommend wearing a liner for potential vaginal discharge – your body is cleansing itself.</em></p><p><strong>FOR VAGINAL USE ONLY. DO NOT TAKE BY MOUTH. IN CASE OF ACCIDENTAL INGESTION, CONTACT POISON CONTROL IMMEDIATELY AT 800-222-1222.</strong></p><p><strong>KEEP OUT OF REACH OF CHILDREN.</strong></p>",
+            "heading": "🔬 À propos de ce produit :",
+            "icon": "none",
+            "content": "{{ product.metafields.custom.a_propos_de_ce_produit | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "collapsible_tab_gkjxT3": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "📋 Faits sur le produit :",
+            "icon": "none",
+            "content": "{{ product.metafields.custom.faits_sur_le_produit | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "collapsible_tab_NHFBmM": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "🧴 Comment utiliser le produit :",
+            "icon": "none",
+            "content": "{{ product.metafields.custom.comment_utiliser_le_produit | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "collapsible_tab_NhCBNJ": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "🧪 Que contient le produit ? (Ingrédients détaillés)",
+            "icon": "none",
+            "content": "{{ product.metafields.custom.que_contient_le_produit | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "collapsible_tab_XVP6DH": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "⚠️ Précautions d’emploi :",
+            "icon": "none",
+            "content": "{{ product.metafields.custom.precautions_d_emploi | metafield_tag }}",
             "page": ""
           }
         },
@@ -104,14 +134,17 @@
         "judge_me_reviews_preview_badge_Kz6nAh",
         "inventory_jnfR8R",
         "icon_with_text_pqcCtx",
-        "custom_liquid_xyzKzP",
         "price",
         "quantity_selector",
         "buy_buttons",
         "description_zAbWqV",
-        "collapsible_tab_j9bPgh",
-        "collapsible_tab_xLG8rT",
-        "collapsible_tab_gWBG3y",
+        "collapsible_tab_tVikyb",
+        "collapsible_tab_hkPFfw",
+        "collapsible_tab_q8ixmi",
+        "collapsible_tab_gkjxT3",
+        "collapsible_tab_NHFBmM",
+        "collapsible_tab_NhCBNJ",
+        "collapsible_tab_XVP6DH",
         "share"
       ],
       "custom_css": [],
