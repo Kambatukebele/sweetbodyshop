@@ -43,7 +43,7 @@
       <div class="product-carousel__products">
         {%- if section.settings.product_carousel_products != blank -%}
           {%- for item-product in section.settings.product_carousel_products -%}
-            <a href="#" class="product-carousel__product">
+            <a href="{{ item-product.url }}" class="product-carousel__product">
               <div class="product-carousel__product-image-block-{{ section.id }}">
                 {%- if item-product.featured_image -%}
                   {{-
