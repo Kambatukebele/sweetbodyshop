@@ -1,56 +1,67 @@
-<div class="newsletter">
+<div id="Newsletter-{{ section.id }}" class="newsletter">
   <div class="newsletter-content">
-    {%- if section.blocks.size > 0 -%}
-      <div>
-        {% for block in section.blocks %}
-          {%- case block.type -%}
-            {%- when 'newsletter' -%}
-              <h3>
-                {%- if block.settings.newsletter_title != blank -%}
-                  {{ block.settings.newsletter_title }}
-                {%- else -%}
-                  Give your information here<br>
-                  Leave us your email
-                {%- endif -%}
-              </h3>
-              <p>
-                {%- if block.settings.newsletter_description -%}
-                  {{ block.settings.newsletter_description }}
-                {%- else -%}
-                  Stay informedswsfdfdfdfdf
-                {%- endif -%}
-              </p>
-          {%- endcase -%}
-        {% endfor %}
-      </div>
-    {%- else -%}
-      <div>
-        <h3>
-          Give your information here<br>
-          Leave us your email
-        </h3>
-        <p>Stay informed</p>
-      </div>
-    {%- endif -%}
+    <div class="newsletter-wrapper">
+      {%- if section.blocks.size > 0 -%}
+        <div>
+          {% for block in section.blocks %}
+            {%- case block.type -%}
+              {%- when 'newsletter' -%}
+                <h3>
+                  {%- if block.settings.newsletter_title != blank -%}
+                    {{ block.settings.newsletter_title }}
+                  {%- else -%}
+                    Give your information here<br>
+                    Leave us your email
+                  {%- endif -%}
+                </h3>
+                <p>
+                  {%- if block.settings.newsletter_description -%}
+                    {{ block.settings.newsletter_description }}
+                  {%- else -%}
+                    Stay informedswsfdfdfdfdf
+                  {%- endif -%}
+                </p>
+            {%- endcase -%}
+          {% endfor %}
+        </div>
+      {%- else -%}
+        <div>
+          <h3>
+            Give your information here<br>
+            Leave us your email
+          </h3>
+          <p>Stay informed</p>
+        </div>
+      {%- endif -%}
 
-    <form class="newsletter-form" id="newsletter-form">
-      <div class="input-group">
-        <label class="input-group__label">
-          <span>Name</span>
-          <input type="text" placeholder="Ex: Adrian" name="name" required>
-        </label>
-        <label class="input-group__label">
-          <span>Phone number</span>
-          <input type="text" placeholder="+33 6 12 34 56 78" name="phone_number" required>
-        </label>
-      </div>
-      <label class="input-group__label">
-        <span>Email</span>
-        <input type="email" placeholder="adrian@example.com" name="email" required>
-      </label>
-      <button type="submit">Appelez moi discretement</button>
-      <small>Vložením e-mailu souhlasíte s <a href="#">podmínkami ochrany osobních údajů</a></small>
-    </form>
+      <form class="newsletter-form" id="newsletter-form">
+        <div class="input-group">
+          <label class="input-group__label">
+            <span>Name</span>
+            <input type="text" placeholder="Ex: Adrian" name="name" required>
+          </label>
+          <label class="input-group__label">
+            <span>Phone number</span>
+            <input type="text" placeholder="+33 6 12 34 56 78" name="phone_number" required>
+          </label>
+        </div>
+        <div class="input-group">
+          <label class="input-group__label">
+            <span>Product</span>
+            <input type="text" placeholder="Boric acid" name="product" required>
+          </label>
+          <label class="input-group__label">
+            <span>Email</span>
+            <input type="email" placeholder="adrian@example.com" name="email" required>
+          </label>
+        </div>
+        <button type="submit">Appelez moi discretement</button>
+        <small>
+          En soumettant ce formulaire, vous acceptez nos <a href="#">conditions générales</a> et notre
+          <a href="#">politique de confidentialité</a>.
+        </small>
+      </form>
+    </div>
   </div>
 </div>
 
@@ -58,23 +69,28 @@
    .newsletter {
     background-color: {{ section.settings.newsletter_bg_color}};
     padding: 40px 20px;
+
   }
 
   .newsletter-content {
     max-width: var(--page-width);
     margin: 0 auto;
     padding: 0 1.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
+
   }
+   .newsletter-wrapper{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
 
   .newsletter h3 {
     margin: 0;
-    font-size: 20px;
+    font-size: 28px;
     font-family: {{ settings.type_header_font.family }};
     font-weight: {{ settings.type_header_font.weight }};
     color: {{  section.settings.newsletter_heading_color }};
@@ -90,9 +106,11 @@
   }
 
   .newsletter-form {
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 10px;
+
   }
   .newsletter-form .input-group{
     display: flex;
@@ -100,6 +118,7 @@
     gap: 10px;
   }
   .input-group__label{
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -121,20 +140,49 @@
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
+    margin-top: 20px;
   }
 
   .newsletter-form small {
-    font-size: 11px;
+    font-size: 12px;
     color: #555;
+    text-align: center;
+    margin: 0px auto;
   }
 
-  .newsletter-form a {
+  .newsletter-form small a {
+
     text-decoration: underline;
+    color: red;
+
   }
   @media screen and (min-width: 750px){
+    .newsletter-wrapper{
+      max-width: 600px;
+      margin: 0px auto;
+      flex-wrap: nowrap;
+    }
+     .newsletter h3 {
+      font-size: 32px;
+      width: 470px;
+      margin: 0 auto;
+      text-align: center;
+    }
     .newsletter p {
       width: 470px;
+      margin: 0 auto;
+      text-align: center;
 
+    }
+    .newsletter-form .input-group{
+      flex-direction: row;
+
+    }
+    .input-group__label{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
     }
   }
 </style>
@@ -219,7 +267,7 @@
           "type": "text",
           "id": "newsletter_title",
           "label": "newsletter Heading",
-          "default": "Request a discrete call back"
+          "default": "Envie d’en savoir plus ou de passer à l’action ?"
         },
         {
           "type": "textarea",
@@ -245,7 +293,7 @@
           "name": "Newsletter",
           "type": "newsletter",
           "settings": {
-            "newsletter_title": "Request a discrete call back",
+            "newsletter_title": "Envie d’en savoir plus ou de passer à l’action ?",
             "newsletter_description": "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
           }
         }
