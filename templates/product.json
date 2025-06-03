@@ -186,6 +186,30 @@
         "padding_bottom": 28
       }
     },
+    "newsletter_c4Y7TD": {
+      "type": "newsletter",
+      "blocks": {
+        "newsletter_pmibKC": {
+          "type": "newsletter",
+          "name": "Newsletter",
+          "settings": {
+            "newsletter_title": "Envie d’en savoir plus ou de passer à l’action ?",
+            "newsletter_description": "Laissez-nous vos coordonnées et notre équipe vous contactera discrètement pour vous conseiller, répondre à vos questions ou vous guider vers les produits les mieux adaptés à vos besoins."
+          }
+        }
+      },
+      "block_order": [
+        "newsletter_pmibKC"
+      ],
+      "name": "t:sections.newsletter.presets.name",
+      "settings": {
+        "newsletter_bg_color": "#f6ebd8",
+        "newsletter_heading_color": "#000000",
+        "newsletter_description_color": "#000000",
+        "newsletter_button_bg_color": "#000000",
+        "newsletter_button_color": "#ffffff"
+      }
+    },
     "174876168234883167": {
       "type": "apps",
       "blocks": {
@@ -205,6 +229,7 @@
   "order": [
     "main",
     "related-products",
+    "newsletter_c4Y7TD",
     "174876168234883167"
   ]
 }

@@ -474,6 +474,20 @@
                   section_id: section.id,
                   show_pickup_availability: true
                 -%}
+                ou
+                <div class="product-form">
+                  <div class="product-form__buttons form">
+                    <a
+                      href="#"
+                      name="add"
+                      class="product-form__submit button button--full-width button--primary"
+                      disabled
+                    >
+                      Veuillez m'appeler discrètement.
+                    </a>
+                  </div>
+                </div>
+
               {%- when 'rating' -%}
                 {%- if product.metafields.reviews.rating.value != blank -%}
                   <div class="rating-wrapper">
@@ -726,6 +740,8 @@
     </script>
   </div>
 </product-info>
+
+<style></style>
 
 {% schema %}
 {
