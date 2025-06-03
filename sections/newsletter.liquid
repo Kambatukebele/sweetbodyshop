@@ -1,4 +1,4 @@
-<div id="Newsletter-{{ section.id }}" class="newsletter">
+<div id="NewsletterID" class="newsletter">
   <div class="newsletter-content">
     <div class="newsletter-wrapper">
       {%- if section.blocks.size > 0 -%}
@@ -47,12 +47,12 @@
         </div>
         <div class="input-group">
           <label class="input-group__label">
-            <span>Product</span>
-            <input type="text" placeholder="Boric acid" name="product" required>
-          </label>
-          <label class="input-group__label">
             <span>Email</span>
             <input type="email" placeholder="adrian@example.com" name="email" required>
+          </label>
+          <label class="input-group__label">
+            <span>Product</span>
+            <input type="text" name="product" value="{{ product.title }}" required disabled>
           </label>
         </div>
         <button type="submit">Appelez moi discretement</button>
@@ -196,6 +196,7 @@
       name: this.name.value,
       phone_number: this.phone_number.value,
       email: this.email.value,
+      product: this.product.value,
     };
 
     try {

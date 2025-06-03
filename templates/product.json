@@ -203,7 +203,7 @@
       ],
       "name": "t:sections.newsletter.presets.name",
       "settings": {
-        "newsletter_bg_color": "#f6ebd8",
+        "newsletter_bg_color": "#fdd9d9",
         "newsletter_heading_color": "#000000",
         "newsletter_description_color": "#000000",
         "newsletter_button_bg_color": "#000000",
