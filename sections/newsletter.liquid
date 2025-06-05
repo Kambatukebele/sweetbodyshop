@@ -244,6 +244,7 @@
 
   // Form submission handler
   newsletterForm.addEventListener('submit', async function (e) {
+    console.log('Custom handler running');
     e.preventDefault();
 
     const name = this.name.value.trim();
