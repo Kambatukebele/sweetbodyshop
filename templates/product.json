@@ -246,6 +246,23 @@
       "settings": {
         "include_margins": true
       }
+    },
+    "1749108817c870ec0d": {
+      "type": "apps",
+      "blocks": {
+        "bundler_custom_bundle_cqRjGT": {
+          "type": "shopify://apps/bundler/blocks/custom-bundle/7a6ae1b8-3b16-449b-8429-8bb89a62c664",
+          "settings": {
+            "shortcode": ""
+          }
+        }
+      },
+      "block_order": [
+        "bundler_custom_bundle_cqRjGT"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
@@ -253,6 +270,7 @@
     "main",
     "related-products",
     "newsletter_c4Y7TD",
-    "174876168234883167"
+    "174876168234883167",
+    "1749108817c870ec0d"
   ]
 }
