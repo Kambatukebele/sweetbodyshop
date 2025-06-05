@@ -27,7 +27,7 @@
     </h6>
   </div>
   <div class="doctor-testimonial__quote-image">
-    <div class="doctor-testimonial__rimage-outer-wrapper" style="max-width: 528px">
+    <div class="doctor-testimonial__rimage-outer-wrapper">
       {%- if image != blank -%}
         {{ image | image_url: width: 132, height: 132 | image_tag }}
       {%- else -%}
@@ -54,7 +54,8 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: end;
+    flex-direction: column;
+    align-items: center;
   }
   .doctor-testimonial__quote-text h1 {
     font-size: 14px;
@@ -69,5 +70,13 @@
     font-size: 11px;
     font-weight: 500;
     line-height: 1.5;
+  }
+  .doctor-testimonial__quote-image {
+    flex-shrink: 0;
+  }
+  @media screen and (min-width: 450px) {
+    .doctor-testimonial {
+      flex-direction: row;
+    }
   }
 </style>
