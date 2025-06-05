@@ -158,6 +158,66 @@
         "name": "rich_text_field",
         "category": "TEXT"
       }
+    },
+    {
+      "key": "doctor_type_title",
+      "namespace": "custom",
+      "name": "Doctor type title",
+      "description": "This section will for feeling doctor information",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "doctor_body_description",
+      "namespace": "custom",
+      "name": "Doctor body description",
+      "description": "",
+      "type": {
+        "name": "rich_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "doctor_subtitle",
+      "namespace": "custom",
+      "name": "Doctor subtitle",
+      "description": "Here goes full name, years of experiece, and in what sector",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "doctor_image",
+      "namespace": "custom",
+      "name": "Doctor image",
+      "description": "Doctor image",
+      "type": {
+        "name": "file_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "rating",
+      "namespace": "reviews",
+      "name": "Product rating",
+      "description": "Average rating from customers",
+      "type": {
+        "name": "rating",
+        "category": "RATING"
+      }
+    },
+    {
+      "key": "rating_count",
+      "namespace": "reviews",
+      "name": "Product rating count",
+      "description": "Total number of ratings from customers",
+      "type": {
+        "name": "number_integer",
+        "category": "NUMBER"
+      }
     }
   ],
   "variant": [],
