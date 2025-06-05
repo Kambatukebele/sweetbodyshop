@@ -1,0 +1,73 @@
+{% comment %}
+  Accept: title, description, doctor_details, image
+{% endcomment %}
+
+<div class="doctor-testimonial">
+  <div class="doctor-testimonial__quote-text">
+    <h1>
+      {%- if title != blank -%}
+        {{- title -}}
+      {%- else -%}
+        OB/GYN Approved:
+      {%- endif -%}
+    </h1>
+    <p>
+      {%- if description != blank -%}
+        {{- description -}}
+      {%- else -%}
+        A favorite of OB/GYN’s for its powerful rapid relief formula for treatment of BV &amp; yeast infection
+      {%- endif -%}
+    </p>
+    <h6>
+      {%- if doctor_details != blank -%}
+        {{ doctor_details }}
+      {%- else -%}
+        Dr. Barb McLaren, MD, OB/GYN, 20+ yrs experience.
+      {%- endif -%}
+    </h6>
+  </div>
+  <div class="doctor-testimonial__quote-image">
+    <div class="doctor-testimonial__rimage-outer-wrapper" style="max-width: 528px">
+      {%- if image != blank -%}
+        {{ image | image_url: width: 132, height: 132 | image_tag }}
+      {%- else -%}
+        <img
+          width="132px"
+          height="132px"
+          data-widths="[180, 220, 300, 360, 460, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+          data-aspectratio="1.0731707317073171"
+          data-sizes="auto"
+          alt="doctor image"
+          src="{{ 'doctor.avif' | asset_url }}"
+          class=""
+        >
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+<style>
+  .doctor-testimonial {
+    background-color: #f8f8f8;
+    padding: 10px 16px;
+    max-width: 450px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+  }
+  .doctor-testimonial__quote-text h1 {
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .doctor-testimonial__quote-text p {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+  .doctor-testimonial__quote-text h6 {
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+</style>
