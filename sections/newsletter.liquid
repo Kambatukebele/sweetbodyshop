@@ -1,38 +1,23 @@
 <div id="NewsletterID" class="newsletter">
   <div class="newsletter-content">
     <div class="newsletter-wrapper">
-      {%- if section.blocks.size > 0 -%}
-        <div>
-          {% for block in section.blocks %}
-            {%- case block.type -%}
-              {%- when 'newsletter' -%}
-                <h3>
-                  {%- if block.settings.newsletter_title != blank -%}
-                    {{ block.settings.newsletter_title }}
-                  {%- else -%}
-                    Give your information here<br>
-                    Leave us your email
-                  {%- endif -%}
-                </h3>
-                <p>
-                  {%- if block.settings.newsletter_description -%}
-                    {{ block.settings.newsletter_description }}
-                  {%- else -%}
-                    Stay informedswsfdfdfdfdf
-                  {%- endif -%}
-                </p>
-            {%- endcase -%}
-          {% endfor %}
-        </div>
-      {%- else -%}
-        <div>
-          <h3>
+      <div>
+        <h3>
+          {%- if section.settings.newsletter_title != blank -%}
+            {{ section.settings.newsletter_title }}
+          {%- else -%}
             Give your information here<br>
             Leave us your email
-          </h3>
-          <p>Stay informed</p>
-        </div>
-      {%- endif -%}
+          {%- endif -%}
+        </h3>
+        <p>
+          {%- if section.settings.newsletter_description -%}
+            {{ section.settings.newsletter_description }}
+          {%- else -%}
+            Stay informed
+          {%- endif -%}
+        </p>
+      </div>
 
       <form class="newsletter-form" id="newsletter-form">
         <div class="input-group">
@@ -52,13 +37,17 @@
           </label>
           <label class="input-group__label">
             <span>Product</span>
-            <input type="text" name="product" value="{{ product.title }}" required>
+            <input type="text" name="product" value="{{ product.title }}" readonly>
           </label>
         </div>
         <button type="submit">Appelez moi discretement</button>
         <small>
-          En soumettant ce formulaire, vous acceptez nos <a href="#">conditions générales</a> et notre
-          <a href="#">politique de confidentialité</a>.
+          {%- if section.settings.newsletter_bottom_text != blank -%}
+            {{ section.settings.newsletter_bottom_text }}
+          {%- else -%}
+            En soumettant ce formulaire, vous acceptez nos <a href="#">conditions générales</a> et notre
+            <a href="#">politique de confidentialité</a>.
+          {%- endif -%}
         </small>
       </form>
     </div>
@@ -69,6 +58,7 @@
    .newsletter {
     background-color: {{ section.settings.newsletter_bg_color}};
     padding: 40px 20px;
+    margin-bottom: 50px;
 
   }
 
@@ -124,6 +114,10 @@
     gap: 5px;
   }
 
+  .input-group__label span{
+    color: {{  section.settings.newsletter_label_color }};
+  }
+
   .newsletter-form input {
     padding: 16px;
     border-radius: 8px;
@@ -151,11 +145,15 @@
   }
 
   .newsletter-form small a {
-
     text-decoration: underline;
-    color: red;
-
+    color: {{  section.settings.newsletter_bottom_text_link_color }};
   }
+  #form-status {
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+
   @media screen and (min-width: 750px){
     .newsletter-wrapper{
       max-width: 600px;
@@ -189,17 +187,56 @@
 
 <script>
   const newsletterForm = document.getElementById('newsletter-form');
+  const statusDiv = document.createElement('div');
+  statusDiv.id = 'form-status';
+  statusDiv.style.marginTop = '10px';
+  statusDiv.style.fontSize = '14px';
+  newsletterForm.appendChild(statusDiv);
+
+  function showStatus(message, isSuccess = true) {
+    statusDiv.textContent = message;
+    statusDiv.style.color = isSuccess ? 'green' : 'red';
+
+    // Auto-hide after `duration` milliseconds
+    clearTimeout(showStatus._timeout);
+    showStatus._timeout = setTimeout(() => {
+      statusDiv.textContent = '';
+    }, duration);
+  }
+
+  function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
+  function isValidPhone(phone) {
+    const cleaned = phone.replace(/\s+/g, ''); // remove spaces
+    return /^(\+33|0033)[1-9]\d{8}$/.test(cleaned);
+  }
   newsletterForm.addEventListener('submit', async function (e) {
     e.preventDefault();
 
-    const formData = {
-      name: this.name.value,
-      phone_number: this.phone_number.value,
-      email: this.email.value,
-      product: this.product.value,
-    };
+    const name = this.name.value.trim();
+    const phone = this.phone_number.value.trim();
+    const email = this.email.value.trim();
+    const product = this.product.value.trim();
 
-      console.log(formData);
+    // Validation
+    if (!/^[A-Za-zÀ-ÿ\s]{4,}$/.test(name)) {
+      showStatus('Le nom doit contenir au moins 4 lettres sans chiffres ni symboles.', false);
+      return;
+    }
+
+    if (!isValidPhone(phone)) {
+      showStatus('Veuillez entrer un numéro de téléphone valide, sans espaces. Ex : +33612345678', false);
+      return;
+    }
+
+    if (!isValidEmail(email)) {
+      showStatus('Veuillez entrer une adresse e-mail valide.', false);
+      return;
+    }
+
+    const formData = { name, phone_number: phone, email, product };
 
     try {
       const response = await fetch('https://lightgray-dugong-905323.hostingersite.com/submit-lead.php', {
@@ -209,13 +246,14 @@
       });
 
       if (response.ok) {
-        alert('Submitted successfully!');
+        showStatus('Nous avons bien reçu votre demande. Notre agent vous contactera sous 24 à 48 heures.', true);
+        newsletterForm.reset();
       } else {
-        alert('Failed to submit. Please try again.');
+        showStatus("Échec de l'envoi. Veuillez réessayer.", false);
       }
     } catch (error) {
       console.error('Error submitting form:', error);
-      alert('An error occurred while submitting the form. Please try again.');
+      showStatus('Une erreur est survenue. Veuillez réessayer.', false);
     }
   });
 </script>
@@ -229,6 +267,11 @@
     "groups": ["header", "footer"]
   },
   "settings": [
+    {
+      "type": "header",
+      "content": "Background, text, and button colors",
+      "info": "Background, text, and button colors"
+    },
     {
       "type": "color",
       "id": "newsletter_bg_color",
@@ -255,32 +298,54 @@
     },
     {
       "type": "color",
+      "id": "newsletter_label_color",
+      "label": "Label color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
       "id": "newsletter_button_color",
       "label": "Button text color",
       "default": "#ffffff"
-    }
-  ],
-  "blocks": [
+    },
     {
-      "name": "Newsletter",
-      "type": "newsletter",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "text",
-          "id": "newsletter_title",
-          "label": "newsletter Heading",
-          "default": "Envie d’en savoir plus ou de passer à l’action ?"
-        },
-        {
-          "type": "textarea",
-          "id": "newsletter_description",
-          "label": "Newsletter Description",
-          "default": "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
-        }
-      ]
+      "type": "header",
+      "content": "Newsletters text"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_title",
+      "label": "newsletter Heading",
+      "default": "Envie d’en savoir plus ou de passer à l’action ?"
+    },
+    {
+      "type": "textarea",
+      "id": "newsletter_description",
+      "label": "Newsletter Description",
+      "default": "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
+    },
+    {
+      "type": "header",
+      "content": "Newsletter button design"
+    },
+    {
+      "type": "header",
+      "content": "Bottom text"
+    },
+    {
+      "type": "richtext",
+      "id": "newsletter_bottom_text",
+      "label": "Bottom text",
+      "default": "<p>En soumettant ce formulaire, vous acceptez nos conditions générales et notre politique de confidentialité.</p>"
+    },
+    {
+      "type": "color",
+      "id": "newsletter_bottom_text_link_color",
+      "label": "Link color",
+      "default": "#000000"
     }
   ],
+  "blocks": [],
   "presets": [
     {
       "name": "t:sections.newsletter.presets.name",
@@ -289,18 +354,11 @@
         "newsletter_heading_color": "#000000",
         "newsletter_description_color": "#000000",
         "newsletter_button_bg_color": "#000000",
-        "newsletter_button_color": "#ffffff"
+        "newsletter_button_color": "#ffffff",
+        "newsletter_title": "Envie d’en savoir plus ou de passer à l’action ?",
+        "newsletter_description": "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
       },
-      "blocks": [
-        {
-          "name": "Newsletter",
-          "type": "newsletter",
-          "settings": {
-            "newsletter_title": "Envie d’en savoir plus ou de passer à l’action ?",
-            "newsletter_description": "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
-          }
-        }
-      ]
+      "blocks": []
     }
   ]
 }

@@ -205,26 +205,18 @@
     },
     "newsletter_c4Y7TD": {
       "type": "newsletter",
-      "blocks": {
-        "newsletter_pmibKC": {
-          "type": "newsletter",
-          "name": "Newsletter",
-          "settings": {
-            "newsletter_title": "Envie d’en savoir plus ou de passer à l’action ?",
-            "newsletter_description": "Laissez-nous vos coordonnées et notre équipe vous contactera discrètement pour vous conseiller, répondre à vos questions ou vous guider vers les produits les mieux adaptés à vos besoins."
-          }
-        }
-      },
-      "block_order": [
-        "newsletter_pmibKC"
-      ],
       "name": "t:sections.newsletter.presets.name",
       "settings": {
-        "newsletter_bg_color": "#fdd9d9",
-        "newsletter_heading_color": "#000000",
-        "newsletter_description_color": "#000000",
-        "newsletter_button_bg_color": "#000000",
-        "newsletter_button_color": "#ffffff"
+        "newsletter_bg_color": "#f3f3f3",
+        "newsletter_heading_color": "#121212",
+        "newsletter_description_color": "#121212",
+        "newsletter_button_bg_color": "#c33635",
+        "newsletter_label_color": "#121212",
+        "newsletter_button_color": "#ffffff",
+        "newsletter_title": "Envie d’en savoir plus ou de passer à l’action ?",
+        "newsletter_description": "Laissez-nous vos coordonnées et notre équipe vous contactera discrètement pour vous conseiller, répondre à vos questions ou vous guider vers les produits les mieux adaptés à vos besoins.",
+        "newsletter_bottom_text": "<p>En soumettant ce formulaire, vous acceptez <a href=\"#\" title=\"#\"><em>nos conditions générales </em></a>et <a href=\"#\" title=\"#\"><em>notre politique de confidentialité.</em></a></p>",
+        "newsletter_bottom_text_link_color": "#c33635"
       }
     },
     "174876168234883167": {
