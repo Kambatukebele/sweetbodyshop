@@ -186,77 +186,116 @@
 </style>
 
 <script>
-  const newsletterForm = document.getElementById('newsletter-form');
-  const statusDiv = document.createElement('div');
-  statusDiv.id = 'form-status';
-  statusDiv.style.marginTop = '10px';
-  statusDiv.style.fontSize = '14px';
-  newsletterForm.appendChild(statusDiv);
+   <script>
+    const newsletterForm = document.getElementById('newsletter-form');
 
-  function showStatus(message, isSuccess = true) {
-    statusDiv.textContent = message;
-    statusDiv.style.color = isSuccess ? 'green' : 'red';
+    // Create styled status box
+    const statusDiv = document.createElement('div');
+    statusDiv.id = 'form-status';
+    statusDiv.style.marginTop = '15px';
+    statusDiv.style.fontSize = '14px';
+    statusDiv.style.padding = '12px 16px';
+    statusDiv.style.borderRadius = '6px';
+    statusDiv.style.transition = 'opacity 0.5s ease';
+    statusDiv.style.opacity = '0';
+    statusDiv.style.display = 'none';
+    newsletterForm.appendChild(statusDiv);
 
-    // Auto-hide after `duration` milliseconds
-    clearTimeout(showStatus._timeout);
-    showStatus._timeout = setTimeout(() => {
-      statusDiv.textContent = '';
-    }, duration);
-  }
+    // French messages
+    const messages = {
+      name: 'Le nom doit contenir au moins 4 lettres sans chiffres ni symboles.',
+      phone: 'Veuillez entrer un numéro de téléphone valide, sans espaces. Ex : +33612345678',
+      email: 'Veuillez entrer une adresse e-mail valide.',
+      success: 'Nous avons bien reçu votre demande. Notre agent vous contactera sous 24 à 48 heures.',
+      fail: "Échec de l'envoi. Veuillez réessayer.",
+      error: 'Une erreur est survenue. Veuillez réessayer.'
+    };
 
-  function isValidEmail(email) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  }
+    function showStatus(message, isSuccess = true) {
+      statusDiv.textContent = message;
+      statusDiv.style.backgroundColor = isSuccess ? '#d4edda' : '#f8d7da';
+      statusDiv.style.border = isSuccess ? '1px solid #c3e6cb' : '1px solid #f5c6cb';
+      statusDiv.style.color = isSuccess ? '#155724' : '#721c24';
+      statusDiv.style.display = 'block';
 
-  function isValidPhone(phone) {
-    const cleaned = phone.replace(/\s+/g, ''); // remove spaces
-    return /^(\+33|0033)[1-9]\d{8}$/.test(cleaned);
-  }
-  newsletterForm.addEventListener('submit', async function (e) {
-    e.preventDefault();
-
-    const name = this.name.value.trim();
-    const phone = this.phone_number.value.trim();
-    const email = this.email.value.trim();
-    const product = this.product.value.trim();
-
-    // Validation
-    if (!/^[A-Za-zÀ-ÿ\s]{4,}$/.test(name)) {
-      showStatus('Le nom doit contenir au moins 4 lettres sans chiffres ni symboles.', false);
-      return;
-    }
-
-    if (!isValidPhone(phone)) {
-      showStatus('Veuillez entrer un numéro de téléphone valide, sans espaces. Ex : +33612345678', false);
-      return;
-    }
-
-    if (!isValidEmail(email)) {
-      showStatus('Veuillez entrer une adresse e-mail valide.', false);
-      return;
-    }
-
-    const formData = { name, phone_number: phone, email, product };
-
-
-    try {
-      const response = await fetch('https://lightgray-dugong-905323.hostingersite.com/submit-lead.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+      requestAnimationFrame(() => {
+        statusDiv.style.opacity = '1';
       });
 
-      if (response.ok) {
-        showStatus('Nous avons bien reçu votre demande. Notre agent vous contactera sous 24 à 48 heures.', true);
-        newsletterForm.reset();
-      } else {
-        showStatus("Échec de l'envoi. Veuillez réessayer.", false);
-      }
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      showStatus('Une erreur est survenue. Veuillez réessayer.', false);
+      clearTimeout(showStatus._timeout);
+      showStatus._timeout = setTimeout(() => {
+        statusDiv.style.opacity = '0';
+        setTimeout(() => {
+          statusDiv.style.display = 'none';
+        }, 500);
+      }, 5000);
+
+      statusDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
-  });
+
+    function isValidEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function isValidPhone(phone) {
+      const cleaned = phone.replace(/\s+/g, '');
+      return /^(\+33|0033)[1-9]\d{8}$/.test(cleaned);
+    }
+
+    function setFormDisabled(state) {
+      const elements = newsletterForm.querySelectorAll('input, button');
+      elements.forEach(el => el.disabled = state);
+    }
+
+    newsletterForm.addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const name = this.name.value.trim();
+      const phone = this.phone_number.value.trim();
+      const email = this.email.value.trim().toLowerCase();
+      const product = this.product.value.trim();
+
+      // Validation
+      if (!/^[A-Za-zÀ-ÿ\s]{4,}$/.test(name)) {
+        showStatus(messages.name, false);
+        return;
+      }
+
+      if (!isValidPhone(phone)) {
+        showStatus(messages.phone, false);
+        return;
+      }
+
+      if (!isValidEmail(email)) {
+        showStatus(messages.email, false);
+        return;
+      }
+
+      const formData = { name, phone_number: phone, email, product };
+
+      setFormDisabled(true);
+
+      try {
+        const response = await fetch('https://lightgray-dugong-905323.hostingersite.com/submit-lead.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData),
+        });
+
+        if (response.ok) {
+          showStatus(messages.success, true);
+          newsletterForm.reset();
+        } else {
+          showStatus(messages.fail, false);
+        }
+      } catch (error) {
+        console.error('Erreur lors de la soumission du formulaire:', error);
+        showStatus(messages.error, false);
+      } finally {
+        setFormDisabled(false);
+      }
+    });
+  </script>
 </script>
 
 {% schema %}
