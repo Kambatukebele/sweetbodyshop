@@ -15,7 +15,7 @@
         "slide_JVEcyL": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/pexels-danny-the-designer-280039-14521368.jpg",
+            "image": "shopify://shop_images/lui-et-elle.jpg",
             "image_overlay_opacity": 40,
             "heading": "Soins Intimes Naturels pour Hommes et Femmes. Volume, Libido & Bien-Être",
             "heading_size": "h1",
@@ -212,7 +212,6 @@
         "product_carousel_enable": false,
         "product_carousel_enable_border": false,
         "product_carousel_paddingY": 36,
-        "product_carousel_image": "shopify://shop_images/ChatGPT_Image_Jun_11_2025_06_35_56_PM.png",
         "product_carousel_subtitle": "POUR ELLE",
         "product_carousel_title": "Bien-Être Féminin Naturel – Confiance, Équilibre & Plaisir",
         "product_carousel_description": "Découvrez notre sélection de soins naturels spécialement conçus pour les femmes. Que ce soit pour stimuler la libido, raffermir et galber votre silhouette ou rééquilibrer votre flore intime, chaque produit est formulé avec des ingrédients d’origine végétale, efficaces et doux pour votre corps. Prenez soin de vous, naturellement.",
@@ -235,7 +234,6 @@
         "product_carousel_enable": true,
         "product_carousel_enable_border": true,
         "product_carousel_paddingY": 36,
-        "product_carousel_image": "shopify://shop_images/ChatGPT_Image_Jun_11_2025_06_25_41_PM.png",
         "product_carousel_subtitle": "POUR LUI",
         "product_carousel_title": "Performance & Vitalité Masculine – Naturellement Plus Fort",
         "product_carousel_description": "Explorez notre gamme dédiée au bien-être masculin. Des formules puissantes à base de plantes pour booster la libido, améliorer l’endurance sexuelle et renforcer la confiance. Que vous recherchiez un effet tonifiant ou un soutien ciblé pour vos performances, nos soins naturels répondent à vos besoins, sans compromis.",
