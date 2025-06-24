@@ -25,7 +25,7 @@
           "type": "footer_info",
           "settings": {
             "footer_info_heading": "Information",
-            "footer_info_subheading_one": "Politique de <a href=\"/policies/refund-policy\" target=\"_blank\" title=\"Refund Policy\">retour</a>",
+            "footer_info_subheading_one": "<a href=\"/policies/refund-policy\" target=\"_blank\" title=\"Refund Policy\">Politique de retour</a>",
             "footer_info_subheading_two": "Politique de confidentialité",
             "footer_info_subheading_three": "Politique de transport",
             "footer_info_subheading_four": "Mentions legales"
