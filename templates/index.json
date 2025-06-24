@@ -311,6 +311,7 @@
     },
     "featured_blog_PVebUA": {
       "type": "featured-blog",
+      "disabled": true,
       "custom_css": [
         ".card {border-radius: 10px;}"
       ],
