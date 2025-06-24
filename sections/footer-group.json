@@ -34,11 +34,11 @@
         "footer_contact_cjXwCw": {
           "type": "footer_contact",
           "settings": {
-            "footer_contact_heading": "Customer service",
-            "footer_contact_phone": "+33 123 456 789",
+            "footer_contact_heading": "",
+            "footer_contact_phone": "",
             "footer_contact_phone_description": "Du Lundi - au Vendredi 08:00 - 16:00",
-            "footer_contact_email": "info@test.com",
-            "footer_contact_email_description": "Call anytime"
+            "footer_contact_email": "support@c-innovatech.com",
+            "footer_contact_email_description": "Appelez à tout moment"
           }
         }
       },
