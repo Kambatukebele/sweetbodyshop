@@ -65,8 +65,8 @@
                 </h4>
                 <div class="product-carousel__product-price-block">
                   <span class="product-carousel__product-price-compare">
-                    {%- if item-product.price != blank -%}
-                      {{ item-product.price | money }}
+                    {%- if item-product.compare_at_price != blank -%}
+                      {{ item-product.compare_at_price | money }}
                     {%- else -%}
                       $25.00
                     {%- endif -%}
