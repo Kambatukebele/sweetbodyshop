@@ -292,6 +292,7 @@
       } else {
         showStatus("Échec de l'envoi. Veuillez réessayer.", false);
       }
+      console.log(response);
     } catch (error) {
       console.error('Erreur lors de la soumission du formulaire:', error);
       showStatus('Une erreur est survenue. Veuillez réessayer.', false);
